@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "oddyn8":    { ".read": "auth != null", ".write": "auth != null" },
+    "tonshuul6": { ".read": "auth != null", ".write": "auth != null" }
+  }
+}
