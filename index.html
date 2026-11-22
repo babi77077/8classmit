@@ -10,7 +10,7 @@
 /* VOICE: сонирхолтой, итгэлтэй, 8-р ангийн өсвөр насныханд — тоглоомлог биш, адал явдалтай
    IDEA: шөнийн тэнгэрийн одны орд = алгоритмын зам; од бүр нэг алхам
    PICTURE: оддыг холбосон яст мэлхийн зам; лабораторид бодит зурах талбай
-   COLOUR+TYPE: шөнийн гүн хөх (хоёр загварт), алтан од, тэнгэрийн цэнхэр; 130-р сургуулийн 4 өнгө; Nunito + PT Mono
+   COLOUR+TYPE: шөнийн гүн хөх (хоёр загварт), алтан од, тэнгэрийн цэнхэр; сургуулийн 4 өнгө; Nunito + PT Mono
    LAYOUT: дээд цэс → оддын зурагтай нүүр → эрхэм зорилго → зорилго → үнэт зүйл → ангийн одны орд */
 :root{color-scheme:dark;--bg:#0d1330;--bg2:#121a42;--card:#18214f;--ink:#eef1ff;--mut:#a9b2dd;--gold:#ffcf4a;--sky:#5ad1ff;--red:#ff6b6b;--leaf:#4fd49a;--line:#2b3672;--soft:#212b5e;
 --s1:#a46bf0;--s2:#4fc45a;--s3:#3d8df0;--s4:#f0b21a;--blk1:#3d8df0;--blk2:#4fc45a;--blk3:#f0b21a;--blk4:#a46bf0;--blk5:#ef6aa0}
@@ -182,12 +182,179 @@ body.dragging{cursor:grabbing;user-select:none}
 #syncdot[data-st=local]{display:none}
 .syncbanner{background:#fff3cd;color:#5c4400;border:1px solid #e0b100;border-radius:12px;padding:10px 14px;margin:0 0 12px;font-size:14px}
 .clspick{max-height:260px;overflow:auto;border:2px solid var(--line);border-radius:12px;padding:8px 12px;text-align:left}
+/* ===== 7 алхмын хичээл (8-р анги, шөнийн загвар) ===== */
+:root{--hee:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2.2' opacity='.14'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Cpath d='M30 14l3 9 9 0-7 6 3 9-8-6-8 6 3-9-7-6 9 0z'/%3E%3C/g%3E%3C/svg%3E")}
+.ubanner{--uc:#3d8df0;display:flex;align-items:center;gap:14px;margin:28px 0 12px;padding:14px 18px;border-radius:20px;color:#fff;background:var(--hee),linear-gradient(120deg,var(--uc),color-mix(in srgb,var(--uc) 55%,#0d1330));box-shadow:0 6px 0 color-mix(in srgb,var(--uc) 40%,#000)}
+.ubanner .uico{font-size:30px;width:54px;height:54px;border-radius:16px;background:#ffffff2e;display:grid;place-items:center;flex:none}
+.ubanner small{display:block;opacity:.85;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.6px}.ubanner b{font-size:21px;line-height:1.2}
+.ubanner .ucount{margin-left:auto;background:#fff;color:#0d1330;font-weight:900;border-radius:99px;padding:6px 14px;white-space:nowrap}
+.lessons .les{border-top:5px solid var(--uc,#ffcf4a)}.lessons .les .n{background:var(--uc,#ffcf4a)!important;color:#fff!important}.lessons .les .n.done{background:var(--leaf)!important}
+.lhero{--uc:#3d8df0;color:#fff;border-radius:28px;padding:22px 26px 26px;background:var(--hee),linear-gradient(135deg,var(--uc),color-mix(in srgb,var(--uc) 45%,#0d1330));box-shadow:0 10px 0 color-mix(in srgb,var(--uc) 35%,#000);position:relative;overflow:hidden}
+.lhero h1{color:#fff!important;font-size:clamp(28px,4.4vw,44px);margin:2px 0 8px}.lpill{background:#ffffff26;border-radius:99px;padding:5px 12px;font-weight:800;font-size:14px}.lback{color:#fff;font-weight:800}
+.lnum{margin-top:14px;font-weight:900;font-size:15px;opacity:.85}.lgoal{margin:0 0 12px;font-size:17px;max-width:720px}
+.lprog{margin-top:14px;height:10px;border-radius:10px;background:#ffffff33;overflow:hidden}.lprog i{display:block;height:100%;background:linear-gradient(90deg,#ffcf4a,#fff);border-radius:10px}
+.stepper{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:22px 0 6px;position:sticky;top:66px;z-index:6;background:#0d1330ee;padding:8px;border-radius:18px;backdrop-filter:blur(6px)}
+.stepper button{background:var(--card)!important;color:var(--ink)!important;border:2px solid color-mix(in srgb,var(--sc) 55%,transparent)!important;box-shadow:none!important;border-radius:14px;padding:6px 4px;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:0}
+.stepper button span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--sc);color:#fff;font-size:17px;font-weight:900}.stepper button small{font-size:12px;font-weight:800;line-height:1.15;text-align:center}
+.stepper button.ok span{background:var(--leaf)}.stepper button.lk{opacity:.5}
+@media(max-width:760px){.stepper{grid-template-columns:repeat(4,1fr);top:58px}}
+.stage{margin:26px 0;border-radius:24px;background:var(--bg2);border:2px solid color-mix(in srgb,var(--sc) 50%,transparent);overflow:hidden;scroll-margin-top:150px}
+.sthead{display:flex;align-items:center;gap:12px;padding:14px 20px;color:#fff;background:var(--hee),linear-gradient(90deg,var(--sc),color-mix(in srgb,var(--sc) 55%,#0d1330))}
+.sthead h2{color:#fff!important;margin:0;font-size:clamp(21px,2.6vw,27px)}.stnum{width:34px;height:34px;border-radius:50%;background:#fff;color:#0d1330;display:grid;place-items:center;font-weight:900;flex:none}
+.stico{font-size:24px}.stok{margin-left:auto;background:#ffffff33;border-radius:99px;padding:4px 12px;font-weight:800;font-size:14px}.stbody{padding:6px 20px 18px}
+.stage .sec{border-left:5px solid var(--sc)}.stage .sec h3{display:flex;align-items:center;gap:8px}.sico{font-size:22px}.stage .sec>h3 .tag{display:none}
+.slock .stbody{opacity:.75}.lockmsg{font-weight:800;font-size:17px;margin:14px 0}
+.wstabs{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 4px}.wstabs button{background:var(--card)!important;color:var(--ink)!important;border:2px solid var(--line)!important;box-shadow:none!important;text-align:left;display:flex;flex-direction:column;align-items:flex-start;flex:1 1 240px}
+.wstabs button small{font-weight:700;color:var(--mut);font-size:13px}.wstabs button.on{background:var(--sc)!important;color:#fff!important}.wstabs button.on small{color:#ffffffcc}
+.embws{margin-top:12px}
+.donebox{display:flex;gap:14px;align-items:center;font-size:40px;background:linear-gradient(135deg,#2b3672,#1d4a3a);border:2px solid var(--gold);border-radius:18px;padding:14px 18px;margin:8px 0}.donebox>div{font-size:17px}
+.sumgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));margin-top:10px}.sumcard{border:2px dashed var(--line);border-radius:18px;padding:14px 16px}.sumcard h3{margin:0 0 8px}.sumline{margin:6px 0;font-weight:700}
+.tchips{display:flex;flex-wrap:wrap;gap:8px}.tchips span{background:var(--soft);border-radius:12px;padding:6px 10px}.tchips small{display:block;color:var(--mut);font-size:12.5px}
+.ucard{background:var(--card)!important;color:var(--ink)}.yrow{color:#222}.rankcard .rkl.me{color:#222}
+
+/* ===== Хөдөлгөөн ===== */
+.fx{opacity:0;transform:translateY(22px) scale(.98);transition:opacity .55s ease var(--fxd,0ms),transform .55s cubic-bezier(.2,.8,.2,1.15) var(--fxd,0ms)}
+.fx.fxin{opacity:1;transform:none}
+@keyframes fxfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes fxpop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+@keyframes fxgrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fxshine{0%{background-position:-160px 0}100%{background-position:260px 0}}
+@keyframes fxwig{0%,100%{transform:rotate(0)}25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+.bar2 i,.ybar i,.minibar i,.lprog i,.sbar i{transform-origin:left;animation:fxgrow 1s cubic-bezier(.2,.8,.2,1) both}
+button,.btn{transition:transform .12s,box-shadow .12s,filter .12s}button:hover:not(:disabled),.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}button:active:not(:disabled),.btn:active{transform:translateY(1px)}
+.btn.leaf,button.leaf{background-image:linear-gradient(110deg,transparent 30%,#ffffff55 45%,transparent 60%);background-size:200px 100%;background-repeat:no-repeat;animation:fxshine 2.6s ease-in-out infinite}
+.logo img,.logo svg,.logocalf{transition:transform .3s}.logo:hover img,.logo:hover svg,.logo:hover .logocalf{animation:fxwig .5s}
+.pill,.vchip,.stok{animation:fxpop .45s both}
+.fxconf{position:fixed;inset:0;pointer-events:none;z-index:9999}
+@media (prefers-reduced-motion: reduce){.fx{opacity:1!important;transform:none!important}*{animation:none!important}}
+/* ===== Дүн, эрэмбэ ===== */
+.rkn{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#eee;color:#333}.rkn.r1{background:linear-gradient(135deg,#ffe066,#e8a21a);color:#5a3a00}.rkn.r2{background:linear-gradient(135deg,#f1f3f5,#adb5bd)}.rkn.r3{background:linear-gradient(135deg,#ffd8a8,#d9822b);color:#4a2400}
+.minibar,.ybar{height:8px;border-radius:8px;background:#0001;overflow:hidden;margin:4px 0;min-width:70px}.minibar i,.ybar i{display:block;height:100%;background:linear-gradient(90deg,#2e8b57,#ffcf4a);border-radius:8px}
+.ucards{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr))}
+.ucard{border:2px solid #0001;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:4px;background:#fff}.ufin{font-size:26px;font-weight:900;color:#2e8b57}.ufin small{font-size:13px;color:#888}
+.yrow{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-top:14px;padding:14px;border-radius:16px;background:linear-gradient(135deg,#fff3bf,#e7f5ff);color:#222}.yrow>div{flex:1;min-width:220px}
+.rankcard{text-align:left}.rankcard .rkl{display:flex;gap:8px;align-items:center;padding:6px 8px;border-radius:12px}.rankcard .rkl.me{background:#fff3bf;font-weight:900}
+/* ===== Батламж ===== */
+.certmodal .card,.certmodal>div{max-width:980px!important}
+.cert{background:#fff;padding:14px;border-radius:10px;color:#2a1a10;text-align:center;background-image:repeating-linear-gradient(45deg,#c8102e 0 10px,#ffcf4a 10px 14px,#1b3a6b 14px 24px,#ffcf4a 24px 28px)}
+.certin{background:#fffdf6;border:3px solid #1b3a6b;outline:3px solid #ffcf4a;outline-offset:-10px;padding:34px 40px 26px;border-radius:4px;position:relative;background-image:radial-gradient(circle at 50% 40%,#fff3cf 0,#fffdf6 60%)}
+.certtop{display:flex;gap:14px;align-items:center;justify-content:center}.certlogo{width:66px;height:66px;border-radius:50%}
+.certschool{font-weight:900;letter-spacing:.6px;color:#1b3a6b;font-size:15px}.certsite{color:#7a6650;font-size:14px}
+.certh{font-family:Georgia,'Times New Roman',serif;font-size:58px!important;letter-spacing:10px;margin:16px 0 4px;color:#c8102e!important;text-shadow:0 2px 0 #ffcf4a!important;background:none!important;-webkit-text-fill-color:#c8102e}
+.certfor{margin:4px 0;font-style:italic;color:#5a4a35}.certname{font-family:Georgia,serif;font-size:40px;font-weight:700;color:#1b3a6b;border-bottom:2px solid #ffcf4a;display:inline-block;padding:0 30px 4px;margin:4px 0}
+.certtext{max-width:640px;margin:10px auto;font-size:17px;line-height:1.6}
+.certscore{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0}.certscore div{border:2px solid #ead9b9;border-radius:12px;padding:8px 14px;min-width:110px;background:#fff}.certscore b{display:block;font-size:22px;color:#1b3a6b}.certscore span{font-size:12px;color:#7a6650}.certscore .certfin{border-color:#c8102e;background:#fff3f3}.certscore .certfin b{color:#c8102e}
+.certpraise{font-family:Georgia,serif;font-style:italic;font-size:17px;color:#2e5a3a;max-width:640px;margin:8px auto 18px}
+.certsign{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;font-size:13px;color:#5a4a35}.certsign>div{flex:1}.certsign i{display:block;border-bottom:1.5px solid #5a4a35;margin:0 20px 6px;height:24px}
+.certseal{flex:0 0 92px!important;height:92px;border-radius:50%;background:radial-gradient(circle,#e63950 0,#b0102a 70%);color:#ffe9a8;display:grid;place-items:center;font-weight:900;font-size:24px;box-shadow:0 0 0 4px #ffcf4a,0 0 0 7px #b0102a;line-height:1}.certseal small{display:block;font-size:12px}
+@media print{body *{visibility:hidden!important}#certbox,#certbox *{visibility:visible!important}#certbox{position:fixed;inset:0;margin:0;border-radius:0}.noprint{display:none!important}@page{size:A4 landscape;margin:8mm}}
+.badge130{display:none}
+.setrow{display:grid;grid-template-columns:26px minmax(0,1fr) minmax(0,2fr) 40px;gap:8px;align-items:start;margin:8px 0}.setrow b{padding-top:10px}@media(max-width:700px){.setrow{grid-template-columns:26px 1fr 40px}.setrow textarea{grid-column:2/3}}
+
+/* ===== Дэвтрийн эргэцүүлэмж ===== */
+.nbhead{display:flex;gap:10px;align-items:center;margin-top:12px;background:rgba(255,255,255,.92);color:#2a2a2a;border:2px dashed #e0a43a;border-radius:14px;padding:8px 14px;font-size:15px;max-width:max-content}
+.nbhead>span{font-size:24px}
+.refl{margin:26px 0 10px;background:linear-gradient(135deg,#fff8e1,#fdf1ff);color:#2a2236;border:2px solid #e8b84a;border-radius:22px;padding:18px 20px;box-shadow:0 8px 24px rgba(120,80,0,.12)}
+.reflhead{display:flex;gap:14px;align-items:flex-start}.reflico{font-size:42px;line-height:1}.refl h2{margin:0 0 4px;font-size:22px;color:#5a3b00}.refl p{margin:4px 0;color:#3a3046}
+.paper{position:relative;margin:14px 0 8px;background:#fffef8 repeating-linear-gradient(#fffef8 0 33px,#c9dcf5 33px 34px);border-radius:12px;padding:10px 16px 12px 58px;box-shadow:inset 0 0 0 1px #e9e1c8;color:#222;font-size:16px;line-height:34px}
+.paper:before{content:"";position:absolute;left:44px;top:0;bottom:0;width:2px;background:#f08a8a}
+.pline{font-family:"Comic Sans MS","Segoe Print",cursive,sans-serif}.pdate{text-align:right;color:#444}.ptopic{font-weight:800;color:#1d3b8a}
+.pq{display:flex;flex-direction:column;line-height:1.45;padding:6px 0 4px}.pq b{color:#2a2236}.pq span{color:#6a6178;font-size:14px;font-style:italic}
+.reflex{margin-top:6px;background:#fff;border-radius:12px;padding:6px 14px;border:1px solid #ecd9a8}.reflex summary{cursor:pointer;font-weight:800;color:#8a5a00}.reflex p{color:#333}
+.reflok{background:#2f9e62!important;color:#fff!important}
+/* ===== Товчлол ===== */
+.kwrap{max-width:1000px}
+kbd{display:inline-block;min-width:26px;text-align:center;font:700 14px/1 "Nunito",system-ui,sans-serif;color:#1f2550;background:linear-gradient(#fff,#e9edf7);border:1.5px solid #b9c2da;border-bottom-width:4px;border-radius:8px;padding:5px 8px;margin:1px 0;white-space:nowrap}
+.kplus{margin:0 3px;font-weight:800;color:#8a93ad}
+.khero{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(135deg,#3b2fbf,#0f8f9a);color:#fff;border-radius:22px;padding:18px 22px;margin-bottom:16px}
+.khero h2{margin:0 0 4px;color:#fff}.khero p{margin:0;color:#e9f3ff;max-width:560px}
+.kmed{display:flex;gap:6px;flex-wrap:wrap}.kmed span{font-size:24px;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.15);filter:grayscale(1);opacity:.55}.kmed span.on{background:#ffd23f;filter:none;opacity:1;box-shadow:0 0 0 3px #fff6}
+.ktask{background:#fff4d6;color:#4a3500;border:2px solid #f0b429;border-radius:16px;padding:12px 16px;margin-bottom:16px}.ktask p{margin:4px 0 8px;color:#4a3500}
+.kchip{background:#fff!important;color:#3a2a00!important;border:2px solid #f0b429!important;border-radius:999px!important;padding:6px 12px!important;min-height:0!important;font-weight:800}.kchip.ok{background:#2f9e62!important;color:#fff!important;border-color:#2f9e62!important}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.kcat{position:relative;display:flex!important;flex-direction:column;align-items:flex-start;text-align:left;gap:3px;background:#fff!important;color:#1f2550!important;border:2px solid #dfe4f2!important;border-radius:18px!important;padding:16px!important;min-height:0!important;box-shadow:0 6px 16px rgba(30,40,90,.08);transition:transform .15s,box-shadow .15s}
+.kcat:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(30,40,90,.16)}.kico{font-size:34px}.kcat b{font-size:18px}.kcat small{color:#5b6383;font-weight:600}.kmeta{font-size:13px;color:#2d78d2;font-weight:800;margin-top:4px}.kpin{position:absolute;top:10px;right:12px}
+.ktip{margin-top:16px;background:#eef6ff;color:#1f2a44;border-radius:14px;padding:12px 16px;line-height:1.6}
+.khead{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}.khead h2{margin:0}.khead small{font-size:15px;opacity:.75}
+.ktabs button{font-weight:800}
+.kbody{background:#fff;color:#1f2550;border-radius:18px;padding:16px;margin-top:10px;border:2px solid #e3e7f3}
+.ktab td,.ktab th{color:#1f2550}.ktab .kcell{white-space:nowrap}
+.kcard{max-width:520px;margin:10px auto 0;min-height:220px;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#eef2ff,#fff);border:3px solid #6b5bff;border-radius:22px;cursor:pointer;padding:18px;transition:transform .25s}
+.kcard.flip{background:linear-gradient(135deg,#e6fff3,#fff);border-color:#2f9e62;animation:kflip .3s}
+@keyframes kflip{from{transform:rotateY(80deg)}to{transform:none}}
+.kbig{display:inline-block;margin:8px 0;transform:scale(1.35);transform-origin:center}.kq{font-size:18px;font-weight:800;margin:4px 0 10px}.kdesc{font-size:22px;font-weight:800;color:#1d6b45;margin:0 0 6px}
+.kstart{text-align:center;padding:18px}.kscore{font-size:54px;font-weight:900;color:#3b2fbf}
+.kquiz{text-align:center}.kqn{font-weight:800;color:#6b7393}
+.kopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;max-width:720px;margin:0 auto}
+.kopt{background:#f4f6fd!important;color:#1f2550!important;border:2px solid #d5dbef!important;border-radius:14px!important;padding:12px!important;font-weight:700;min-height:56px}
+.kopt.ok{background:#d3f9d8!important;border-color:#2f9e62!important}.kopt.no{background:#ffe3e3!important;border-color:#e03131!important}
+.kpress{max-width:520px;margin:6px auto;min-height:110px;display:grid;place-items:center;font-size:18px;font-weight:800;border:3px dashed #6b5bff;border-radius:18px;background:#f5f3ff;color:#3b2fbf;outline:none}
+.kpress.ok{border-style:solid;border-color:#2f9e62;background:#e6fff3;color:#1d6b45}.kpress.no{border-style:solid;border-color:#e03131;background:#fff0f0;color:#a61e1e}
+.kteach{max-width:none;text-align:left;margin-bottom:16px}
+.kmini{background:#f3f0ff;color:#1f2550;border:2px solid #b8adff;border-radius:16px;padding:12px 14px;margin-top:10px}
+.kminil{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px;margin-top:8px}.kminil span{display:flex;flex-direction:column;gap:2px;background:#fff;border-radius:10px;padding:6px 8px}.kminil small{color:#4a5275;font-weight:600}
+/* ===== Ажлын хуудас (6-р анги) ===== */
+.pwbox{background:#fff;color:#1f2550;border:2px solid #13a89e;border-radius:18px;padding:14px 16px;margin-top:12px}
+.pwbox h3{margin:0 0 6px;display:flex;gap:8px;align-items:center}
+.pwlist{margin:8px 0 0;padding-left:22px}.pwlist li{padding:8px 10px;margin:6px 0;border-radius:12px;background:#f6f8fc;border:1.5px solid #e1e6f2}.pwlist li.ok{background:#e9fbef;border-color:#8fd6a8}
+.pwt{font-weight:700;margin-bottom:6px}.pwsel{display:flex;flex-wrap:wrap;gap:6px}
+.pwo{background:#fff!important;color:#1f2550!important;border:2px solid #cfd6ea!important;border-radius:10px!important;padding:6px 12px!important;min-height:0!important;font-weight:700}
+.pwo.ok{background:#2f9e62!important;color:#fff!important;border-color:#2f9e62!important}.pwo.no{background:#ffe3e3!important;border-color:#e03131!important}
+.pwin{max-width:260px}.pwfb{display:block;font-weight:800;font-size:14px;margin-top:4px}.pwlist li.ok .pwfb{color:#2f9e62}.pwlist li:not(.ok) .pwfb{color:#c92a2a}
+.pwfoot{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px}.pwbar{flex:1;min-width:160px;height:12px;background:#e6ebf5;border-radius:99px;overflow:hidden}.pwbar i{display:block;height:100%;background:linear-gradient(90deg,#13a89e,#2f9e62);transition:width .3s}
+.pwtool{margin-top:12px;border:2px solid #f08a24;border-radius:16px;padding:10px;background:#fffaf3}
+.painthost{margin-top:8px}
+.rulebox textarea{width:100%;min-height:90px;font-size:17px}.rulel{list-style:none;padding:0;margin:8px 0 0}.rulel li{padding:3px 0;font-weight:700}.rulel .y{color:#2f9e62}.rulel .n{color:#c92a2a}
+/* ===== Баяжуулсан онол ===== */
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}.flow span{background:linear-gradient(135deg,#e8f1ff,#fff);border:2px solid #9cc0f5;border-radius:14px;padding:8px 12px;font-weight:800;text-align:center;line-height:1.3}.flow span small{display:block;font-weight:600;color:#4a5275}.flow i{font-style:normal;font-weight:900;color:#2d78d2;font-size:20px}
+.mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin:10px 0}.mini span{display:flex;flex-direction:column;gap:3px;background:#fff7ec;border:2px solid #ffd29a;border-radius:14px;padding:10px 12px}.mini small{color:#5b5470;font-weight:600}
+.bar{display:block;background:#e0457b;color:#fff;border-radius:8px;padding:2px 8px;margin:3px 0;font-weight:800;font-size:13px}.bar.b2{background:#2d78d2}
+.pixgrid{display:grid;grid-template-columns:repeat(8,22px);gap:1px;margin:10px 0;background:#c9d3e6;width:max-content;border:1px solid #c9d3e6}.pixgrid i{display:block;width:22px;height:22px}
+.urlx{font:800 20px/1.6 "PT Mono",monospace;margin:8px 0}.urlx span{padding:2px 4px;border-radius:6px}.u1{background:#ffe3e3}.u2{background:#eee}.u3{background:#d3f9d8}.u4{background:#fff3bf}.u5{background:#d0ebff}
+.steps{margin:8px 0;padding-left:22px}.steps li{margin:5px 0}
+/* ===== Цахим шуудан ===== */
+.mhero{background:linear-gradient(135deg,#d6336c,#f08c00)}
+.mailbody h3{margin:18px 0 8px;color:#1f2550}.mailbody h3:first-child{margin-top:4px}
+.mailbody table{margin:8px 0}.mailbody td,.mailbody th{color:#1f2550}
+.mage{display:flex;gap:10px;background:#fff4e6;border:2px solid #f08c00;border-radius:14px;padding:10px 14px;color:#5c3a00;font-size:24px}.mage div{font-size:15px}
+.maddr{font:800 clamp(15px,4.6vw,26px)/1.4 "PT Mono",monospace;margin:6px 0;overflow-wrap:anywhere}.maddr span,.mlegend span{padding:2px 6px;border-radius:8px}.mlegend{display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:700}
+.a1{background:#d0ebff}.a2{background:#ffd8a8}.a3{background:#d3f9d8}.a4{background:#f3d9fa}
+.mstep{display:flex;gap:12px;align-items:flex-start;background:#f8f9ff;border:1.5px solid #e0e4f5;border-radius:14px;padding:10px 12px;margin:8px 0}.mnum{flex:none;width:32px;height:32px;border-radius:50%;background:#d6336c;color:#fff;display:grid;place-items:center;font-weight:900}
+.mgb{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.mgb span{font:700 13px "PT Mono",monospace;padding:3px 8px;border-radius:8px}.mgb .g{background:#d3f9d8;color:#1d6b45}.mgb .b{background:#ffe3e3;color:#a61e1e}
+.mtip{background:#e7f5ff;border-left:5px solid #1c7ed6;border-radius:12px;padding:10px 14px;margin-top:12px;color:#1f2a44}
+.mmock{border:2px solid #cfd6ea;border-radius:16px;overflow:hidden;background:#fff;margin:8px 0}.mmock.bad{border-color:#e03131}
+.mrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid #eef0f7}.mrow i,.mbody i{font-style:normal;font-size:12px;font-weight:800;color:#d6336c;margin-left:auto}
+.mbody{padding:10px 12px;border-bottom:1px solid #eef0f7}.mbody p{display:flex;gap:8px;align-items:flex-start;justify-content:space-between;margin:6px 0;padding:6px 8px;border-radius:10px}.mbody i{flex:none}
+.hl1{background:#fff3bf}.hl2{background:#e7f5ff}.hl3{background:#ebfbee}.hl4{background:#f8f0fc}.matt{background:#f1f3f5;border-radius:8px;padding:2px 8px;font-weight:700}
+.mrules li{margin:4px 0}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}.mgrid>div{background:#fff5f5;border:1.5px solid #ffc9c9;border-radius:14px;padding:10px 12px}.mgrid p{margin:4px 0 0;color:#333}
+.mtask{background:#fff9db;border:2px solid #fab005;border-radius:14px;padding:10px 14px;color:#5c4400}
+.mcomp{max-width:640px;margin:12px auto 0;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15);background:#fff;border:1px solid #dee2e6}
+.mchead{background:#404660;color:#fff;font-weight:800;padding:8px 14px}
+.mf{display:flex!important;align-items:center;gap:8px;border-bottom:1px solid #eef0f7;margin:0!important;padding:2px 12px}.mf span{width:64px;color:#666;font-weight:700;font-size:14px}.mf input{border:0!important;box-shadow:none!important;min-height:38px;padding:4px!important;background:transparent!important;color:#222!important}
+.mcomp textarea{width:100%;min-height:180px;border:0!important;box-shadow:none!important;padding:12px!important;font-size:16px;background:#fff!important;color:#222!important;resize:vertical;border-radius:0!important}
+.mcfoot{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;background:#f8f9fa;border-top:1px solid #eef0f7}
+.mchk{max-width:640px;margin:10px auto 0;list-style:none;padding:10px 14px;background:#f8f9ff;border-radius:14px;color:#1f2550}.mchk li{padding:2px 0;font-weight:700}.mchk .y{color:#2f9e62}.mchk .n{color:#c92a2a}
+.mchk.shake{animation:mshake .4s}@keyframes mshake{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.msent{display:flex;gap:12px;align-items:center;font-size:42px;max-width:640px;margin:14px auto;background:#e6fcf5;border:2px solid #20c997;border-radius:18px;padding:14px 18px;color:#0b5e45}.msent div{font-size:17px}
+/* ===== Батламжийн загвар ===== */
+.cert{--c1:#c8102e;--c2:#1b3a6b;--c3:#ffcf4a;background-image:repeating-linear-gradient(45deg,var(--c1) 0 10px,var(--c3) 10px 14px,var(--c2) 14px 24px,var(--c3) 24px 28px)}
+.cert.th-sky{--c1:#1971c2;--c2:#0b3d6e;--c3:#a5d8ff}.cert.th-green{--c1:#2b8a3e;--c2:#1e4d2b;--c3:#ffd43b}.cert.th-purple{--c1:#9c36b5;--c2:#3b1a5a;--c3:#fcc2d7}.cert.th-gold{--c1:#c77d00;--c2:#5c3d00;--c3:#ffe066}
+.certin{border-color:var(--c2);outline-color:var(--c3)}.certschool,.certname,.certscore b{color:var(--c2)}
+.certh{color:var(--c1)!important;-webkit-text-fill-color:var(--c1);text-shadow:0 2px 0 var(--c3)!important}.certname{border-bottom-color:var(--c3)}
+.certscore .certfin{border-color:var(--c1)}.certscore .certfin b{color:var(--c1)}
+.certseal{background:radial-gradient(circle,var(--c1) 0,var(--c2) 95%);box-shadow:0 0 0 4px var(--c3),0 0 0 7px var(--c1)}
+.ctgrid{display:grid;grid-template-columns:minmax(280px,1fr) minmax(320px,1.2fr);gap:18px;align-items:start}
+@media(max-width:860px){.ctgrid{grid-template-columns:1fr}}
+.ctgrid>div:last-child{position:sticky;top:130px}.ctprev{border-radius:12px;overflow:hidden}.ctprev .cert{zoom:.58}
+.ctth{padding:6px 10px!important;min-height:0!important;font-size:13px;border:2px solid #dee2e6!important;background:#fff!important;color:#222!important}.ctth.on{border-color:#1971c2!important;box-shadow:0 0 0 3px #a5d8ff}
+.ctpr small{display:block;font-weight:800;color:#666;margin-top:6px}.ctpr textarea{width:100%}
 </style>
 </head>
 <body>
 <header><div class="stripe"><i></i><i></i><i></i><i></i></div><div class="bar">
- <a class="logo" href="#home"><img class="badge130" src="logo130.png" alt="130-р сургууль"><svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true"><use href="#star"/></svg><span>Оддын хөтөч<small>130-р сургууль · 8-р анги</small></span></a>
- <nav id="nav"><a href="#theory" data-v="theory">Онол</a><a href="#lab" data-v="lab">Лаборатори</a><a href="#ws" data-v="ws">Ажлын хуудас</a><a href="#terms" data-v="terms">Нэр томьёо</a><a href="#exam" data-v="exam">Шалгалт</a></nav>
+ <a class="logo" href="#home"><img class="badge130" src="logo130.png" alt="Сургуулийн лого"><svg viewBox="0 0 40 40" width="36" height="36" aria-hidden="true"><use href="#star"/></svg><span>Оддын хөтөч<small id="hsub">8-р анги</small></span></a>
+ <nav id="nav"><a href="#theory" data-v="theory">Онол</a><a href="#lab" data-v="lab">Лаборатори</a><a href="#ws" data-v="ws">Ажлын хуудас</a><a href="#terms" data-v="terms">Нэр томьёо</a><a href="#keys" data-v="keys">Товчлол</a><a href="#mail" data-v="mail">Цахим шуудан</a><a href="#exam" data-v="exam">Шалгалт</a></nav>
  <span id="syncdot" data-st="local"></span>
  <button class="who" id="who">Нэвтрэх</button>
 </div></header>
@@ -210,7 +377,7 @@ body.dragging{cursor:grabbing;user-select:none}
 </defs></svg>
 <main id="app"></main>
 <div class="modal" id="modal"><div class="card" id="mbox"></div></div>
-<footer>Оддын хөтөч · 130-р сургуулийн 8-р ангийн Мэдээллийн технологийн сургалтын сайт<br>Эв нэгдэл · Эерэг хандлага · Тасралтгүй хөгжил · Үүрэг хариуцлага</footer>
+<footer>Оддын хөтөч · <span id="fschool"></span>8-р ангийн Мэдээллийн технологийн сургалтын сайт<br>Эв нэгдэл · Эерэг хандлага · Тасралтгүй хөгжил · Үүрэг хариуцлага</footer>
 <script src="firebase-config.js"></script>
 <script>window.SYNC_ROOT="oddyn8";window.SYNC_PREFIX="od2_";window.SYNC_KEYS=["users", "exams", "teachers", "opened", "wsGrade"];window.SYNC_EMPTY={"users":{},"exams":{},"opened":{},"wsGrade":{}};</script>
 <script src="sync.js"></script>
@@ -301,7 +468,7 @@ const guest={theory:{},lab:{},ws:{},exams:{},days:[]};const prog=()=>user()||gue
 function markDay(u){if(!u)return;u.days??=[];const d=today();if(!u.days.includes(d)){u.days.push(d);u.days=u.days.slice(-60)}}
 function streak(u){const s=new Set(u?.days||[]);let n=0,d=new Date();while(s.has(d.toISOString().slice(0,10))){n++;d.setDate(d.getDate()-1)}return n}
 const starsOf=u=>Object.values(u.lab||{}).filter(Boolean).length+Object.keys(u.ws||{}).length+Object.keys(u.theory||{}).length;
-const isOpen=key=>{if(free())return true;const u=user();return !!(u&&okFor(u)[key])};const thOpen=id=>isOpen(id);const wsKey=w=>'ws:'+w.les;const wsOpen=w=>isOpen(wsKey(w));
+const isOpen=key=>{if(free())return true;const u=user();return !!(u&&okFor(u)[key])};const thOpen=id=>isOpen(id);const wsKey=w=>'ws:'+w.les;const wsOpen=w=>isOpen(wsKey(w))||(()=>{const l=wsLid(w);return !!l&&isOpen(l)})();
 
 /* ---------- Нээх код: багшийн нээсэн хичээлийг сурагчийн төхөөрөмж рүү дамжуулах ---------- */
 const OKEYS=()=>[...TH.map(x=>x.id),...[...new Set(WS.map(w=>w.les))].map(l=>'ws:'+l)];
@@ -506,10 +673,10 @@ V.home=()=>{const u=user(),T=teacher(),cs=classStars(),mx=Math.max(1,...Object.v
   side=`<div class="me"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Сайн уу, ${esc(u.ner)}!</h3><span class="pill">${esc(u.cls)} анги</span></div>
   <div class="mini"><span><b>${starsOf(u)}</b> од</span><span><b>${streak(u)}</b> өдөр дараалан</span><span><b>${it.filter(x=>x.done).length}/${it.length}</b> хичээл хийсэн</span></div>
   ${nx?`<a class="btn" href="${nx.h}" style="width:100%;margin:6px 0 12px">▶ Үргэлжлүүлэх: ${esc(nx.t)}</a>`:''}
-  <b class="small">Багшийн нээсэн хичээлүүд</b>${it.length?`<div class="olist">${it.map(x=>`<a href="${x.h}"><span class="dot ${x.done?'ok':''}">${x.done?'✓':'•'}</span><span>${esc(x.t)}<small>${x.kind}</small></span></a>`).join('')}</div>`:'<p class="small mut">Багш танай ангид хичээл хараахан нээгээгүй байна.</p>'}${ocBox()}</div>`}
+  <b class="small">Багшийн нээсэн хичээлүүд</b>${it.length?`<div class="olist">${it.map(x=>`<a href="${x.h}"><span class="dot ${x.done?'ok':''}">${x.done?'✓':'•'}</span><span>${esc(x.t)}<small>${x.kind}</small></span></a>`).join('')}</div>`:'<p class="small mut">Багш танай ангид хичээл хараахан нээгээгүй байна.</p>'}${ocBox()}${rankOn()?rankCardHTML(u):''}</div>`}
  else side=`<div class="me"><h3>Тавтай морил!</h3><p class="mut small" style="margin-top:0">Нэвтэрмэгц багшийн танай ангид нээсэн хичээл, ажлын хуудас харагдана.</p><div class="row"><button onclick="window._lm('login')">Нэвтрэх</button><button class="ghost" onclick="window._lm('reg')">Бүртгүүлэх</button></div></div>`;
  return `<section class="band"><div class="wrap hero">
- <div><div class="row" style="gap:12px;margin-bottom:10px"><img class="badge130" src="logo130.png" alt="130-р сургууль" style="width:62px;height:62px"><div><h1 style="margin:0">Оддын хөтөч</h1><p class="mut" style="margin:2px 0 0;font-size:16px">НЕБ-ын 130 дугаар сургууль · 8-р анги · Мэдээллийн технологи</p></div></div>${side}</div>
+ <div><div class="row" style="gap:12px;margin-bottom:10px"><img class="badge130" src="logo130.png" alt="Сургуулийн лого" style="width:62px;height:62px"><div><h1 style="margin:0">Оддын хөтөч</h1><p class="mut" style="margin:2px 0 0;font-size:16px">${schoolTag()}8-р анги · Мэдээллийн технологи</p></div></div>${side}</div>
  <svg viewBox="0 0 460 380" role="img" aria-label="Оддыг холбосон замаар алхаж буй муур">
   <circle cx="390" cy="62" r="36" fill="#fff3c4" opacity=".95"/><circle cx="405" cy="54" r="32" fill="#0d1330"/>
   ${[[60,40],[150,70],[250,30],[330,250],[440,300],[20,180],[200,120]].map(([a,b])=>`<circle cx="${a}" cy="${b}" r="1.6" fill="#fff" opacity=".7"/>`).join('')}
@@ -518,12 +685,12 @@ V.home=()=>{const u=user(),T=teacher(),cs=classStars(),mx=Math.max(1,...Object.v
   <path d="M0 380 Q120 318 240 340 T460 330 V380Z" fill="#18214f"/>
   <g transform="translate(150 262) scale(1.15)"><use href="#cat"/></g>
  </svg></div></section>
- <section class="band" style="padding-top:0"><div class="wrap"><div class="mission"><span class="pill">130-р сургуулийн эрхэм зорилго</span>
-  <p class="q"><b style="color:var(--s1)">Хамтын бүтээлч</b> үйл ажиллагаанд тулгуурлан, <b style="color:var(--sky)">дижитал шилжилтийг</b> үр дүнтэй ашиглаж хүүхдийн хөгжил, <b style="color:var(--s2)">сургалтын чанарыг</b> эрхэмлэнэ.</p></div></div></section>
+ <section class="band" style="padding-top:0"><div class="wrap"><div class="mission"><span class="pill">${SETS().school?esc(SETS().school)+' · ':''}Эрхэм зорилго</span>
+  <p class="q">${CFG().site?.mission?esc(CFG().site.mission):`<b style="color:var(--s1)">Хамтын бүтээлч</b> үйл ажиллагаанд тулгуурлан, <b style="color:var(--sky)">дижитал шилжилтийг</b> үр дүнтэй ашиглаж хүүхдийн хөгжил, <b style="color:var(--s2)">сургалтын чанарыг</b> эрхэмлэнэ.`}</p></div></div></section>
  <section class="band" style="padding-top:0"><div class="wrap"><h2>Хичээлийн жилийн зорилго</h2><div class="goals">
-  ${[['1','--s3','Ойлгож уншдаг','Заавар, алгоритмыг анхааралтай уншиж, алхам бүрийг зөв биелүүлнэ.'],['2','--s1','Бусдыг хүндэлдэг','Нийгмийн сүлжээнд ч бусдыг хүндэлж, мэдээллийг хамтдаа зөв ашиглана.'],['3','--s4','Ухаалаг утсыг зөв зохистой хэрэглэдэг','Утсаа хэмжээтэй хэрэглэж, 20 минут тутамд нүдээ амраана.']].map(([n,c,t,d])=>`<div class="goal" style="--c:var(${c})"><div class="n">${n}</div><h3>${t}</h3><p class="mut" style="margin:0">${d}</p></div>`).join('')}</div></div></section>
+  ${mergeG([['1','--s3','Ойлгож уншдаг','Заавар, алгоритмыг анхааралтай уншиж, алхам бүрийг зөв биелүүлнэ.'],['2','--s1','Бусдыг хүндэлдэг','Нийгмийн сүлжээнд ч бусдыг хүндэлж, мэдээллийг хамтдаа зөв ашиглана.'],['3','--s4','Ухаалаг утсыг зөв зохистой хэрэглэдэг','Утсаа хэмжээтэй хэрэглэж, 20 минут тутамд нүдээ амраана.']]).map(([n,c,t,d])=>`<div class="goal" style="--c:var(${c})"><div class="n">${n}</div><h3>${t}</h3><p class="mut" style="margin:0">${d}</p></div>`).join('')}</div></div></section>
  <section class="band" style="padding-top:0"><div class="wrap"><h2>Үнэт зүйл</h2><div class="vals">
-  ${[['01','--s1','Эв нэгдэл','Анги бүрийн цуглуулсан од нэг одны ордонд нийлнэ.',`${Object.values(cs).reduce((a,b)=>a+b,0)} од нийт`],['02','--s2','Эерэг хандлага','Алгоритм буруу бол засаад дахин ажиллуул. Алдаа бол суралцах боломж.','Хязгааргүй оролдлого'],['03','--s3','Тасралтгүй хөгжил','Өдөр бүр нэг даалгавар — нэг од.',u?`${streak(u)} өдөр дараалан`:'Өдөр бүр нэг од'],['04','--s4','Үүрэг хариуцлага','Ажлын хуудсаа өөрөө, шударгаар, хугацаанд нь илгээнэ.','Цахим иргэний амлалт']].map(([n,c,t,d,s])=>`<div class="val" style="--c:var(${c})"><b style="opacity:.85">${n}</b><h3>${t}</h3><p>${d}</p><div class="stat2">${s}</div></div>`).join('')}</div></div></section>
+  ${mergeV([['01','--s1','Эв нэгдэл','Анги бүрийн цуглуулсан од нэг одны ордонд нийлнэ.',`${Object.values(cs).reduce((a,b)=>a+b,0)} од нийт`],['02','--s2','Эерэг хандлага','Алгоритм буруу бол засаад дахин ажиллуул. Алдаа бол суралцах боломж.','Хязгааргүй оролдлого'],['03','--s3','Тасралтгүй хөгжил','Өдөр бүр нэг даалгавар — нэг од.',u?`${streak(u)} өдөр дараалан`:'Өдөр бүр нэг од'],['04','--s4','Үүрэг хариуцлага','Ажлын хуудсаа өөрөө, шударгаар, хугацаанд нь илгээнэ.','Цахим иргэний амлалт']]).map(([n,c,t,d,s])=>`<div class="val" style="--c:var(${c})"><b style="opacity:.85">${n}</b><h3>${t}</h3><p>${d}</p><div class="stat2">${s}</div></div>`).join('')}</div></div></section>
  <section class="band" style="padding-top:0"><div class="wrap"><div class="card tree"><h3>Ангийн одны орд · Эв нэгдэл</h3><p class="small mut" style="margin-top:0">Онол, лаборатори, ажлын хуудаснаас цуглуулсан нийт од</p>
   ${CLASSES.map(c=>`<div class="r"><b>${c}</b><div class="bar2"><i style="width:${Math.round(cs[c]/mx*100)}%"></i></div><span class="v">${cs[c]} од</span></div>`).join('')}</div></div></section>`};
 window._lm=m=>{lmode=m;location.hash='login';render()};window._tt=t=>{tTab=t;location.hash='teacher';render()};
@@ -533,37 +700,64 @@ const TAGS={h:['t-h','Асуудал'],o:['t-o','Ойлгохуй'],m:['t-m','М
 const thId=id=>'th-'+id.replace(/\./g,'');
 const lockNote=()=>user()?'':`<p class="small" style="background:var(--soft);padding:10px 14px;border-radius:14px">Нэвтэрсний дараа багшийн танай ангид нээсэн хичээлүүд нээгдэнэ. <a href="#login">Нэвтрэх</a></p>`;
 V.theory=()=>{const P=prog();return `<section class="band"><div class="wrap"><h2>Онолын хичээлүүд</h2><p class="mut">Багшийн нээсэн хичээлүүдийг үзэж, лаборатори, дасгал, хичээлийн шалгалтаа хийгээрэй.</p>${lockNote()}
- ${UNITS.map(([n,t,b])=>{const L2=TH.filter(x=>x.u===n);return `<h3 style="margin-top:24px">${b} бүлэг · ${n}. ${t}</h3>${L2.length?`<div class="lessons">${L2.map(x=>{const r=P.ltest?.[x.id],op=thOpen(x.id),ls=(x.lab||[]).filter(l=>P.lab?.[l.id]).length;return op?`<a class="les" href="#${thId(x.id)}"><span class="n ${r?'done':''}">${x.id.split('.').pop()}</span><span>${esc(x.t)}<small>${x.id}${x.lab?` · ★ ${ls}/${x.lab.length}`:''}${r?` · Шалгалт ${r.score}/${r.total}`:''}</small></span></a>`:`<button class="les lock" disabled><span class="n">${LOCK}</span><span>${esc(x.t)}<small>${x.id} · Багш нээгээгүй</small></span></button>`}).join('')}</div>`:'<p class="small mut">Загварт удахгүй нэмэгдэнэ.</p>'}`}).join('')}</div></section>`};
+ ${UNITS.map(([n,t,b])=>{const L2=TH.filter(x=>x.u===n);return `<div class="ubanner" style="--uc:${uc(n)}"><span class="uico">${ui(n)}</span><div><small>${b} бүлэг · Нэгж ${n}</small><b>${t}</b></div><span class="ucount">🏁 ${L2.filter(x=>P.done?.[x.id]).length}/${L2.length}</span></div>${L2.length?`<div class="lessons" style="--uc:${uc(n)}">${L2.map(x=>{const r=P.ltest?.[x.id],dn=P.done?.[x.id],op=thOpen(x.id),ls=(x.lab||[]).filter(l=>P.lab?.[l.id]).length;return op?`<a class="les" href="#${thId(x.id)}"><span class="n ${dn?'done':''}">${dn?'🏁':x.id.split('.').pop()}</span><span>${esc(x.t)}<small>${x.id}${x.lab?` · ★ ${ls}/${x.lab.length}`:''}${r?` · Шалгалт ${r.score}/${r.total}`:''}</small></span></a>`:`<button class="les lock" disabled><span class="n">${LOCK}</span><span>${esc(x.t)}<small>${x.id} · Багш нээгээгүй</small></span></button>`}).join('')}</div>`:'<p class="small mut">Загварт удахгүй нэмэгдэнэ.</p>'}`}).join('')}</div></section>`};
 const lockedView=(what)=>`<section class="band"><div class="wrap" style="max-width:640px"><div class="card" style="text-align:center"><div style="font-size:46px">🔒</div><h2>${what} түгжээтэй байна</h2><p>${user()?'Багш энэ хичээлийг танай ангид хараахан нээгээгүй байна. Хичээлийн үеэр багш нээж өгнө.':'Эхлээд нэвтэрнэ үү. Багшийн танай ангид нээсэн хичээлүүд л харагдана.'}</p><div class="row" style="justify-content:center">${user()?'':'<a class="btn" href="#login">Нэвтрэх</a>'}<a class="btn ghost" href="#home">Нүүр хуудас</a></div>${user()?ocBox():''}</div></div></section>`;
 let thSt=null,thTask=0,ltSt=null;
+const UC={'1.1':['#3d8df0','🧩'],'1.2':['#13a89e','💻'],'1.3':['#e8434f','🐢'],'2.1':['#7b5cff','📄'],'2.2':['#f08a24','🎨'],'2.3':['#e0457b','🎞️'],'2.4':['#2fb36d','📊'],'2.5':['#2a9df4','🌐']};
+const uc=u=>(UC[u]||['#3d8df0'])[0],ui=u=>(UC[u]||[0,'📘'])[1];
+const STG=[['Сэдэлжүүлэлт','🔥','#ff7a3d'],['Шинэ мэдлэг, ойлголт','💡','#3d8df0'],['Дадлага','🛠️','#13a89e'],['Бататгах дасгал','🎯','#2fb36d'],['Шалгалт','📝','#e8434f'],['Өөрийн ба хичээлийн үнэлгээ','🪞','#9b6bff'],['Хичээл төгсөв','🏁','#e0a800']];
+const SICO={m:'📘',o:'💡',c:'🛠️',x:'🌍',a:'⚠️',h:'❓'};
+const go2=n=>`document.getElementById('st${n}').scrollIntoView({behavior:'smooth',block:'start'})`;
+/* ажлын хуудсыг хичээлтэй дарааллаар нь холбох */
+const LESWS={};(()=>{const byU={};[...new Set(WS.map(w=>w.u+'|'+w.les))].forEach(k=>{const [u,l]=k.split('|');(byU[u]??=[]).push(l)});
+ Object.entries(byU).forEach(([u,ls])=>{const L=TH.filter(x=>x.u===u);if(!L.length)return;ls.forEach((l,i)=>{const t=L[Math.min(L.length-1,Math.floor(i*L.length/ls.length))];(LESWS[t.id]??=[]).push(...WS.filter(w=>w.les===l))})})})();
+const wsLid=w=>Object.keys(LESWS).find(id=>LESWS[id].includes(w));
+let thWs={};
+function lessonState(x,P){const ws=LESWS[x.id]||[],wd=ws.filter(w=>P.ws?.[w.id]).length,lb=(x.lab||[]),ld=lb.filter(t=>P.lab?.[t.id]).length;
+ const st=[true,true,(ws.length?wd>0:true)&&(lb.length?ld>0:true),!!P.theory?.[x.id],!!P.ltest?.[x.id]||!x.test,!!P.ev?.[x.id]];st.push(st.every(Boolean));return {ws,wd,lb,ld,st}}
 function theoryView(id){const x=TH.find(t=>t.id===id);if(!x)return V.theory();const idx=TH.indexOf(x),nx=TH[idx+1],pv=TH[idx-1];
  if(!thOpen(id))return lockedView('Энэ хичээл');
  if(!thSt||thSt.id!==id){thSt={id,qs:prep(x.q),ans:{},chk:{}};thTask=0}
- const P=prog();
- return `<section class="band"><div class="wrap theory" style="max-width:${x.lab?'1240px':'860px'}">
- <div class="row" style="justify-content:space-between"><span class="pill">${x.id} · ${esc(unitName(x.u))}</span><a href="#theory" class="small">← Бүх хичээл</a></div>
- <h1 style="margin-top:10px;font-size:clamp(28px,4vw,40px)">${esc(x.t)}</h1><p style="margin:0"><b>Зорилт:</b> ${esc(x.goal)}</p>
- <p style="margin:8px 0"><span class="vchip" style="background:var(${VAL[x.v]||'--s3'})">${esc(x.v)}</span></p>
- <div style="max-width:860px">${x.s.map(([tg,ti,h])=>`<div class="sec"><h3><span class="tag ${TAGS[tg][0]}">${TAGS[tg][1]}</span>${esc(ti)}</h3>${h}</div>`).join('')}
- ${x.lab?`<div class="sec"><h3><span class="tag t-m">Блок схем</span>Алгоритмын дүрсүүд</h3><p style="margin-top:0">Алгоритмыг блок схемээр дүрсэлнэ. Лабораторид «Блок схем» товч дарж өөрийн алгоритмын схемийг харна.</p>${FCLEG}</div>`:''}</div>
- ${x.lab?`<div class="sec"><h3><span class="tag t-c">Лаборатори</span>Муураар хийцгээе</h3>
-  <div class="tasks">${x.lab.map((t,i)=>`<button class="${i===thTask?'on':''} ${P.lab?.[t.id]?'ok':''}" data-task="${i}">${P.lab?.[t.id]?'★ ':''}${i+1}. ${esc(t.t)}</button>`).join('')}</div>
-  <div class="task"><b>${thTask+1}. ${esc(x.lab[thTask].t)}</b><p style="margin:4px 0 0">${esc(x.lab[thTask].d)}</p>${x.lab[thTask].mode==='draw'?'<p class="small mut" style="margin:4px 0 0">Тасархай шугам — зурах ёстой зураг.</p>':''}</div>
-  <div id="labhost"></div></div>`:''}
- <div style="max-width:860px"><div class="sec"><h3><span class="tag t-o">Бататгах дасгал</span>Шалгаад үзье</h3><p class="small mut" style="margin-top:0">Хариулаад «Шалгах» товчийг дар. Хэдэн ч удаа оролдож болно.</p>
- ${thSt.qs.map((q,k)=>`<div class="qcard" data-k="${k}"><div class="top"><b>${k+1}.</b><span class="pill">${TYPE_NM[q.t]}</span></div><p style="margin:0 0 8px;font-weight:700">${esc(q.q)}</p>${qInput(q,k,thSt.ans[k])}<div class="row" style="margin-top:8px"><button class="ghost sm" data-chk="${k}">Шалгах</button></div><div class="fb" data-fb="${k}"></div></div>`).join('')}<div class="fb" id="thres"></div></div>
- ${x.test?`<div class="sec" id="ltbox">${ltHTML(x)}</div>`:''}
- <div class="sec" id="evbox">${evalHTML(x.id,x.can)}</div></div>
- <div class="row" id="thnav">${pv&&thOpen(pv.id)?`<a class="btn ghost" href="#${thId(pv.id)}">← ${pv.id}</a>`:''}${nx&&thOpen(nx.id)?`<a class="btn" href="#${thId(nx.id)}">Дараагийн хичээл: ${nx.id} →</a>`:''}</div></div></section>`}
+ const P=prog(),C=uc(x.u),mot=x.s.filter(z=>z[0]==='h'),nw=x.s.filter(z=>z[0]!=='h'),{ws,wd,lb,ld,st}=lessonState(x,P),gate=!!user()&&!teacher();
+ const open=n=>!gate||n<=3||st.slice(2,n-1).every(Boolean);
+ const NEED=['','','','Эхлээд <b>дадлагаа</b> (3-р алхам) хийнэ үү.','Эхлээд <b>бататгах дасгалын</b> бүх асуултыг шалгана уу.','Эхлээд <b>хичээлийн шалгалтаа</b> өгнө үү.','Эхлээд <b>өөрийн болон хичээлийн үнэлгээгээ</b> илгээнэ үү.'];
+ const sec=([tg,ti,h])=>`<div class="sec"><h3><span class="sico">${SICO[tg]||'📘'}</span>${esc(ti)}</h3>${h}</div>`;
+ const stage=(n,body)=>`<div class="stage ${open(n)?'':'slock'}" id="st${n}" style="--sc:${STG[n-1][2]}"><div class="sthead"><span class="stnum">${n}</span><span class="stico">${STG[n-1][1]}</span><h2>${STG[n-1][0]}</h2>${st[n-1]&&n>2?'<span class="stok">✓ Хийсэн</span>':open(n)?'':'<span class="stok">🔒</span>'}</div><div class="stbody">${open(n)?body:`<p class="lockmsg">🔒 ${NEED[n-1]}</p>`}</div></div>`;
+ const cw=thWs[id]&&ws.find(w=>w.id===thWs[id])?thWs[id]:(ws.find(w=>!P.ws?.[w.id])||ws[0]||{}).id;thWs[id]=cw;
+ const labBlock=lb.length?`<div class="sec"><h3><span class="sico">🐢</span>Лаборатори: муураар хийцгээе</h3><p class="small mut" style="margin-top:0">Дор хаяж нэг даалгавар ★ болгоно. Бүгдийг хийвэл илүү сайн!</p>
+  <div class="tasks">${lb.map((t,i)=>`<button class="${i===thTask?'on':''} ${P.lab?.[t.id]?'ok':''}" data-task="${i}">${P.lab?.[t.id]?'★ ':''}${i+1}. ${esc(t.t)}</button>`).join('')}</div>
+  <div class="task"><b>${thTask+1}. ${esc(lb[thTask].t)}</b><p style="margin:4px 0 0">${esc(lb[thTask].d)}</p>${lb[thTask].mode==='draw'?'<p class="small mut" style="margin:4px 0 0">Тасархай шугам — зурах ёстой зураг.</p>':''}</div><div id="labhost"></div></div>`:'';
+ const wsBlock=ws.length?`<div class="sec"><h3><span class="sico">📋</span>Ажлын хуудас</h3><p class="small mut" style="margin-top:0">Ажлын хуудсаа энд хийж илгээнэ. Нэгийг заавал, бусдыг нь нэмэлтээр.</p><div class="wstabs">${ws.map((w,k)=>`<button class="${w.id===cw?'on':''} ${P.ws?.[w.id]?'ok':''}" data-wst="${w.id}">${P.ws?.[w.id]?'✓':'📋'} Ажлын хуудас ${w.id.split('-')[1]}<small>${esc(w.t)}</small></button>`).join('')}</div><div id="wsin">${cw?wsView(cw,true):''}</div></div>`:'';
+ const terms=(window.TERMS||[]).filter(t=>t[2]===id);
+ return `<section class="band"><div class="wrap theory" style="max-width:${lb.length?'1240px':'980px'}">
+ <div class="lhero" style="--uc:${C}"><div class="row" style="justify-content:space-between"><span class="lpill">${ui(x.u)} ${x.u} · ${esc(unitName(x.u))}</span><a href="#theory" class="lback">← Бүх хичээл</a></div>
+  <div class="lnum">${x.id}${P.done?.[id]?' · 🏁 Төгссөн':''}</div><h1>${esc(x.t)}</h1><p class="lgoal"><b>🎯 Зорилт:</b> ${esc(x.goal)}</p><span class="vchip" style="background:var(${VAL[x.v]||'--s3'})">${esc(x.v)}</span>${nbHead(x)}
+  <div class="lprog"><i style="width:${Math.round(st.slice(2).filter(Boolean).length/5*100)}%"></i></div></div>
+ <nav class="stepper">${STG.map(([t,ic],k)=>`<button class="${st[k]&&k>1?'ok':''} ${open(k+1)?'':'lk'}" style="--sc:${STG[k][2]}" onclick="${go2(k+1)}"><span>${st[k]&&k>1?'✓':open(k+1)?ic:'🔒'}</span><small>${k+1}. ${t}</small></button>`).join('')}</nav>
+ ${stage(1,mot.map(sec).join('')||'<p class="mut">Багш хичээлээ асуулт, бодит жишээгээр эхлүүлнэ.</p>')}
+ ${stage(2,nw.map(sec).join('')+(lb.length?`<div class="sec"><h3><span class="sico">🔷</span>Алгоритмын дүрсүүд</h3><p style="margin-top:0">Алгоритмыг блок схемээр дүрсэлнэ. Лабораторид «Блок схем» товч дарж өөрийн алгоритмын схемийг харна.</p>${FCLEG}</div>`:''))}
+ ${stage(3,labBlock+wsBlock||'<p class="mut">Энэ хичээлийн дадлагыг бататгах дасгалаар хийнэ — дараагийн алхам руу шилжээрэй.</p>')}
+ ${stage(4,`<p class="small mut" style="margin-top:0">Хариулаад «Шалгах» товчийг дар. Хэдэн ч удаа оролдож болно.</p>${thSt.qs.map((q,k)=>`<div class="qcard" data-k="${k}"><div class="top"><b>${k+1}.</b><span class="pill">${TYPE_NM[q.t]}</span></div><p style="margin:0 0 8px;font-weight:700">${esc(q.q)}</p>${qInput(q,k,thSt.ans[k])}<div class="row" style="margin-top:8px"><button class="ghost sm" data-chk="${k}">Шалгах</button></div><div class="fb ${thSt.fb?.[k]?.[0]||''}" data-fb="${k}">${thSt.fb?.[k]?.[1]||''}</div></div>`).join('')}<div class="fb ${thSt.msg?'ok':''}" id="thres">${thSt.msg||''}</div>`)}
+ ${stage(5,x.test?`<div id="ltbox">${ltHTML(x)}</div>`:'<p class="mut">Энэ хичээлд шалгалт байхгүй.</p>')}
+ ${stage(6,`<div id="evbox">${evalHTML(x.id,x.can)}</div>`)}
+ ${stage(7,`<div class="donebox">🎉 <div><b>Баяр хүргэе! Та «${esc(x.t)}» хичээлийг амжилттай төгсөлөө.</b><br>Цуглуулсан од: <b>${starsOf(P)}</b> ⭐</div></div>
+  <div class="sumgrid"><div class="sumcard"><h3>✅ Энэ хичээлээр би…</h3>${(x.can||[]).map(c=>`<p class="sumline">⭐ ${esc(c)}</p>`).join('')}</div>${terms.length?`<div class="sumcard"><h3>🔑 Гол нэр томьёо</h3><div class="tchips">${terms.map(t=>`<span><b>${esc(t[0])}</b><small>${esc(t[3])}</small></span>`).join('')}</div></div>`:''}</div>
+  <div class="row" id="thnav" style="margin-top:16px">${pv&&thOpen(pv.id)?`<a class="btn ghost" href="#${thId(pv.id)}">← ${pv.id}</a>`:''}${nx&&thOpen(nx.id)?`<a class="btn" href="#${thId(nx.id)}">Дараагийн хичээл: ${nx.id} →</a>`:''}</div>`)}
+ ${reflHTML(x)}
+ </div></section>`}
+function theoryBind2(x){const id=x.id,P=prog();
+ document.querySelectorAll('[data-wst]').forEach(b=>b.onclick=()=>{thWs[id]=b.dataset.wst;const y=scrollY;render();scrollTo(0,y)});
+ if(thWs[id]&&$('#wsin'))wsBind(thWs[id],true);
+ const {st}=lessonState(x,P);if(st[6]&&user()&&!P.done?.[id]){P.done??={};P.done[id]=today();save();setTimeout(()=>confetti(),300)}}
 function theoryBind(id){const x=TH.find(t=>t.id===id);if(!x||!thOpen(id))return;
- if(x.lab){const t=x.lab[thTask];loadLab('th-'+t.id,t);labRender(tid=>{const P=prog();P.lab??={};if(!P.lab[tid]){P.lab[tid]=1;if(user()){markDay(user());save()}const b=document.querySelector(`[data-task="${thTask}"]`);if(b){b.classList.add('ok');b.textContent='★ '+b.textContent}}});
+ if(x.lab){const t=x.lab[thTask];loadLab('th-'+t.id,t);labRender(tid=>{const P=prog();P.lab??={};if(!P.lab[tid]){P.lab[tid]=1;if(user()){markDay(user());save()}const b=document.querySelector(`[data-task="${thTask}"]`);if(b){b.classList.add('ok');b.textContent='★ '+b.textContent}if(location.hash.startsWith('#th-')&&user()){const y=scrollY;setTimeout(()=>{render();scrollTo(0,y)},900)}}});
   document.querySelectorAll('[data-task]').forEach(b=>b.onclick=()=>{thTask=+b.dataset.task;render()})}
  document.querySelectorAll('.qcard[data-k]').forEach(c=>{const k=+c.dataset.k,q=thSt.qs[k];bindQ(c,q,k,thSt);
   c.querySelector('[data-chk]').onclick=()=>{const A=thSt.ans[k]??(q.t==='order'?[...q.ord]:undefined);const ok=isRight(q,A);thSt.chk[k]=ok;const f=c.querySelector('[data-fb]');f.className='fb '+(ok?'ok':'no');
-   f.innerHTML=(ok?'Зөв! ':'Дахин бодоорой. ')+esc(q.e||'')+(q.t==='create'?`<br><span class="mut">Жишээ хариулт: ${esc(q.sample)}</span>`:(!ok?`<br><span class="mut">Зөв хариулт: ${esc(rightAns(q))}</span>`:''));
-   if(Object.keys(thSt.chk).length===thSt.qs.length){const sc=Object.values(thSt.chk).filter(Boolean).length,n=thSt.qs.length;const P=prog();P.theory??={};const old=P.theory[id];if(!old||old.score<sc)P.theory[id]={score:sc,total:n};if(user()){markDay(user());save()}
-    $('#thres').className='fb ok';$('#thres').innerHTML=`Бүгдийг шалгалаа: ${sc}/${n} зөв.${x.test?' Одоо хичээлийн шалгалтаа өгөөрэй.':''}`}}});
- if(x.test)ltBind(x);evalBind(x.id)}
+   f.innerHTML=(ok?'Зөв! ':'Дахин бодоорой. ')+esc(q.e||'')+(q.t==='create'?`<br><span class="mut">Жишээ хариулт: ${esc(q.sample)}</span>`:(!ok?`<br><span class="mut">Зөв хариулт: ${esc(rightAns(q))}</span>`:''));thSt.fb??={};thSt.fb[k]=['fb '+(ok?'ok':'no'),f.innerHTML];
+   if(Object.keys(thSt.chk).length===thSt.qs.length){const sc=Object.values(thSt.chk).filter(Boolean).length,n=thSt.qs.length;const P=prog();P.theory??={};const old=P.theory[id];if(!old||old.score<sc)P.theory[id]={score:sc,total:n,date:today()};if(user()){markDay(user());save()}
+    thSt.msg=`Бүгдийг шалгалаа: ${sc}/${n} зөв.${x.test?' Одоо хичээлийн шалгалтаа өгөөрэй.':''}`;$('#thres').className='fb ok';$('#thres').innerHTML=thSt.msg;if(!old&&user()){const y=scrollY;render();scrollTo(0,y)}}}});
+ if(x.test)ltBind(x);evalBind(x.id,x.can);theoryBind2(x)}
 
 /* ---------- Хичээлийн шалгалт (5 асуулт, 2 минут, нэг удаа) ---------- */
 function ltHTML(x){const P=prog(),r=P.ltest?.[x.id];const head=`<h3><span class="tag t-h">Хичээлийн шалгалт</span>5 асуулт · 2 минут</h3>`;
@@ -575,7 +769,7 @@ function ltBind(x){const box=$('#ltbox');const re=()=>{box.innerHTML=ltHTML(x);l
  const st=$('#ltstart');if(st)st.onclick=()=>{ltSt={id:x.id,qs:prep(x.test),ans:{},run:true,end:Date.now()+120000};re()};
  if(ltSt?.run&&ltSt.id===x.id&&!prog().ltest?.[x.id]){document.querySelectorAll('[data-lk]').forEach(c=>{const k=+c.dataset.lk;bindQ(c,ltSt.qs[k],k,ltSt)});
   const fin=()=>{clearInterval(window._lt);const res=ltSt.qs.map((q,k)=>{const A=ltSt.ans[k]??(q.t==='order'?[...q.ord]:null);return {i:q.i,ok:isRight(q,A),ans:q.t==='choice'?unperm(q,A):A}}).sort((a,b)=>a.i-b.i);
-   const P=prog();P.ltest??={};P.ltest[x.id]={score:res.filter(r=>r.ok).length,total:res.length,date:today(),res};ltSt=null;if(user()){markDay(user());save()}re()};
+   const P=prog();P.ltest??={};P.ltest[x.id]={score:res.filter(r=>r.ok).length,total:res.length,date:today(),res};ltSt=null;if(user()){markDay(user());save()}if(location.hash.startsWith('#th-')){const y=scrollY;render();scrollTo(0,y)}else re()};
   $('#ltend').onclick=fin;clearInterval(window._lt);window._lt=setInterval(()=>{if(!ltSt)return clearInterval(window._lt);const l=Math.max(0,Math.round((ltSt.end-Date.now())/1000));const e=$('#lttime');if(e)e.textContent=fmt(l);if(l<=0)fin()},500)}}
 
 /* ---------- Өөрийн үнэлгээ ба хичээлийн үнэлгээ ---------- */
@@ -602,7 +796,7 @@ function evalBind(key,can){const box=$('#evbox');if(!box)return;const d=evSt[key
  box.querySelectorAll('[data-cl]').forEach(b=>b.onclick=()=>{d.clear=+b.dataset.cl;re()});
  const n=$('#evn');if(n)n.oninput=()=>d.note=n.value;
  const sv=$('#evsave');if(sv)sv.onclick=()=>{if(d.self.some(v=>v==null)||!d.rate||d.clear==null)return $('#everr').textContent='Бүх асуултад хариулна уу.';
-  const u=user();if(!u)return $('#everr').textContent='Үнэлгээ илгээхийн тулд нэвтэрнэ үү.';u.ev??={};u.ev[key]={self:d.self,rate:d.rate,clear:d.clear,note:d.note.trim(),date:today()};save();d.edit=false;re()}}
+  const u=user();if(!u)return $('#everr').textContent='Үнэлгээ илгээхийн тулд нэвтэрнэ үү.';u.ev??={};u.ev[key]={self:d.self,rate:d.rate,clear:d.clear,note:d.note.trim(),date:today()};save();d.edit=false;if(location.hash.startsWith('#th-')){const y=scrollY;render();scrollTo(0,y)}else re()}}
 
 /* ---------- Чөлөөт лаборатори ---------- */
 const EXAMPLES=[['Дөрвөлжин','rep 4 { fd 100; rt 90 }'],['Од','col #ffcf4a; rep 5 { fd 150; rt 144 }'],['Цэцэг','col #ef6aa0; rep 12 { rep 4 { fd 60; rt 90 }; rt 30 }'],['Шатлал','in n; s = 10; rep n { fd s; rt 90; s = s+10 }'],['Тэгш сондгой','in a; if a%2==0 { print "тэгш" } else { print "сондгой" }']];
@@ -624,12 +818,12 @@ function wsGuide(w){const used=[...new Set([...w.steps.map(s=>stepObj(s).w),'sit
 const wsCan=w=>[w.goal,'Ажлын хуудасны алхмуудыг бие даан гүйцэтгэж чадна','Сурсан командаа бусдад тайлбарлаж чадна'];
 const picOf=p=>!p||!window.PIC?'':typeof p==='string'?(PIC[p]||''):PIC.mk(p);
 const resPic=w=>{const h=w.res?picOf(w.res):(window.PIC?.res?.[w.id]||'');return h?`<div class="sec"><h3><span class="tag t-x">Үр дүн</span>Эцэст нь ийм зүйл бүтээнэ</h3><figure class="pic big">${h}</figure></div>`:''};
-function wsView(id){const w=WS.find(x=>x.id===id);if(!w)return V.ws();if(!wsOpen(w))return lockedView('Энэ ажлын хуудас');const P=prog(),sub=P.ws?.[id];
- if(sub)return wsResult(w,sub);
+function wsView(id,emb){const w=WS.find(x=>x.id===id);if(!w)return V.ws();if(!wsOpen(w))return lockedView('Энэ ажлын хуудас');const P=prog(),sub=P.ws?.[id];
+ if(sub)return wsResult(w,sub,false,null,emb);
  if(!wsSt||wsSt.id!==id)wsSt={id,ps:prep(w.parts),qs:prep(w.quiz),ans:{},qans:{},chk:w.steps.map(()=>false),quiz:'idle',end:0,reflect:''};
  const S=wsSt;
- return `<section class="band"><div class="wrap ws">
- <a href="#ws" class="small">← Бүх ажлын хуудас</a>
+ return `${emb?'<div class="ws embws">':`<section class="band"><div class="wrap ws">
+ <a href="#ws" class="small">← Бүх ажлын хуудас</a>${wsLid(w)?` · <a href="#${thId(wsLid(w))}" class="small">📘 Хичээл рүү очих</a>`:''}`}
  <div class="wsh" style="margin-top:10px"><span class="pill">${w.u} · ${esc(unitName(w.u))}</span><h1 style="font-size:clamp(26px,4vw,38px);margin:10px 0 4px">Ажлын хуудас ${w.id.split('-')[1]}: ${esc(w.t)}</h1><p class="mut" style="margin:0">Хичээл: ${esc(w.les)}</p>
  <div class="meta"><div><b>Зорилго</b><br>${esc(w.goal)}</div><div><b>Хэрэгцээт зүйлс</b><br>${w.need.map(esc).join(', ')}</div><div><b>Бүтэц</b><br>${w.steps.length} алхам · ${w.parts.length} даалгавар · 5 асуулт (2 мин)${w.reflect?' · дүгнэлт':''}</div></div></div>
  <div class="sec"><h3><span class="tag t-h">Нөхцөл байдал</span>Ажлын тухай</h3><p style="margin:0">${esc(w.intro)}</p></div>${wsGuide(w)}${resPic(w)}
@@ -640,12 +834,12 @@ function wsView(id){const w=WS.find(x=>x.id===id);if(!w)return V.ws();if(!wsOpen
  <div class="sec" id="wq"><h3><span class="tag t-o">3-р хэсэг</span>Жижиг шалгалт · 5 асуулт · 2 минут ${wh('site')}</h3>${quizBox()}</div>
  ${w.reflect?`<div class="sec"><h3><span class="tag t-a">4-р хэсэг</span>Нэгжийн дүгнэлт ${wh('site')}</h3><p style="margin-top:0">${esc(w.reflect)}</p><textarea id="wref" rows="5" placeholder="Дүгнэлтээ 3-аас доошгүй өгүүлбэрээр бичнэ үү">${esc(S.reflect)}</textarea></div>`:''}
  <div class="row"><button class="leaf" id="wsub">Ажлын хуудсаа илгээх</button><span class="small mut" id="wmiss"></span></div>
- <div class="sec" id="evbox" style="margin-top:20px">${evalHTML('ws:'+w.id,wsCan(w))}</div></div></section>`}
+ ${emb?'':`<div class="sec" id="evbox" style="margin-top:20px">${evalHTML('ws:'+w.id,wsCan(w))}</div>`}</div>${emb?'':'</section>'}`}
 function quizBox(){const S=wsSt;if(S.quiz==='idle')return `<p>Цаг эхэлмэгц 5 асуултад 2 минутад хариулна. Нэг л удаа өгнө.</p><button id="qstart">Шалгалт эхлүүлэх</button>`;
  if(S.quiz==='done')return `<p class="fb ok">Шалгалт дууслаа. Хариулт хадгалагдсан — ажлын хуудсаа илгээхэд үнэлэгдэнэ.</p>`;
  return `<div class="timer"><span>Жижиг шалгалт</span><span id="qtime">2:00</span></div>${S.qs.map((q,k)=>`<div class="qcard" data-qk="${k}"><div class="top"><b>${k+1}.</b></div><p style="margin:0 0 8px;font-weight:700">${esc(q.q)}</p>${qInput(q,'q'+k,S.qans[k])}</div>`).join('')}<button id="qend">Шалгалтаа дуусгах</button>`}
-function wsBind(id){const w=WS.find(x=>x.id===id);if(!w||!wsOpen(w))return;evalBind('ws:'+w.id,wsCan(w));if(prog().ws?.[id])return;const S=wsSt;
- document.querySelectorAll('[data-st]').forEach(l=>{const cb=l.querySelector('input');cb.onchange=()=>{S.chk[+l.dataset.st]=cb.checked;l.classList.toggle('done',cb.checked)}});
+function wsBind(id,emb){const w=WS.find(x=>x.id===id);if(!w||!wsOpen(w))return;if(!emb)evalBind('ws:'+w.id,wsCan(w));if(prog().ws?.[id])return;const S=wsSt;
+ document.querySelectorAll('#app label[data-st]').forEach(l=>{const cb=l.querySelector('input');cb.onchange=()=>{S.chk[+l.dataset.st]=cb.checked;l.classList.toggle('done',cb.checked)}});
  document.querySelectorAll('[data-pk]').forEach(c=>{const k=+c.dataset.pk;bindQ(c,S.ps[k],k,S)});
  const qb=()=>{$('#wq').innerHTML=`<h3><span class="tag t-o">3-р хэсэг</span>Жижиг шалгалт · 5 асуулт · 2 минут</h3>`+quizBox();bindQuiz()};
  function bindQuiz(){const st=$('#qstart');if(st)st.onclick=()=>{S.quiz='run';S.end=Date.now()+120000;qb()};
@@ -660,17 +854,17 @@ function wsBind(id){const w=WS.find(x=>x.id===id);if(!w||!wsOpen(w))return;evalB
   $('#m-ok').onclick=()=>{const po=S.ps.map((q,k)=>isRight(q,S.ans[k]??(q.t==='order'?[...q.ord]:null))),qo=S.qs.map((q,k)=>isRight(q,S.qans[k]));
    const ans={};S.ps.forEach((q,k)=>{const A=S.ans[k]??(q.t==='order'?[...q.ord]:null);ans[q.i]=q.t==='choice'?unperm(q,A):A});const qa={};S.qs.forEach((q,k)=>qa[q.i]=q.t==='choice'?unperm(q,S.qans[k]):S.qans[k]);
    const pord=[],qord=[];S.ps.forEach((q,k)=>pord[q.i]=po[k]);S.qs.forEach((q,k)=>qord[q.i]=qo[k]);
-   u.ws??={};u.ws[id]={date:today(),chk:S.chk,po:pord,qo:qord,ans,qa,score:po.filter(Boolean).length+qo.filter(Boolean).length,total:po.length+qo.length,reflect:w.reflect?S.reflect.trim():''};markDay(u);save();wsSt=null;closeModal();render();scrollTo(0,0)}}}
+   u.ws??={};u.ws[id]={date:today(),chk:S.chk,po:pord,qo:qord,ans,qa,score:po.filter(Boolean).length+qo.filter(Boolean).length,total:po.length+qo.length,reflect:w.reflect?S.reflect.trim():''};markDay(u);save();wsSt=null;closeModal();render();const s3=document.getElementById('st3');s3?s3.scrollIntoView():scrollTo(0,0)}}}
 function evSummary(e,can){if(!e)return '<p class="small mut">Үнэлгээ өгөөгүй.</p>';return `${can.map((c,i)=>`<p class="small" style="margin:4px 0">${SELF[e.self[i]]?.[0]||'—'} ${esc(c)}</p>`).join('')}<p class="small" style="margin:4px 0"><span class="starsv">${'★'.repeat(e.rate)}${'☆'.repeat(5-e.rate)}</span> · ${CLEAR[e.clear]||''}</p>${e.note?`<p class="small" style="margin:4px 0">«${esc(e.note)}»</p>`:''}`}
-function wsResult(w,s,forTeacher,su){const pc=Math.round(s.score/s.total*100);const tg=s.tg;
- return `<section class="band" style="text-align:left"><div class="wrap ws">${forTeacher?'':'<a href="#ws" class="small">← Бүх ажлын хуудас</a>'}
+function wsResult(w,s,forTeacher,su,emb){const pc=Math.round(s.score/s.total*100);const tg=s.tg;
+ return `${emb?'<div class="ws embws">':`<section class="band" style="text-align:left"><div class="wrap ws">${forTeacher?'':'<a href="#ws" class="small">← Бүх ажлын хуудас</a>'}`}
  <div class="wsh" style="margin-top:10px"><span class="pill">${w.u} · Илгээсэн ${s.date}</span><h2 style="margin:10px 0 4px">${esc(w.t)}</h2>
  <div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(120px,1fr))"><div class="stat"><b>${pc}%</b><span>Нийт</span></div><div class="stat"><b>${s.po.filter(Boolean).length}/${s.po.length}</b><span>Даалгавар</span></div><div class="stat"><b>${s.qo.filter(Boolean).length}/5</b><span>Жижиг шалгалт</span></div><div class="stat"><b>${s.chk.filter(Boolean).length}/${s.chk.length}</b><span>Алхам</span></div>${tg?`<div class="stat"><b>${tg.score}/10</b><span>Багшийн үнэлгээ</span></div>`:''}</div></div>
  <div class="sec"><h3>Даалгавар</h3>${w.parts.map((q,i)=>`<div class="qcard rev ${s.po[i]?'':'no'}"><b>${i+1}. ${esc(q.q)}</b><p class="small" style="margin:6px 0 0">Хариулт: ${esc(showAns(q,s.ans?.[i]))}</p>${s.po[i]?'':`<p class="small" style="margin:2px 0 0">Зөв хариулт: <b>${esc(rightAns(q))}</b></p>`}<p class="small mut" style="margin:4px 0 0">${esc(q.e||'')}</p></div>`).join('')}</div>
  <div class="sec"><h3>Жижиг шалгалт</h3>${w.quiz.map((q,i)=>`<div class="qcard rev ${s.qo[i]?'':'no'}"><b>${i+1}. ${esc(q.q)}</b><p class="small" style="margin:6px 0 0">Хариулт: ${esc(showAns(q,s.qa?.[i]))}${s.qo[i]?' ✓':` · Зөв: <b>${esc(rightAns(q))}</b>`}</p></div>`).join('')}</div>
  ${w.reflect?`<div class="sec"><h3>Нэгжийн дүгнэлт</h3><p style="white-space:pre-line">${esc(s.reflect||'—')}</p>${tg?`<div class="def" style="border-left-color:var(--leaf)">Багшийн үнэлгээ: <b>${tg.score}/10</b>${tg.c?`<br>${esc(tg.c)}`:''}</div>`:'<p class="small mut">Багшийн үнэлгээ хүлээгдэж байна (багш үнэлэхээр сонгосон бол).</p>'}</div>`:''}
- ${forTeacher?`<div class="sec"><h3>Сурагчийн өөрийн үнэлгээ, хичээлийн үнэлгээ</h3>${evSummary(su?.ev?.['ws:'+w.id],wsCan(w))}</div>`:`${resPic(w)}<div class="sec" id="evbox">${evalHTML('ws:'+w.id,wsCan(w))}</div>`}
- </div></section>`}
+ ${forTeacher?`<div class="sec"><h3>Сурагчийн өөрийн үнэлгээ, хичээлийн үнэлгээ</h3>${evSummary(su?.ev?.['ws:'+w.id],wsCan(w))}</div>`:emb?'':`${resPic(w)}<div class="sec" id="evbox">${evalHTML('ws:'+w.id,wsCan(w))}</div>`}
+ </div>${emb?'':'</section>'}`}
 
 /* ---------- Нэр томьёо ---------- */
 let tq='',tf='',tu='';
@@ -688,7 +882,7 @@ V.exam=()=>{const u=user();if(!u)return `<section class="band"><div class="wrap"
  return `<section class="band"><div class="wrap"><h2>Нэгжийн шалгалт</h2><p class="mut">Шалгалт 40 минут үргэлжилнэ. 3 удаа өгч болно. Эхний оролдлогоор батламж гарна. 3 оролдлогоо дуусгасны дараа зөв хариулт, тайлбар нээгдэнэ.</p>
  <p class="small" style="background:var(--soft);padding:10px 14px;border-radius:14px"><b>Үүрэг хариуцлага:</b> Шалгалтаа бие даан, шударгаар өгье. Кодыг зөвхөн багш хэлнэ.</p>
  <div class="grid">${UNITS.map(([n,t])=>{const at=u.exams?.[n]||[];return `<div class="card"><span class="pill">Нэгж ${n}</span><h3 style="margin-top:8px">${t}</h3><p class="small mut">Оролдлого: ${at.length}/3${at[0]?` · Эхний оноо: ${at[0].score}/${at[0].total}`:''}</p>
- ${BANK[n]?`${at.length<3?`<label for="c-${n}">Багшийн өгсөн код</label><div class="row"><input id="c-${n}" placeholder="0000" inputmode="numeric" style="max-width:140px"><button data-start="${n}">Эхлэх</button></div>`:''}<div class="row" style="margin-top:8px">${at[0]?`<button class="ghost sm" data-cert="${n}">Батламж</button>`:''}${at.length>=3&&at[2].res?`<button class="ghost sm" data-rev="${n}">Хариу, тайлбар</button>`:''}</div>`:'<p class="small mut">Загварт удахгүй нэмэгдэнэ.</p>'}</div>`}).join('')}</div></div></section>`};
+ ${BANK[n]?`${at.length<3?`<label for="c-${n}">Багшийн өгсөн код</label><div class="row"><input id="c-${n}" placeholder="0000" inputmode="numeric" style="max-width:140px"><button data-start="${n}">Эхлэх</button></div>`:''}<div class="row" style="margin-top:8px">${at[0]?`<button class="ghost sm" data-cert="${n}">Батламж</button>`:''}${at.length>=3&&at[2].res?`<button class="ghost sm" data-rev="${n}">Хариу, тайлбар</button>`:''}</div>`:'<p class="small mut">Загварт удахгүй нэмэгдэнэ.</p>'}</div>`}).join('')}</div>${myGradesHTML(u)}</div></section>`};
 V.exam.bind=()=>{if(ex)return examBind();
  document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>{const n=b.dataset.start,u=user();const s=exams[u.cls]?.[n];const code=document.getElementById('c-'+n).value.trim();
   if(!s?.open)return modal(`<h3>Шалгалт нээгдээгүй байна</h3><p>Багш таны ангид (${esc(u.cls)}) энэ шалгалтыг хараахан нээгээгүй байна.</p><button onclick="window.closeModal()">Ойлголоо</button>`);
@@ -710,13 +904,13 @@ function loadImg(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(
 async function showCert(n){const u=user(),a=u.exams[n][0];const c=document.createElement('canvas');c.width=1400;c.height=990;const x=c.getContext('2d');
  x.fillStyle='#0d1330';x.fillRect(0,0,1400,990);['#a46bf0','#4fc45a','#3d8df0','#f0b21a'].forEach((col,i)=>{x.fillStyle=col;x.fillRect(i*350,0,350,22);x.fillRect(i*350,968,350,22)});
  x.strokeStyle='#ffcf4a';x.lineWidth=5;x.strokeRect(50,60,1300,870);
- const logo=await loadImg('logo130.png'),st=await loadImg('data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">${document.getElementById('star').innerHTML}</svg>`));
+ const logo=SETS().logo?await loadImg('logo130.png'):null,st=await loadImg('data:image/svg+xml;utf8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">${document.getElementById('star').innerHTML}</svg>`));
  try{if(logo)x.drawImage(logo,510,100,180,184);if(st)x.drawImage(st,720,100,180,180)}catch(e){}
  x.textAlign='center';x.fillStyle='#ffcf4a';x.font='900 84px Nunito, sans-serif';x.fillText('БАТЛАМЖ',700,380);x.fillStyle='#a9b2dd';x.font='600 30px Nunito, sans-serif';x.fillText('Энэхүү батламжийг',700,432);
  x.fillStyle='#ffffff';x.font='900 60px Nunito, sans-serif';x.fillText(`${u.ovog} ${u.ner}`,700,510);x.font='700 30px Nunito, sans-serif';x.fillStyle='#eef1ff';x.fillText(`${u.cls} анги · Мэдээллийн технологи`,700,558);
  x.font='700 32px Nunito, sans-serif';x.fillText(`«${n} ${unitName(n)}»`,700,612);x.font='600 28px Nunito, sans-serif';x.fillText('нэгжийн шалгалтыг өгсөнд олгов.',700,650);
  x.fillStyle='#4fd49a';x.beginPath();x.roundRect(430,680,540,110,24);x.fill();x.fillStyle='#0d1330';x.font='900 54px Nunito, sans-serif';x.fillText(`${a.score}/${a.total} оноо · ${Math.round(a.score/a.total*100)}%`,700,754);
- x.fillStyle='#a9b2dd';x.font='600 25px Nunito, sans-serif';x.fillText(`Огноо: ${a.date}  ·  Эхний оролдлого  ·  Оддын хөтөч  ·  130-р сургууль`,700,850);
+ x.fillStyle='#a9b2dd';x.font='600 25px Nunito, sans-serif';x.fillText(`Огноо: ${a.date}  ·  Эхний оролдлого  ·  ${SITE_NAME}${SETS().school?'  ·  '+SETS().school:''}`,700,850);
  u.certSeen??={};if(!u.certSeen[n]){u.certSeen[n]=today();save()}
  modal(`<h3>Батламж</h3><img src="${c.toDataURL('image/png')}" alt="Батламж" style="width:100%;border-radius:12px"><p class="small mut">Баяр хүргэе! Батламж чинь энд үргэлж хадгалагдана.</p><button onclick="window.closeModal()">Хаах</button>`)}
 
@@ -811,14 +1005,14 @@ function lrBind(){const lk=$('#lrk');if(!lk)return;lk.onchange=e=>{lrKey=e.targe
   <div class="sec"><h3>Өөрийн үнэлгээ, хичээлийн үнэлгээ</h3>${evSummary(u.ev?.[lrKey],can)}${u.ev?.[lrKey]?`<p class="small mut">${u.ev[lrKey].date}</p>`:''}</div></div>`)})}
 V.teacher=()=>{const T=teacher();if(!T)return V.login();const my=tKeys(T);if(!my.includes(tCls))tCls=my[0];const list=Object.values(users).filter(u=>inK(u,tCls)).sort((a,b)=>a.ovog.localeCompare(b.ovog));
  return `<section class="band"><div class="wrap"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">Багшийн самбар</h2><p class="small mut" style="margin:4px 0 0">${esc(T.name)}${T.admin?' · Админ':''}</p></div><div class="row"><label for="tcls" style="margin:0">Анги</label><select id="tcls" style="width:auto">${my.map(c=>`<option value="${c}" ${c===tCls?'selected':''}>${gName(c)}</option>`).join('')}</select></div></div>
- <div class="tabs" style="margin:12px 0"><button data-tt="st" class="${tTab==='st'?'on':''}">Сурагчид</button><button data-tt="op" class="${tTab==='op'?'on':''}">🔓 Хичээл нээх</button><button data-tt="lr" class="${tTab==='lr'?'on':''}">Хичээлийн үр дүн, үнэлгээ</button><button data-tt="ws" class="${tTab==='ws'?'on':''}">Ажлын хуудас</button><button data-tt="an" class="${tTab==='an'?'on':''}">Шалгалтын анализ</button><button data-tt="ex" class="${tTab==='ex'?'on':''}">Шалгалт нээх, хаах</button>${T.admin?`<button data-tt="tc" class="${tTab==='tc'?'on':''}">👩‍🏫 Багш нар</button>`:''}</div>
- ${tTab==='tc'?(T.admin?tcHTML():''):tTab==='st'?`<div class="row" style="margin-bottom:10px"><button class="sm" id="sadd">+ Сурагч нэмэх</button><button class="red sm" id="sdel" ${sel.size?'':'disabled'}>Сонгосон ${sel.size} сурагчийг хасах</button><button class="ghost sm" id="sall">${list.length&&list.every(u=>sel.has(u.id))?'Сонголт цуцлах':'Бүгдийг сонгох'}</button></div>
+ <div class="tabs" style="margin:12px 0"><button data-tt="st" class="${tTab==='st'?'on':''}">Сурагчид</button><button data-tt="op" class="${tTab==='op'?'on':''}">🔓 Хичээл нээх</button><button data-tt="lr" class="${tTab==='lr'?'on':''}">Хичээлийн үр дүн, үнэлгээ</button><button data-tt="ws" class="${tTab==='ws'?'on':''}">Ажлын хуудас</button><button data-tt="an" class="${tTab==='an'?'on':''}">Шалгалтын анализ</button><button data-tt="ex" class="${tTab==='ex'?'on':''}">Шалгалт нээх, хаах</button><button data-tt="rk" class="${tTab==='rk'?'on':''}">🏅 Дүн, эрэмбэ</button><button data-tt="set" class="${tTab==='set'?'on':''}">⚙️ Тохиргоо</button>${T.admin?`<button data-tt="tc" class="${tTab==='tc'?'on':''}">👩‍🏫 Багш нар</button>`:''}</div>
+ ${tTab==='set'?setHTML():tTab==='rk'?rkHTML():tTab==='tc'?(T.admin?tcHTML():''):tTab==='st'?`<div class="row" style="margin-bottom:10px"><button class="sm" id="sadd">+ Сурагч нэмэх</button><button class="red sm" id="sdel" ${sel.size?'':'disabled'}>Сонгосон ${sel.size} сурагчийг хасах</button><button class="ghost sm" id="sall">${list.length&&list.every(u=>sel.has(u.id))?'Сонголт цуцлах':'Бүгдийг сонгох'}</button></div>
   <div class="card scroll"><table class="stack"><thead><tr><th></th><th>Овог нэр</th><th>Хичээлийн шалгалт</th><th>Лаборатори ★</th><th>Ажлын хуудас</th><th>Шалгалт</th><th>Өдөр</th><th></th></tr></thead><tbody>
   ${list.map(u=>`<tr><td><input type="checkbox" data-sel="${u.id}" ${sel.has(u.id)?'checked':''} aria-label="${esc(u.ovog)} ${esc(u.ner)} сонгох" style="width:22px;min-height:22px"></td><td><b>${esc(u.ovog)} ${esc(u.ner)}</b>${u.clsNote?` <span class="pill">${esc(u.clsNote)}</span>`:''} <span class="pill" style="${u.grp?'':'background:#ffe9a8'}">${u.grp?u.grp+'-р бүлэг':'бүлэггүй'}</span>${u.demo?' <span class="demo">жишээ</span>':''}</td><td>${Object.values(u.ltest||{}).map(r=>r.score+'/'+r.total).join(' · ')||'—'}</td><td>${Object.values(u.lab||{}).filter(Boolean).length}</td><td>${Object.keys(u.ws||{}).length}/${WS.length}</td><td>${Object.entries(u.exams||{}).map(([n,a])=>`${n}: ${a.map(x=>x.score).join('·')}`).join('; ')||'—'}</td><td>${streak(u)}</td><td><button class="ghost sm" data-rp="${u.id}">Нууц үг</button><button class="ghost sm" data-mvg="${u.id}">Бүлэг солих</button><button class="ghost sm" data-sdx="${u.id}" style="color:#c0392b;margin-left:4px">Хасах</button></td></tr>`).join('')||`<tr><td colspan="8" class="mut">${gName(tCls)} ангид бүртгүүлсэн сурагч алга.</td></tr>`}</tbody></table></div>`:
  tTab==='op'?opHTML():tTab==='lr'?lrHTML():tTab==='ws'?wsTeacherHTML():tTab==='an'?anHTML():
  `<div class="grid">${UNITS.filter(u=>BANK[u[0]]).map(([n,t])=>{const s=exams[cOf(tCls)]?.[n];return `<div class="card"><span class="pill">${gName(tCls)} · Нэгж ${n}</span><h3 style="margin-top:8px">${t}</h3>${s?.open?`<p class="small mut">Нээлттэй. Сурагчдад хэлэх код:</p><div class="code">${s.code}</div><button class="ghost" data-close="${n}" style="margin-top:8px">Хаах</button>`:`<p class="small mut">Хаалттай</p><button class="leaf" data-open="${n}">Нээх, код үүсгэх</button>`}</div>`}).join('')}</div>`}
  <div class="row" style="margin-top:16px"><button class="ghost" id="tpw">Нууц үгээ солих</button><button class="ghost" id="tout">Багшийн эрхээс гарах</button></div></div></section>`};
-V.teacher.bind=()=>{stBind();tcBind();if(!teacher())return V.login.bind();$('#tcls').onchange=e=>{tCls=e.target.value;sel.clear();render()};document.querySelectorAll('[data-tt]').forEach(b=>b.onclick=()=>{tTab=b.dataset.tt;render()});
+V.teacher.bind=()=>{stBind();tcBind();rkBind();setBind();if(!teacher())return V.login.bind();$('#tcls').onchange=e=>{tCls=e.target.value;sel.clear();render()};document.querySelectorAll('[data-tt]').forEach(b=>b.onclick=()=>{tTab=b.dataset.tt;render()});
  document.querySelectorAll('[data-optg]').forEach(b=>b.onclick=()=>{const k=b.dataset.optg;opened[tCls]??={};if(opened[tCls][k])delete opened[tCls][k];else opened[tCls][k]=1;save();render()});
  document.querySelectorAll('[data-opall]').forEach(b=>b.onclick=()=>{const n=b.dataset.opall,v=b.dataset.v==='1';opened[tCls]??={};const ks=[...TH.filter(x=>x.u===n).map(x=>x.id),...WS.filter(w=>w.u===n).map(w=>'ws:'+w.les)];ks.forEach(k=>{if(v)opened[tCls][k]=1;else delete opened[tCls][k]});save();render()});
  lrBind();
@@ -845,8 +1039,8 @@ V.teacher.bind=()=>{stBind();tcBind();if(!teacher())return V.login.bind();$('#tc
 /* ---------- Админ: багш нар ---------- */
 function tcHTML(){const me=tlogin;const list=Object.entries(teachers).sort((a,b)=>(b[1].admin?1:0)-(a[1].admin?1:0)||a[1].name.localeCompare(b[1].name));
  return `<div class="card"><h3 style="margin-top:0">Багш нар</h3><p class="small mut" style="margin-top:0">Зөвхөн админ багш нэмж, хасна. Нэмсэн багшид нэвтрэх нэр, нууц үгийг нь биечлэн хэлээрэй. Багш нэвтэрсний дараа нууц үгээ өөрөө сольж болно.</p>
- <div class="scroll"><table><thead><tr><th>Нэр</th><th>Нэвтрэх нэр</th><th>Ангиуд</th><th>Эрх</th><th></th></tr></thead><tbody>${list.map(([l,t])=>`<tr><td><b>${esc(t.name)}</b>${l===me?' <span class="pill">Та</span>':''}</td><td><code>${esc(l)}</code></td><td>${t.admin?'Бүх анги':esc((t.classes||[]).map(gShort).join(', '))}</td><td>${t.admin?'Админ':'Багш'}</td>
-  <td><div class="row" style="gap:6px;flex-wrap:nowrap">${t.admin?'':`<button class="ghost sm" data-tcl="${esc(l)}">Анги засах</button>`}${l===me?'':`<button class="ghost sm" data-tpw="${esc(l)}">Нууц үг</button><button class="ghost sm" data-tdel="${esc(l)}" style="color:#c0392b;border-color:#e8b4ad">Хасах</button>`}</div></td></tr>`).join('')}</tbody></table></div>
+ <div class="scroll"><table><thead><tr><th>Нэр</th><th>Нэвтрэх нэр</th><th>Ангиуд</th><th>Эрх</th><th></th></tr></thead><tbody>${list.map(([l,t])=>`<tr><td><b>${esc(t.name)}</b>${l===me?' <span class="pill">Та</span>':''}${t.email?`<br><small class="mut">📧 ${esc(t.email)}</small>`:''}</td><td><code>${esc(l)}</code></td><td>${t.admin?'Бүх анги<br><span class="small mut">Хичээл ордог: '+(teachOf(t).length?esc(teachOf(t).map(gShort).join(', ')):'—')+'</span>':esc((t.classes||[]).map(gShort).join(', '))}</td><td>${t.admin?'Админ':'Багш'}</td>
+  <td><div class="row" style="gap:6px;flex-wrap:nowrap"><button class="ghost sm" data-tnm="${esc(l)}">Нэр, имэйл</button>${t.admin?`<button class="ghost sm" data-tteach="${esc(l)}">Хичээл ордог анги</button>`:`<button class="ghost sm" data-tcl="${esc(l)}">Анги засах</button>`}${l===me?'':`<button class="ghost sm" data-tpw="${esc(l)}">Нууц үг</button><button class="ghost sm" data-tdel="${esc(l)}" style="color:#c0392b;border-color:#e8b4ad">Хасах</button>`}</div></td></tr>`).join('')}</tbody></table></div>
  <h3 style="margin-top:20px">Шинэ багш нэмэх</h3><form id="tf2"><div class="grid"><div><label for="nt1">Овог нэр</label><input id="nt1" required placeholder="Жишээ: Д.Сараа"></div><div><label for="nt2">Нэвтрэх нэр (латин)</label><input id="nt2" required placeholder="sarah" autocomplete="off"></div><div><label for="nt3">Анхны нууц үг</label><input id="nt3" required minlength="4" autocomplete="off"></div></div>
  <label style="margin-top:10px">Хариуцах анги, бүлэг</label>${clsPick('ncl',[])}
  <label class="chk" style="margin-top:10px"><input type="checkbox" id="nt4"> Админ эрх өгөх (бүх анги, багш нэмж хасах эрхтэй)</label>
@@ -864,7 +1058,13 @@ function tcBind(){const T=teacher();if(!T?.admin)return;
   $('#m-pws').onclick=()=>{const v=$('#m-npw').value;if(v.length<4)return $('#m-pwe').textContent='Дор хаяж 4 тэмдэгт.';t.pw=hash(v);save();$('#mbox').innerHTML='<h3>Хадгаллаа</h3><p>Шинэ нууц үгийг багшид биечлэн хэлээрэй.</p><button onclick="window.closeModal()">Ойлголоо</button>'}});
  document.querySelectorAll('[data-tcl]').forEach(b=>b.onclick=()=>{const l=b.dataset.tcl,t=teachers[l];
   modal(`<h3>${esc(t.name)} — хариуцах анги, бүлэг</h3>${clsPick('ecl',t.classes||[])}<p class="fb no" id="m-cle"></p><div class="row" style="justify-content:center;margin-top:8px"><button class="ghost" onclick="window.closeModal()">Болих</button><button id="m-cls">Хадгалах</button></div>`);
-  $('#m-cls').onclick=()=>{const cl=[...document.querySelectorAll('[name=ecl]:checked')].map(x=>x.value);if(!cl.length)return $('#m-cle').textContent='Дор хаяж нэг анги сонгоно уу.';t.classes=cl;save();closeModal();render()}})}
+  $('#m-cls').onclick=()=>{const cl=[...document.querySelectorAll('[name=ecl]:checked')].map(x=>x.value);if(!cl.length)return $('#m-cle').textContent='Дор хаяж нэг анги сонгоно уу.';t.classes=cl;delete t.teach;save();closeModal();render()}})
+ document.querySelectorAll('[data-tteach]').forEach(b=>b.onclick=()=>{const l=b.dataset.tteach,t=teachers[l];
+  modal(`<h3>${esc(t.name)} — хичээл ордог анги, бүлэг</h3><p class="small mut">Админ бүх ангийг харна. Энд сонгосон ангийн сурагчдын батламж дээр таны нэр гарна.</p>${clsPick('tch',teachOf(t))}<div class="row" style="justify-content:center;margin-top:8px"><button class="ghost" onclick="window.closeModal()">Болих</button><button id="m-tch">Хадгалах</button></div>`);
+  $('#m-tch').onclick=()=>{t.teach=[...document.querySelectorAll('[name=tch]:checked')].map(x=>x.value);save();closeModal();render()}});
+ document.querySelectorAll('[data-tnm]').forEach(b=>b.onclick=()=>{const l=b.dataset.tnm,t=teachers[l];
+  modal(`<h3>Багшийн нэр, имэйл</h3><label for="m-tnm">Овог нэр</label><input id="m-tnm" value="${esc(t.name)}"><label for="m-tem">Цахим шуудангийн хаяг <span class="small mut">(заавал биш)</span></label><input id="m-tem" value="${esc(t.email||'')}" placeholder="ner@gmail.com" autocomplete="off"><p class="fb no" id="m-tne"></p><div class="row" style="justify-content:center;margin-top:8px"><button class="ghost" onclick="window.closeModal()">Болих</button><button id="m-tns">Хадгалах</button></div>`);
+  $('#m-tns').onclick=()=>{const v=$('#m-tnm').value.trim(),em=$('#m-tem').value.trim();if(!v)return $('#m-tne').textContent='Нэрээ бичнэ үү.';if(em&&!mailOk(em))return $('#m-tne').textContent='Имэйл хаяг буруу байна.';t.name=v;if(em)t.email=em;else delete t.email;save();closeModal();render()}})}
 
 /* ---------- Багш: сурагч нэмэх, хасах ---------- */
 function stBind(){document.querySelectorAll('[data-mvg]').forEach(b=>b.onclick=()=>{const u=users[b.dataset.mvg];if(!u)return;u.grp=u.grp===1?2:1;save();render()});const a=$('#sadd');if(a)a.onclick=()=>{const pw=String(Math.floor(1000+Math.random()*9000));
@@ -880,6 +1080,338 @@ function stBind(){document.querySelectorAll('[data-mvg]').forEach(b=>b.onclick=(
 function modal(h){$('#mbox').innerHTML=h;$('#modal').classList.add('on')}
 function closeModal(){$('#modal').classList.remove('on')}
 window.closeModal=closeModal;
+const SITE_NAME='Оддын хөтөч',SITE_GRADE=8,SCHOOL_YEAR='2026–2027',SITE_METRIC='Од';
+function lessonsDone(u){return {done:TH.filter(x=>u.done?.[x.id]).length,total:TH.length}}
+function siteMetric(u){return starsOf(u)}
+function unitPractice(u,unit){const v=[];WS.filter(w=>w.u===unit).forEach(w=>{const r=u.ws?.[w.id];if(r&&r.total)v.push(pct(r.score,r.total))});TH.filter(x=>x.u===unit).forEach(x=>{const r=u.theory?.[x.id];if(r&&r.total)v.push(pct(r.score,r.total));if(x.lab?.length)v.push(pct(x.lab.filter(t=>u.lab?.[t.id]).length,x.lab.length))});return avgN(v)}
+function rankCardHTML(u){const cl=Object.values(users).filter(x=>x.cls===u.cls).map(x=>({x,t:starsOf(x)})).sort((a,b)=>b.t-a.t);const me2=cl.findIndex(z=>z.x.id===u.id);
+ return `<div class="rankcard" style="margin-top:12px"><b class="small">🏅 ${esc(u.cls)} ангийн одны эрэмбэ</b>${cl.slice(0,5).map((z,i)=>`<div class="rkl ${z.x.id===u.id?'me':''}"><b class="rkn r${i<3?i+1:0}">${i+1}</b><span style="flex:1">${esc(z.x.ner)} ${esc(z.x.ovog.slice(0,1))}.</span><b>${z.t} ⭐</b></div>`).join('')}${me2>=5?`<div class="rkl me"><b class="rkn">${me2+1}</b><span style="flex:1">Би</span><b>${cl[me2].t} ⭐</b></div>`:''}</div>`}
+
+/* ========== ХӨДӨЛГӨӨН, БАЯР ХӨӨР, ЖИЛИЙН БАТЛАМЖ (нийтлэг) ========== */
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let _io=null;
+function animIn(){if(RM)return;const els=document.querySelectorAll('#app .sec,#app .card,#app .les,#app .stage,#app .goal,#app .val,#app .gcard,#app .labcard,#app .me,#app .mission,#app .ubanner,#app .lhero,#app .wsh,#app .qcard,#app .rkrow,#app .ucard');
+ _io?.disconnect();_io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('fxin');_io.unobserve(e.target)}}),{rootMargin:'0px 0px -6% 0px'});
+ let k=0;els.forEach(el=>{if(el.classList.contains('fxin'))return;el.classList.add('fx');el.style.setProperty('--fxd',(Math.min(k++,8)*45)+'ms');_io.observe(el)});clearTimeout(window._fxT);window._fxT=setTimeout(()=>document.querySelectorAll('#app .fx:not(.fxin)').forEach(e=>e.classList.add('fxin')),2200)}
+function confetti(n=140){if(RM)return;const c=document.createElement('canvas');c.className='fxconf';c.width=innerWidth;c.height=innerHeight;document.body.appendChild(c);const x=c.getContext('2d');
+ const C=['#1f5fbf','#c8102e','#ffcf4a','#2e8b57','#7b3fd0','#ff8fa3','#ffffff'];const P=Array.from({length:n},()=>({x:innerWidth/2+(Math.random()-.5)*200,y:innerHeight*.35,vx:(Math.random()-.5)*14,vy:-Math.random()*13-4,r:Math.random()*6+4,c:C[Math.floor(Math.random()*C.length)],a:Math.random()*6,s:Math.random()*.3-.15}));
+ let t=0;const f=()=>{x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.vx*=.99;p.a+=p.s;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore()});if(++t<170)requestAnimationFrame(f);else c.remove()};f()}
+const LETTER=p=>p>=90?['A','Онц']:p>=80?['B','Сайн']:p>=70?['C','Дунд']:p>=60?['D','Хангалттай']:['F','Хангалтгүй'];
+const pct=(a,b)=>b?Math.round(a/b*100):null;
+const avgN=a=>{a=a.filter(v=>v!=null&&!isNaN(v));return a.length?Math.round(a.reduce((s,v)=>s+v,0)/a.length):null};
+/* тохиргоо (synced): exams.cfg */
+const CFG=()=>{exams.cfg??={};return exams.cfg};
+const rankOn=()=>!!CFG().rank;
+function teachOf(t){return Array.isArray(t&&t.teach)?t.teach:(t&&!t.admin?(t.classes||[]):[])}
+function certTList(u){const m=Object.values(teachers).filter(t=>u&&teachOf(t).some(k=>k===u.cls||k===u.cls+"/"+u.grp));return m.length?m:Object.values(teachers).filter(t=>t.admin)}
+const certTeachers=u=>certTList(u).map(t=>t.name).join(", ");
+/* Нэгжийн нэгдсэн дүн: шалгалт 50% + дадлага 50% */
+const prOver=(u,unit)=>exams['pr_'+u.id]?.[unit];
+function unitFinal(u,unit){const at=u.exams?.[unit]?.[0];const ex=at?pct(at.score,at.total):null;const auto=unitPractice(u,unit);const ov=prOver(u,unit);const pr=ov!=null&&ov!==''?+ov:auto;
+ const fin=ex!=null&&pr!=null?Math.round(ex*.5+pr*.5):null;return {ex,auto,ov,pr,fin}}
+/* Жилийн дүн: үзэлт 20% + дадлага 40% + шалгалт 40% */
+function yearResult(u){const L=lessonsDone(u),units=UNITS.map(x=>x[0]).filter(n=>BANK[n]);
+ const ex=units.map(n=>{const a=u.exams?.[n]?.[0];return a?pct(a.score,a.total):null}),pr=units.map(n=>unitFinal(u,n).pr);
+ const view=pct(L.done,L.total)??0,exA=avgN(ex)??0,prA=avgN(pr)??0;const missingEx=units.filter((n,i)=>ex[i]==null);
+ const total=Math.round(view*.2+prA*.4+exA*.4);return {view,ex:exA,pr:prA,total,letter:LETTER(total),eligible:L.done>=L.total&&!missingEx.length,missingEx,L}}
+function certHTML(u,R,C){C=C||CT();const [lt,ln]=R.letter;const praise=R.total>=90?C.praise[0]:R.total>=80?C.praise[1]:R.total>=70?C.praise[2]:C.praise[3];
+ return `<div class="cert th-${esc(C.theme||'mn')}" id="certbox"><div class="certin"><div class="certtop">${SETS().logo?'<img src="logo130.png" alt="" class="certlogo">':''}<div>${SETS().school?`<div class="certschool">${esc(SETS().school.toUpperCase())}</div>`:''}<div class="certsite">${SITE_NAME} · ${SITE_GRADE}-р анги · Мэдээллийн технологи</div></div></div>
+ <h1 class="certh">${esc(C.title)}</h1><p class="certfor">${esc(certFill(C.intro,u,R,C))}</p><div class="certname">${esc(u.ovog)} ${esc(u.ner)}</div><p class="certfor">${esc(u.cls)} ангийн сурагчид</p>
+ <p class="certtext">${esc(certFill(C.body,u,R,C))}</p>
+ ${C.scores?`<div class="certscore"><div><b>${R.view}%</b><span>Хичээлийн үзэлт</span></div><div><b>${R.pr}%</b><span>Дадлага, лаборатори</span></div><div><b>${R.ex}%</b><span>Шалгалт</span></div><div class="certfin"><b>${R.total}% · ${lt}</b><span>Ерөнхий дүн · ${ln}</span></div></div>`:''}
+ ${praise?`<p class="certpraise">«${esc(certFill(praise,u,R,C))}»</p>`:''}
+ <div class="certsign"><div><i></i>${esc(C.sign)}<br><b>${esc(certTeachers(u))}</b></div><div class="certseal">${esc(C.seal||'★')}<small>${new Date().getFullYear()}</small></div><div><i></i>Огноо<br><b>${today()}</b></div></div></div></div>`}
+function showYearCert(u){u=u||user();if(!u)return;const R=yearResult(u);
+ if(!R.eligible&&!teacher())return modal(`<h3>🎓 Жилийн батламж</h3><p>Батламж авахын тулд бүх хичээлээ үзэж, нэгжийн шалгалтуудаа өгөх хэрэгтэй.</p><div class="yprog"><p>📘 Хичээл: <b>${R.L.done}/${R.L.total}</b></p><div class="ybar"><i style="width:${R.view}%"></i></div>${R.missingEx.length?`<p>📝 Өгөөгүй шалгалт: <b>${R.missingEx.join(', ')}</b></p>`:'<p>📝 Бүх шалгалт өгсөн ✓</p>'}</div><button onclick="window.closeModal()">Ойлголоо</button>`);
+ modal(`${certHTML(u,R)}<div class="row noprint" style="justify-content:center;margin-top:12px"><button class="ghost" onclick="window.closeModal()">Хаах</button><button class="leaf" onclick="window.print()">🖨 Хэвлэх / PDF хадгалах</button></div>`);document.getElementById('modal')?.classList.add('certmodal');setTimeout(()=>confetti(200),200)}
+window.showYearCert=showYearCert;
+/* Багшийн «Дүн, эрэмбэ» таб */
+let rkUnit=null;
+function rkHTML(){const studs=Object.values(users).filter(u=>!u.test&&inK(u,tCls));const units=UNITS.map(x=>x[0]).filter(n=>BANK[n]);rkUnit=units.includes(rkUnit)?rkUnit:units[0];
+ const rows=studs.map(u=>({u,R:yearResult(u),F:unitFinal(u,rkUnit),m:siteMetric(u)})).sort((a,b)=>b.R.total-a.R.total||b.m-a.m);
+ return `<div class="card" style="max-width:none;text-align:left"><div class="row" style="justify-content:space-between"><h3 style="margin:0">🏅 Хичээлийн үзэлт, дүнгийн эрэмбэ · ${esc(gName(tCls))}</h3>
+  <label class="chk" style="margin:0"><input type="checkbox" id="rkon" ${rankOn()?'checked':''}> Сурагчдад эрэмбэ харуулах</label></div>
+  <p class="small mut">Ерөнхий дүн = үзэлт 20% + дадлага 40% + шалгалт 40%. Нэгжийн дүн = шалгалт 50% + дадлага 50%. Дадлагын оноо автоматаар бодогдоно, та нүдэнд нь өөрөө бичиж засаж болно.</p>
+  <div class="scroll"><table class="rktab"><thead><tr><th>Байр</th><th>Сурагч</th><th>Үзэлт</th><th>${SITE_METRIC}</th><th>Дадлага</th><th>Шалгалт</th><th>Ерөнхий</th><th></th></tr></thead><tbody>
+  ${rows.map((r,i)=>`<tr class="rkrow"><td><b class="rkn r${i<3?i+1:0}">${i+1}</b></td><td><b>${esc(r.u.ovog)} ${esc(r.u.ner)}</b></td><td><div class="minibar"><i style="width:${r.R.view}%"></i></div>${r.R.L.done}/${r.R.L.total}</td><td>${r.m}</td><td>${r.R.pr}%</td><td>${r.R.ex}%</td><td><b>${r.R.total}% ${r.R.letter[0]}</b></td><td><button class="ghost sm" data-ycert="${r.u.id}">🎓</button></td></tr>`).join('')||'<tr><td colspan="8" class="mut">Сурагч алга.</td></tr>'}</tbody></table></div></div>
+ <div class="card" style="max-width:none;text-align:left;margin-top:16px"><div class="row" style="justify-content:space-between"><h3 style="margin:0">📊 Нэгжийн нэгдсэн дүн</h3><select id="rku" style="width:auto">${units.map(n=>`<option value="${n}" ${n===rkUnit?'selected':''}>${n} ${esc(unitName(n))}</option>`).join('')}</select></div>
+  <div class="scroll"><table><thead><tr><th>№</th><th>Сурагч</th><th>Шалгалт (50%)</th><th>Дадлага — авто</th><th>Дадлага — багшийн засвар</th><th>Нэгдсэн дүн</th></tr></thead><tbody>
+  ${studs.sort((a,b)=>a.ovog.localeCompare(b.ovog)).map((u,i)=>{const F=unitFinal(u,rkUnit);return `<tr><td>${i+1}</td><td>${esc(u.ovog)} ${esc(u.ner)}</td><td>${F.ex??'—'}${F.ex!=null?'%':''}</td><td>${F.auto??'—'}${F.auto!=null?'%':''}</td><td><input type="number" min="0" max="100" data-prov="${u.id}" value="${F.ov??''}" placeholder="авто" style="width:90px;min-height:34px"></td><td>${F.fin!=null?`<b>${F.fin}% ${LETTER(F.fin)[0]}</b>`:'—'}</td></tr>`}).join('')}</tbody></table></div></div>`}
+function rkBind(){const on=$('#rkon');if(!on)return;on.onchange=()=>{CFG().rank=on.checked;save()};const ru=$('#rku');if(ru)ru.onchange=()=>{rkUnit=ru.value;render()};
+ document.querySelectorAll('[data-prov]').forEach(i=>i.onchange=()=>{const id=i.dataset.prov,k='pr_'+id;exams[k]??={};const v=i.value.trim();if(v==='')delete exams[k][rkUnit];else exams[k][rkUnit]=Math.max(0,Math.min(100,+v));save();render()});
+ document.querySelectorAll('[data-ycert]').forEach(b=>b.onclick=()=>showYearCert(users[b.dataset.ycert]))}
+/* Сурагчийн «Миний дүн» хэсэг */
+function myGradesHTML(u){const units=UNITS.map(x=>x[0]).filter(n=>BANK[n]);const R=yearResult(u);
+ return `<div class="card mygr" style="max-width:none;text-align:left;margin-top:20px"><h3 style="margin-top:0">📊 Миний нэгдсэн дүн</h3><div class="ucards">${units.map(n=>{const F=unitFinal(u,n);return `<div class="ucard"><span class="pill">${n}</span><b>${esc(unitName(n))}</b><div class="small">📝 Шалгалт: <b>${F.ex??'—'}${F.ex!=null?'%':''}</b> · 🛠️ Дадлага: <b>${F.pr??'—'}${F.pr!=null?'%':''}</b></div><div class="ufin">${F.fin!=null?`${F.fin}% <small>${LETTER(F.fin)[1]}</small>`:'<small>Шалгалт өгөөгүй</small>'}</div></div>`}).join('')}</div>
+ <div class="yrow"><div><b>🎓 Жилийн ерөнхий дүн: ${R.total}% · ${R.letter[1]}</b><div class="small mut">Үзэлт ${R.view}% · Дадлага ${R.pr}% · Шалгалт ${R.ex}%</div><div class="ybar"><i style="width:${R.view}%"></i></div><div class="small">Хичээл ${R.L.done}/${R.L.total}${R.missingEx.length?` · Өгөөгүй шалгалт: ${R.missingEx.join(', ')}`:''}</div></div><button class="${R.eligible?'leaf':'ghost'}" onclick="window.showYearCert()">${R.eligible?'🎓 Батламжаа авах':'🔒 Батламж'}</button></div></div>`}
+
+const DEF_MISSION='Хамтын бүтээлч үйл ажиллагаанд тулгуурлан, дижитал шилжилтийг үр дүнтэй ашиглаж хүүхдийн хөгжил, сургалтын чанарыг эрхэмлэнэ.',DEF_GOALS=[["Ойлгож уншдаг", "Заавар, алгоритмыг анхааралтай уншиж, алхам бүрийг зөв биелүүлнэ."], ["Бусдыг хүндэлдэг", "Нийгмийн сүлжээнд ч бусдыг хүндэлж, мэдээллийг хамтдаа зөв ашиглана."], ["Ухаалаг утсыг зөв зохистой хэрэглэдэг", "Утсаа хэмжээтэй хэрэглэж, 20 минут тутамд нүдээ амраана."]],DEF_VALS=[["Эв нэгдэл", "Анги бүрийн цуглуулсан од нэг одны ордонд нийлнэ."], ["Эерэг хандлага", "Алгоритм буруу бол засаад дахин ажиллуул. Алдаа бол суралцах боломж."], ["Тасралтгүй хөгжил", "Өдөр бүр нэг даалгавар — нэг од."], ["Үүрэг хариуцлага", "Ажлын хуудсаа өөрөө, шударгаар, хугацаанд нь илгээнэ."]];
+
+/* ========== САЙТЫН ТОХИРГОО (багш засна): сургууль, эрхэм зорилго, зорилго, үнэт зүйл ========== */
+const SETS=()=>{const c=CFG().site||{};return {school:c.school||'',logo:!!c.logo,mission:c.mission||DEF_MISSION,goals:c.goals?.length?c.goals:DEF_GOALS,vals:c.vals?.length?c.vals:DEF_VALS}};
+const schoolTag=()=>SETS().school?esc(SETS().school)+' · ':'';
+const mergeG=arr=>{const c=CFG().site;if(!c?.goals?.length)return arr;return c.goals.map((g,i)=>{const r=[...(arr[i]||arr[arr.length-1])];r[0]=String(i+1);r[2]=g[0];r[3]=g[1];if(!arr[i]&&r.length>4){r[4]='theory';r[5]='Хичээл рүү'}return r})};
+const mergeV=arr=>{const c=CFG().site;if(!c?.vals?.length)return arr;return c.vals.map((v,i)=>{const r=[...(arr[i]||arr[arr.length-1])];r[0]=String(i+1).padStart(2,'0');r[2]=v[0];r[3]=v[1];if(!arr[i])r[4]='';return r})};
+function applyBrand(){const S=SETS();document.querySelectorAll('.badge130').forEach(e=>e.style.display=S.logo?'inline-block':'none');const h=document.getElementById('hsub');if(h)h.textContent=(S.school?S.school+' · ':'')+SITE_GRADE+'-р анги';const f=document.getElementById('fschool');if(f)f.textContent=S.school?S.school+'-ийн ':''}
+let stEdit=null;
+function setHTML(){const S=SETS();stEdit??={school:S.school,logo:S.logo,mission:S.mission,goals:S.goals.map(g=>[...g]),vals:S.vals.map(v=>[...v])};const E=stEdit;
+ const row=(k,i,a)=>`<div class="setrow"><b>${i+1}</b><input data-sk="${k}" data-si="${i}" data-sj="0" value="${esc(a[0])}" placeholder="Гарчиг"><textarea data-sk="${k}" data-si="${i}" data-sj="1" rows="2" placeholder="Тайлбар">${esc(a[1])}</textarea><button class="ghost sm" data-sdel="${k}|${i}" title="Хасах">✕</button></div>`;
+ return `<div class="card setcard" style="max-width:none;text-align:left"><h3 style="margin-top:0">⚙️ Сайтын тохиргоо</h3><p class="small mut" style="margin-top:0">Энд өөрчилсөн зүйл нүүр хуудас, батламж дээр бүх сурагчид шууд харагдана.</p>
+ <label for="sschool">Сургуулийн нэр <span class="small mut">(хоосон орхивол хаана ч харагдахгүй)</span></label><input id="sschool" value="${esc(E.school)}" placeholder="Жишээ: ... дугаар сургууль">
+ <label class="chk"><input type="checkbox" id="slogo" ${E.logo?'checked':''}> Сургуулийн лого (logo130.png) харуулах</label>
+ <label for="smission">Эрхэм зорилго</label><textarea id="smission" rows="3">${esc(E.mission)}</textarea>
+ <h4>Хичээлийн жилийн зорилго</h4>${E.goals.map((g,i)=>row('goals',i,g)).join('')}<button class="ghost sm" data-sadd="goals">+ Зорилго нэмэх</button>
+ <h4>Үнэт зүйл</h4>${E.vals.map((v,i)=>row('vals',i,v)).join('')}<button class="ghost sm" data-sadd="vals">+ Үнэт зүйл нэмэх</button>
+ <div class="row" style="margin-top:16px"><button class="leaf" id="ssave">💾 Хадгалах</button><button class="ghost" id="sreset">↺ Анхны утга руу буцаах</button><span class="small" id="smsg"></span></div></div>${certSetHTML()}`}
+function setBind(){certSetBind();if(!$('#ssave'))return;const E=stEdit;
+ $('#sschool').oninput=e=>E.school=e.target.value;$('#slogo').onchange=e=>E.logo=e.target.checked;$('#smission').oninput=e=>E.mission=e.target.value;
+ document.querySelectorAll('[data-sk]').forEach(i=>i.oninput=()=>{E[i.dataset.sk][+i.dataset.si][+i.dataset.sj]=i.value});
+ document.querySelectorAll('[data-sdel]').forEach(b=>b.onclick=()=>{const [k,i]=b.dataset.sdel.split('|');if(E[k].length>1)E[k].splice(+i,1);render()});
+ document.querySelectorAll('[data-sadd]').forEach(b=>b.onclick=()=>{E[b.dataset.sadd].push(['','']);render()});
+ $('#ssave').onclick=()=>{const cl=a=>a.map(x=>[x[0].trim(),x[1].trim()]).filter(x=>x[0]);CFG().site={school:E.school.trim(),logo:E.logo,mission:E.mission.trim(),goals:cl(E.goals),vals:cl(E.vals)};save();stEdit=null;applyBrand();render();setTimeout(()=>{const m=$('#smsg');if(m)m.textContent='Хадгаллаа ✓'},50)};
+ $('#sreset').onclick=()=>{if(!confirm('Анхны утга руу буцаах уу?'))return;delete CFG().site;save();stEdit=null;applyBrand();render()}}
+
+/* ===== ⌨️ Товчлол — гарын хослол цээжлэх хэсэг (бүх сайтад нийтлэг) ===== */
+const KCATS=[
+ ['win','🪟','Windows','Үйлдлийн систем, цонхтой ажиллах',[
+  ['Win','Start цэс нээх'],['Win+D','Ажлын ширээг харуулах'],['Win+E','Файлын хөтөч (File Explorer) нээх'],['Win+L','Компьютерыг түгжих'],
+  ['Win+R','«Run» цонх нээх'],['Win+I','Тохиргоо (Settings) нээх'],['Win+Tab','Бүх нээлттэй цонхыг харах'],['Win+←','Цонхыг дэлгэцийн зүүн хагаст байрлуулах'],
+  ['Win+→','Цонхыг дэлгэцийн баруун хагаст байрлуулах'],['Win+↑','Цонхыг дэлгэц дүүргэх'],['Win+↓','Цонхыг жижигрүүлэх, нуух'],['Win+V','Хуулсан зүйлсийн түүх харах'],
+  ['Win+Shift+S','Дэлгэцийн хэсгийн зураг авах'],['Win+.','Эможи, тэмдэгтийн цонх нээх'],['Alt+Tab','Нээлттэй цонхнуудын хооронд шилжих'],['Alt+F4','Идэвхтэй цонх, программыг хаах'],
+  ['Ctrl+Shift+Esc','Task Manager (ажлын менежер) нээх'],['F2','Сонгосон файлын нэрийг солих']]],
+ ['edit','✂️','Ерөнхий засвар','Бараг бүх программд ажилладаг',[
+  ['Ctrl+C','Хуулах (Copy)'],['Ctrl+X','Тасдаж авах (Cut)'],['Ctrl+V','Буулгах (Paste)'],['Ctrl+Z','Сүүлийн үйлдлийг буцаах'],
+  ['Ctrl+Y','Буцаасныг дахин хийх'],['Ctrl+A','Бүгдийг сонгох'],['Ctrl+S','Хадгалах'],['Ctrl+O','Файл нээх'],
+  ['Ctrl+N','Шинэ баримт, цонх үүсгэх'],['Ctrl+P','Хэвлэх'],['Ctrl+F','Үг хайх'],['Ctrl+→','Курсорыг дараагийн үг рүү шилжүүлэх'],
+  ['Shift+→','Сонголтыг нэг тэмдэгтээр сунгах'],['Ctrl+Backspace','Курсорын өмнөх үгийг бүтнээр устгах'],['Home','Мөрийн эхэнд очих'],['End','Мөрийн төгсгөлд очих']]],
+ ['word','📝','Word','Бичвэр боловсруулах',[
+  ['Ctrl+B','Тод (Bold) болгох'],['Ctrl+I','Налуу (Italic) болгох'],['Ctrl+U','Доогуур зураас татах'],['Ctrl+E','Мөрийг голлуулах'],
+  ['Ctrl+L','Зүүн талд зэрэгцүүлэх'],['Ctrl+R','Баруун талд зэрэгцүүлэх'],['Ctrl+J','Хоёр тал тэгшлэх'],['Ctrl+]','Үсгийг 1 pt томруулах'],
+  ['Ctrl+[','Үсгийг 1 pt жижигрүүлэх'],['Ctrl+Shift+8','¶ далд тэмдэгт харуулах, нуух'],['Ctrl+Enter','Шинэ хуудаснаас эхлэх'],['Ctrl+K','Холбоос (линк) оруулах'],
+  ['Ctrl+H','Үг хайж солих'],['F7','Зөв бичгийн алдаа шалгах'],['Ctrl+Home','Баримтын эхэнд очих'],['Ctrl+End','Баримтын төгсгөлд очих'],
+  ['Ctrl+D','Фонтын цонх нээх'],['Shift+F3','Том, жижиг үсгийг солих']]],
+ ['ppt','📽️','PowerPoint','Үзүүлэн бэлтгэх, үзүүлэх',[
+  ['F5','Үзүүлэнг эхнээс нь үзүүлэх'],['Shift+F5','Одоогийн слайдаас үзүүлэх'],['Esc','Үзүүлэнг дуусгах'],['Ctrl+M','Шинэ слайд нэмэх'],
+  ['Ctrl+D','Сонгосон объект, слайдыг хувилах'],['Ctrl+G','Объектуудыг бүлэглэх'],['Ctrl+Shift+G','Бүлгийг задлах'],['B','Үзүүлэх үед дэлгэцийг харлуулах'],
+  ['W','Үзүүлэх үед дэлгэцийг цайруулах'],['N','Үзүүлэх үед дараагийн слайд'],['P','Үзүүлэх үед өмнөх слайд'],['Ctrl+Shift+C','Хэлбэржүүлэлтийг хуулах']]],
+ ['excel','📊','Excel','Хүснэгт, тооцоолол',[
+  ['Ctrl+;','Өнөөдрийн огноог оруулах'],['F2','Нүдийг засах горимд оруулах'],['Alt+=','Нийлбэр (AutoSum) бодох'],['Ctrl+1','Нүдний форматын цонх нээх'],
+  ['Shift+Space','Бүтэн мөрийг сонгох'],['Ctrl+Space','Бүтэн баганыг сонгох'],['Ctrl+Shift+L','Шүүлтүүр асаах, унтраах'],['F4','Нүдний хаягийг тогтмол ($A$1) болгох'],
+  ['Ctrl+↓','Өгөгдлийн төгсгөл рүү үсрэх'],['Alt+Enter','Нүдэн дотор шинэ мөр'],['Ctrl+D','Дээрх нүдийг доош хуулах'],['Tab','Баруун талын нүд рүү шилжих'],
+  ['Enter','Доод нүд рүү шилжих'],['Ctrl+PgDn','Дараагийн хуудас (sheet) руу шилжих']]],
+ ['web','🌐','Вэб хөтөч','Chrome, Edge, Firefox',[
+  ['Ctrl+T','Шинэ таб нээх'],['Ctrl+W','Идэвхтэй табыг хаах'],['Ctrl+Shift+T','Хаасан табыг сэргээх'],['Ctrl+Tab','Дараагийн таб руу шилжих'],
+  ['Ctrl+L','Хаягийн мөрийг сонгох'],['Ctrl+F','Хуудаснаас үг хайх'],['F5','Хуудсыг шинэчлэх'],['Ctrl+D','Хуудсыг тэмдэглэх (bookmark)'],
+  ['Ctrl+H','Үзсэн түүх харах'],['Ctrl+J','Татан авсан файлууд харах'],['Ctrl++','Хуудсыг томруулах'],['Ctrl+-','Хуудсыг жижигрүүлэх'],
+  ['Ctrl+0','Анхны хэмжээнд буцаах'],['Alt+←','Өмнөх хуудас руу буцах'],['Alt+→','Дараагийн хуудас руу урагшлах'],['Ctrl+Shift+N','Нууц (incognito) цонх нээх'],
+  ['F11','Бүтэн дэлгэцээр харах'],['Space','Хуудсыг доош гүйлгэх']]],
+ ['paint','🎨','Paint','Зураг зурах программ',[
+  ['Ctrl+E','Зургийн хэмжээний (Properties) цонх'],['Ctrl+W','Хэмжээ өөрчлөх, хазайлгах (Resize)'],['Ctrl+Shift+X','Сонгосон хэсгээр тайрах (Crop)'],['Ctrl+G','Торон шугам харуулах'],
+  ['Ctrl+R','Шугам (ruler) харуулах'],['Ctrl+PgUp','Томруулж харах'],['Ctrl+PgDn','Жижигрүүлж харах'],['Delete','Сонгосон хэсгийг устгах'],
+  ['F11','Зургийг бүтэн дэлгэцээр харах'],['Ctrl+A','Бүх зургийг сонгох']]]
+];
+/* Хөтөч эсвэл Windows өөрөө барьдаг тул «Дарж үзэх» дасгалд оруулахгүй хослолууд */
+const KNOPRESS=/^(Win|Alt\+Tab|Alt\+F4|Ctrl\+Shift\+Esc|Ctrl\+T$|Ctrl\+W$|Ctrl\+N$|Ctrl\+Shift\+[TN]$|Ctrl\+Tab|Alt\+[←→]|F11|F7|Ctrl\+1$|Ctrl\+Space|Ctrl\+Pg|Ctrl\+P$|Ctrl\+Shift\+C$)/;
+const kParts=k=>k==='Ctrl++'?['Ctrl','+']:k.split('+');
+const kAll=()=>KCATS.flatMap(c=>c[4]);
+const kCat=id=>KCATS.find(c=>c[0]===id);
+const kCap=k=>kParts(k).map(x=>`<kbd>${esc(x==='Win'?'⊞ Win':x)}</kbd>`).join('<span class="kplus">+</span>');
+const KCODE={Equal:'=',Minus:'-',BracketLeft:'[',BracketRight:']',Semicolon:';',Period:'.',Comma:',',Slash:'/',Space:'Space',Enter:'Enter',NumpadEnter:'Enter',Tab:'Tab',Backspace:'Backspace',Delete:'Delete',Home:'Home',End:'End',PageUp:'PgUp',PageDown:'PgDn',Escape:'Esc',ArrowLeft:'←',ArrowRight:'→',ArrowUp:'↑',ArrowDown:'↓',NumpadAdd:'+',NumpadSubtract:'-'};
+function kFromEvent(e){if(['Control','Shift','Alt','Meta','OS'].includes(e.key))return null;let k=KCODE[e.code];if(!k){if(/^Key[A-Z]$/.test(e.code))k=e.code.slice(3);else if(/^Digit\d$/.test(e.code))k=e.code.slice(5);else if(/^F\d+$/.test(e.code))k=e.code;else k=e.key}
+ const m=[];if(e.ctrlKey)m.push('Ctrl');if(e.altKey)m.push('Alt');if(e.shiftKey)m.push('Shift');if(e.metaKey)m.push('Win');return {mods:m,key:k}}
+function kMatch(exp,ev){const p=kParts(exp),key=p.pop(),need=new Set(p);if(key==='+'){if(!(ev.key==='+'||ev.key==='='))return false;need.delete('Shift');const got=new Set(ev.mods);got.delete('Shift');return [...need].every(x=>got.has(x))&&[...got].every(x=>need.has(x))}
+ if(ev.key.toUpperCase()!==key.toUpperCase())return false;return need.size===ev.mods.length&&ev.mods.every(x=>need.has(x))}
+const kShuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function kProg(u){u=u||user();if(!u)return {};u.keys??={};return u.keys}
+const kMast=(u,c)=>(u?.keys?.[c]?.q||0)>=80;
+const kTask=()=>CFG().keys||{cats:[],note:'',due:''};
+let KS={cat:null,mode:'list',card:0,flip:false,quiz:null,press:null};
+
+V.keys=()=>{const T=teacher(),u=user(),task=kTask(),P=u?kProg(u):{};if(window._kcat){KS.cat=window._kcat;KS.mode=window._kmode||'list';window._kcat=null;window._kmode=null}
+ const C=KS.cat&&kCat(KS.cat);
+ const head=`<div class="khero"><div><h2>⌨️ Товчлол — гарын хослол</h2><p>Хулганаар хайхын оронд хоёр товч дарахад л ажил хийгдэнэ. Программ бүрээр нь <b>${kAll().length}</b> хослолыг цээжилж, сорилоо өгөөд 🏅 медаль цуглуулаарай!</p></div><div class="kmed">${KCATS.map(c=>`<span class="${u&&kMast(u,c[0])?'on':''}" title="${esc(c[2])}">${c[1]}</span>`).join('')}</div></div>`;
+ const tbox=task.cats?.length?`<div class="ktask"><b>📌 Багшийн өгсөн даалгавар${task.due?` · ${esc(task.due)} хүртэл`:''}</b><p>${esc(task.note||'Доорх ангиллын товчлолуудыг цээжилж, сорилд 80%-иас дээш оноо аваарай.')}</p><div class="row">${task.cats.map(id=>{const c=kCat(id);if(!c)return'';const ok=u&&kMast(u,id);return `<button class="kchip ${ok?'ok':''}" data-kc="${id}">${c[1]} ${esc(c[2])} ${ok?'🏅':u?(P[id]?.q!=null?P[id].q+'%':'—'):''}</button>`}).join('')}</div></div>`:'';
+ if(!C)return `<section class="band"><div class="wrap kwrap">${head}${tbox}${T?kTeachHTML():''}
+  <div class="kgrid">${KCATS.map(c=>{const p=P[c[0]]||{};return `<button class="kcat" data-kc="${c[0]}"><span class="kico">${c[1]}</span><b>${esc(c[2])}</b><small>${esc(c[3])}</small><span class="kmeta">${c[4].length} хослол${u?` · ${kMast(u,c[0])?'🏅 Цээжилсэн':p.q!=null?'Сорил '+p.q+'%':'Эхлээгүй'}`:''}</span>${task.cats?.includes(c[0])?'<span class="kpin">📌</span>':''}</button>`}).join('')}</div>
+  <div class="ktip"><b>💡 Хэрхэн цээжлэх вэ?</b> 1) <b>Жагсаалт</b>-аа уншаад компьютер дээр туршина. 2) <b>Цээжлэх карт</b>-аар өөрийгөө шалгана. 3) <b>Дарж үзэх</b> дасгалаар гараараа дарж дасна. 4) <b>Сорил</b>-д 80%-иас дээш авбал 🏅 медаль авна.</div>
+ </div></section>`;
+ const p=P[C[0]]||{},L=C[4];
+ const tabs=[['list','📋 Жагсаалт'],['card','🃏 Цээжлэх карт'],['press','⌨️ Дарж үзэх'],['quiz','📝 Сорил']];
+ let body='';
+ if(KS.mode==='list')body=`<div class="scroll"><table class="ktab"><thead><tr><th>№</th><th>Хослол</th><th>Үүрэг</th></tr></thead><tbody>${L.map((x,i)=>`<tr><td>${i+1}</td><td class="kcell">${kCap(x[0])}</td><td>${esc(x[1])}</td></tr>`).join('')}</tbody></table></div>`;
+ if(KS.mode==='card'){const i=KS.card%L.length,x=L[i];body=`<div class="kcard ${KS.flip?'flip':''}" id="kcard"><div class="kfront">${KS.flip?`<p class="kdesc">${esc(x[1])}</p><div class="kbig">${kCap(x[0])}</div>`:`<p class="kq">Энэ хослол юу хийдэг вэ?</p><div class="kbig">${kCap(x[0])}</div><small>Бодоод, картыг эргүүл</small>`}</div></div>
+  <div class="row" style="justify-content:center;margin-top:12px"><button class="ghost" id="kprev">← Өмнөх</button><button id="kflip">🔁 Эргүүлэх</button><button class="ghost" id="knext">Дараах →</button></div><p class="small mut" style="text-align:center">${i+1} / ${L.length} карт · Space — эргүүлэх, ← → — шилжих</p>`}
+ if(KS.mode==='quiz'){const Q=KS.quiz;if(!Q||Q.cat!==C[0])body=`<div class="kstart"><p>${Math.min(10,L.length)} асуулт. Нэг хэсэгт нь <b>үйлдэлд тохирох хослол</b>, нөгөөд нь <b>хослолын үүрэг</b>-ийг сонгоно. 80%-иас дээш авбал 🏅!</p>${p.q!=null?`<p>Таны шилдэг оноо: <b>${p.q}%</b></p>`:''}<button id="kqgo">📝 Сорил эхлүүлэх</button></div>`;
+  else if(Q.i>=Q.items.length){const sc=Math.round(Q.ok/Q.items.length*100);body=`<div class="kstart"><div class="kscore">${sc}%</div><p>${Q.ok}/${Q.items.length} зөв. ${sc>=80?'🏅 Баяр хүргэе! Та энэ ангиллыг цээжиллээ.':'Цээжлэх картаар дахин давтаад дахин оролдоорой.'}</p><button id="kqgo">↻ Дахин өгөх</button></div>`}
+  else{const it=Q.items[Q.i];body=`<div class="kquiz"><div class="kqn">${Q.i+1} / ${Q.items.length} · ✓ ${Q.ok}</div><p class="kq">${it.rev?`<span class="kbig">${kCap(it.x[0])}</span><br>Энэ хослол юу хийдэг вэ?`:`«${esc(it.x[1])}» — аль хослол вэ?`}</p><div class="kopts">${it.o.map((o,j)=>`<button class="kopt ${Q.ans!=null?(j===it.a?'ok':j===Q.ans?'no':''):''}" data-ko="${j}" ${Q.ans!=null?'disabled':''}>${it.rev?esc(o[1]):kCap(o[0])}</button>`).join('')}</div>${Q.ans!=null?`<div class="row" style="justify-content:center;margin-top:10px"><button id="kqnext">Дараах →</button></div>`:''}</div>`}}
+ if(KS.mode==='press'){const PL=L.filter(x=>!KNOPRESS.test(x[0])),R=KS.press;
+  if(!PL.length)body='<p>Энэ ангиллын хослолуудыг хөтөч дотор дарж болохгүй. Жинхэнэ программ дээрээ туршаарай.</p>';
+  else if(!R||R.cat!==C[0])body=`<div class="kstart"><p>Үүргийг уншаад, <b>гар дээрээ</b> тохирох хослолыг дарна. ${PL.length<L.length?`<br><small class="mut">Windows, хөтөч өөрөө барьдаг ${L.length-PL.length} хослолыг (жишээ нь Alt+Tab, Win) энд оруулаагүй. Тэдгээрийг жинхэнэ компьютер дээрээ туршаарай.</small>`:''}</p>${p.p!=null?`<p>Шилдэг оноо: <b>${p.p}%</b></p>`:''}<button id="kpgo">⌨️ Эхлүүлэх</button></div>`;
+  else if(R.i>=R.items.length){const sc=Math.round(R.ok/R.items.length*100);body=`<div class="kstart"><div class="kscore">${sc}%</div><p>${R.ok}/${R.items.length} хослолыг анхны оролдлогоор зөв дарлаа.</p><button id="kpgo">↻ Дахин</button></div>`}
+  else{const x=R.items[R.i];body=`<div class="kquiz"><div class="kqn">${R.i+1} / ${R.items.length} · ✓ ${R.ok}</div><p class="kq">«${esc(x[1])}»</p><div class="kpress ${R.st||''}" id="kpress" tabindex="0">${R.st==='ok'?kCap(x[0])+' ✓':R.st==='no'?`Буруу: ${esc(R.last||'')} · Зөв нь ${kCap(x[0])}`:'Гар дээрээ хослолоо дарна уу…'}</div>${R.st?'<div class="row" style="justify-content:center;margin-top:10px"><button id="kpnext">Дараах →</button></div>':''}</div>`}}
+ return `<section class="band"><div class="wrap kwrap">${tbox}
+  <div class="khead"><button class="ghost sm" id="kback">← Бүх ангилал</button><h2>${C[1]} ${esc(C[2])} <small>${L.length} хослол ${u&&kMast(u,C[0])?'· 🏅':''}</small></h2></div>
+  <div class="tabs ktabs">${tabs.map(([m,t])=>`<button class="${KS.mode===m?'on':''}" data-km="${m}">${t}</button>`).join('')}</div>
+  <div class="kbody">${body}</div></div></section>`};
+V.keys.bind=()=>{const go=()=>{const y=scrollY;render();scrollTo(0,y)};
+ document.querySelectorAll('[data-kc]').forEach(b=>b.onclick=()=>{KS.cat=b.dataset.kc;KS.mode='list';KS.card=0;KS.flip=false;go()});
+ const bk=$('#kback');if(bk)bk.onclick=()=>{KS.cat=null;go()};
+ document.querySelectorAll('[data-km]').forEach(b=>b.onclick=()=>{KS.mode=b.dataset.km;KS.flip=false;go()});
+ const C=KS.cat&&kCat(KS.cat);kTeachBind();if(!C)return;const L=C[4],u=user();
+ const fl=$('#kflip');if(fl){fl.onclick=()=>{KS.flip=!KS.flip;go()};$('#kprev').onclick=()=>{KS.card=(KS.card-1+L.length)%L.length;KS.flip=false;go()};$('#knext').onclick=()=>{KS.card=(KS.card+1)%L.length;KS.flip=false;go()};$('#kcard').onclick=()=>{KS.flip=!KS.flip;go()}}
+ const qg=$('#kqgo');if(qg)qg.onclick=()=>{const it=kShuf(L).slice(0,Math.min(10,L.length)).map((x,k)=>{const rev=k%2===1;const others=kShuf(L.filter(y=>y!==x&&y[1]!==x[1]&&y[0]!==x[0])).slice(0,3);const o=kShuf([x,...others]);return {x,rev,o,a:o.indexOf(x)}});KS.quiz={cat:C[0],items:it,i:0,ok:0,ans:null};go()};
+ document.querySelectorAll('[data-ko]').forEach(b=>b.onclick=()=>{const Q=KS.quiz,it=Q.items[Q.i];Q.ans=+b.dataset.ko;if(Q.ans===it.a)Q.ok++;go()});
+ const qn=$('#kqnext');if(qn)qn.onclick=()=>{const Q=KS.quiz;Q.i++;Q.ans=null;if(Q.i>=Q.items.length&&u){const P=kProg(u),sc=Math.round(Q.ok/Q.items.length*100),was=kMast(u,C[0]);P[C[0]]??={};if((P[C[0]].q??-1)<sc)P[C[0]].q=sc;P[C[0]].d=today();save();if(sc>=80&&!was&&typeof confetti==='function')setTimeout(()=>confetti(),200)}go()};
+ const pg=$('#kpgo');if(pg)pg.onclick=()=>{const PL=L.filter(x=>!KNOPRESS.test(x[0]));KS.press={cat:C[0],items:kShuf(PL).slice(0,Math.min(10,PL.length)),i:0,ok:0,st:null};go()};
+ const pn=$('#kpnext');if(pn)pn.onclick=()=>{const R=KS.press;R.i++;R.st=null;R.last=null;if(R.i>=R.items.length&&u){const P=kProg(u),sc=Math.round(R.ok/R.items.length*100);P[C[0]]??={};if((P[C[0]].p??-1)<sc)P[C[0]].p=sc;save()}go()};
+ const kp=$('#kpress');if(kp)kp.focus()}
+/* Гарын товч: карт, дарж үзэх */
+document.addEventListener('keydown',e=>{if(location.hash!=='#keys'||!KS.cat)return;if(e.target.closest&&e.target.closest('input,textarea,select'))return;
+ if(KS.mode==='card'&&!e.ctrlKey&&!e.altKey){const L=kCat(KS.cat)[4];if(e.code==='Space'){e.preventDefault();KS.flip=!KS.flip;render()}else if(e.code==='ArrowRight'){KS.card=(KS.card+1)%L.length;KS.flip=false;render()}else if(e.code==='ArrowLeft'){KS.card=(KS.card-1+L.length)%L.length;KS.flip=false;render()}return}
+ const R=KS.press;if(KS.mode!=='press'||!R||R.i>=R.items.length)return;const ev=kFromEvent(e);if(!ev)return;e.preventDefault();e.stopPropagation();
+ if(R.st){if(e.code==='Enter'){$('#kpnext')?.click()}return}
+ const x=R.items[R.i];if(kMatch(x[0],ev)){R.ok++;R.st='ok'}else{R.st='no';R.last=[...ev.mods,ev.key].join('+')}const y=scrollY;render();scrollTo(0,y)},true);
+/* Багш: даалгавар өгөх, ангийн ахиц */
+function kTeachHTML(){{const my=tKeys(teacher());if(!my.includes(tCls))tCls=my[0]}const t=kTask(),studs=Object.values(users).filter(u=>!u.test&&inK(u,tCls)).sort((a,b)=>a.ovog.localeCompare(b.ovog)),cats=t.cats?.length?t.cats:KCATS.map(c=>c[0]);
+ return `<div class="card kteach"><h3 style="margin-top:0">👩‍🏫 Товчлолын даалгавар өгөх</h3><div class="row">${KCATS.map(c=>`<label class="chk" style="margin:0"><input type="checkbox" name="ktc" value="${c[0]}" ${t.cats?.includes(c[0])?'checked':''}> ${c[1]} ${esc(c[2])}</label>`).join('')}</div>
+  <div class="grid" style="margin-top:8px"><div><label for="ktn">Сурагчдад өгөх үүрэг</label><input id="ktn" value="${esc(t.note||'')}" placeholder="Жишээ: Энэ 7 хоногт Windows болон Word-ын товчлолыг цээжлээрэй."></div><div><label for="ktd">Хугацаа</label><input id="ktd" type="date" value="${esc(t.due||'')}"></div></div>
+  <div class="row" style="margin-top:8px"><button id="kts">Хадгалах</button><button class="ghost" id="ktc0">Даалгавар цуцлах</button><span class="small mut" id="ktm"></span></div>
+  <div class="row" style="margin:16px 0 6px;justify-content:space-between"><h4 style="margin:0">Ангийн ахиц (сорилын шилдэг оноо)</h4><select id="kcls" style="width:auto">${kClsOpts()}</select></div>${studs.length?`<div class="scroll"><table><thead><tr><th>№</th><th>Сурагч</th>${cats.map(id=>`<th>${kCat(id)[1]} ${esc(kCat(id)[2])}</th>`).join('')}<th>🏅</th></tr></thead><tbody>${studs.map((u,i)=>`<tr><td>${i+1}</td><td>${esc(u.ovog)} ${esc(u.ner)}</td>${cats.map(id=>{const q=u.keys?.[id]?.q;return `<td>${q==null?'<span class="mut">—</span>':q>=80?`<b style="color:#2f9e62">🏅 ${q}%</b>`:q+'%'}</td>`}).join('')}<td><b>${KCATS.filter(c=>kMast(u,c[0])).length}</b></td></tr>`).join('')}</tbody></table></div>`:'<p class="mut small">Энэ ангид сурагч алга. Багшийн самбараас ангиа сонгоно уу.</p>'}</div>`}
+function kTeachBind(){const s=$('#kts');if(!s)return;const kc=$('#kcls');if(kc)kc.onchange=()=>{tCls=kc.value;render()};s.onclick=()=>{CFG().keys={cats:[...document.querySelectorAll('[name=ktc]:checked')].map(x=>x.value),note:$('#ktn').value.trim().slice(0,200),due:$('#ktd').value};save();render()};
+ $('#ktc0').onclick=()=>{CFG().keys={cats:[],note:'',due:''};save();render()}}
+/* Хичээл дотор харуулах товч хүснэгт */
+function keysMini(cat){const C=kCat(cat);if(!C)return '';const u=user(),q=u?.keys?.[cat]?.q;return `<div class="kmini"><div class="row" style="justify-content:space-between"><b>${C[1]} ${esc(C[2])} — товчлол цээжлэх</b>${q!=null?`<span class="pill">${q>=80?'🏅 ':''}Сорил ${q}%</span>`:''}</div>
+ <div class="kminil">${C[4].slice(0,8).map(x=>`<span>${kCap(x[0])}<small>${esc(x[1])}</small></span>`).join('')}</div>
+ <div class="row" style="margin-top:8px"><button class="ghost sm" onclick="window._kcat='${cat}';window._kmode='card';location.hash='keys'">🃏 Цээжлэх карт</button><button class="ghost sm" onclick="window._kcat='${cat}';window._kmode='press';location.hash='keys'">⌨️ Дарж үзэх</button><button class="sm" onclick="window._kcat='${cat}';window._kmode='quiz';location.hash='keys'">📝 Сорил өгөх</button></div></div>`}
+function kClsOpts(){return tKeys(teacher()).map(k=>`<option value="${esc(k)}" ${k===tCls?'selected':''}>${esc(typeof gName==='function'?gName(k):k)}</option>`).join('')}
+
+/* ===== 📓 Дэвтрийн эргэцүүлэмж — хичээлийн эхэнд огноо, сэдэв; төгсгөлд 3–5 өгүүлбэрийн гэрийн даалгавар ===== */
+const mnDate=d=>{const t=d?new Date(d):new Date();return `${t.getFullYear()} оны ${t.getMonth()+1} сарын ${t.getDate()}`};
+function nbHead(x){return `<div class="nbhead"><span>📓</span><div><b>Дэвтэртээ бич:</b> <span class="nbdate">____ оны ___ сарын ___</span> · <b>Сэдэв:</b> ${esc(x.id)} ${esc(x.t)}</div></div>`}
+function reflHTML(x){const u=user(),P=prog(),done=P.refl?.[x.id];
+ return `<div class="refl" id="refl"><div class="reflhead"><span class="reflico">📓</span><div><h2>Гэрийн даалгавар: дэвтрийн эргэцүүлэмж</h2><p>Өнөөдрийн 40 минутаа <b>3–5 өгүүлбэр</b>т багтааж дэвтэртээ бичээрэй. Олон зүйл бичих шаардлагагүй. Гол нь өөрийн үгээр, товч, тодорхой бичих.</p></div></div>
+ <div class="paper"><div class="pline pdate">____ оны ___ сарын ___</div><div class="pline ptopic">Сэдэв: ${esc(x.id)} ${esc(x.t)}</div>
+  <div class="pq"><b>1. 📘 Юу сурсан бэ?</b><span>«Өнөөдөр би … талаар сурсан.» «… гэдэг нь … юм байна.»</span></div>
+  <div class="pq"><b>2. 🛠️ Юу хийсэн бэ?</b><span>«Хичээл дээр би … хийсэн.» «Ажлын хуудсанд … зурсан/бичсэн.»</span></div>
+  <div class="pq"><b>3. ✅ Чадсан уу?</b><span>«Би …-ийг бие даан хийж чадсан.» «… дээр бэрхшээсэн, дахин … давтана.»</span></div>
+ </div>
+ <details class="reflex"><summary>💡 Жишээ эргэцүүлэмж харах</summary><p>Өнөөдөр би «${esc(x.t)}» сэдвийг үзлээ. Хичээлийн шинэ ойлголтуудыг мэдэж авч, дадлагын ажлаа компьютер дээр хийсэн. Бататгах дасгалын ихэнхийг зөв хариулж чадсан. Нэг асуултад алдсан тул гэртээ дахин уншиж давтана.</p><p class="small">Зорилтоо санаарай: ${esc(x.goal||'')}</p></details>
+ ${u&&!teacher()?`<div class="row" style="margin-top:10px">${done?`<span class="pill reflok">✓ Дэвтэртээ бичсэн · ${esc(done)}</span>`:`<button class="leaf" data-refl="${esc(x.id)}">✓ Дэвтэртээ бичлээ</button>`}</div>`:''}</div>`}
+document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('[data-refl]');if(!b)return;const u=user();if(!u)return;const P=prog();P.refl??={};P.refl[b.dataset.refl]=today();save();b.outerHTML=`<span class="pill reflok">✓ Дэвтэртээ бичсэн · ${today()}</span>`});
+
+/* ===== 📧 Цахим шуудан — хаяг нээх, зөв захидал илгээх (бүх сайтад нийтлэг) ===== */
+let MS={tab:'open',quiz:null,draft:null,sent:false};
+const MQ=[
+ {q:'Цахим шуудангийн хаягт заавал байх тэмдэгт аль вэ?',o:['@','#','&','%'],a:0,e:'Хаяг «нэр@домэйн» бүтэцтэй. @ нь «эт» гэж уншигдана.'},
+ {q:'Аль нь ЗӨВ бичигдсэн хаяг вэ?',o:['bold.temuulen@gmail.com','bold temuulen@gmail','bold@@gmail.com','@gmail.com.bold'],a:0,e:'Зайгүй, нэг @ тэмдэгтэй, домэйн нь цэгтэй байна.'},
+ {q:'«Гарчиг» (Subject) мөрөнд юу бичих вэ?',o:['Захидлын товч агуулга: «6А Болд — Ажлын хуудас 2»','Юу ч бичихгүй','«Сайн уу»','Зөвхөн эможи'],a:0,e:'Гарчгаас хүлээн авагч захидлын агуулгыг шууд ойлгоно.'},
+ {q:'Захидлыг хүлээн авагчдаас бусдад нь хаягийг нь харуулахгүйгээр илгээх талбар аль вэ?',o:['BCC (нууц хуулбар)','CC (хуулбар)','To (Хэнд)','Subject'],a:0,e:'BCC-д бичсэн хаягийг бусад хүлээн авагч харахгүй.'},
+ {q:'Багшдаа захидал бичихэд аль мэндчилгээ тохиромжтой вэ?',o:['Сайн байна уу, багшаа.','Юу байна аа','Хөөе!!!','Мэндчилгээгүй шууд бичнэ'],a:0,e:'Албан захидалд хүндэтгэлтэй мэндчилгээ бичнэ.'},
+ {q:'Бүх үгээ ТОМ ҮСГЭЭР бичвэл юу гэж ойлгогдох вэ?',o:['Хашгирч байна гэж','Хүндэтгэлтэй гэж','Хурдан гэж','Ямар ч утгагүй'],a:0,e:'Цахим орчинд том үсгээр бичихийг хашгирахтай адилтгадаг.'},
+ {q:'Танихгүй хүнээс «Шагнал хожлоо, нууц үгээ бичээрэй» гэсэн захидал ирвэл?',o:['Хариу бичихгүй, холбоос дарахгүй, томчуудад хэлнэ','Нууц үгээ бичиж илгээнэ','Найзууддаа дамжуулна','Хавсралтыг нь нээнэ'],a:0,e:'Энэ бол луйврын (фишинг) захидал.'},
+ {q:'Зөвхөн илгээгчид хариу бичих товч аль вэ?',o:['Reply (Хариу)','Reply all (Бүгдэд хариу)','Forward (Дамжуулах)','Delete'],a:0,e:'Reply all бол захидалд байсан бүх хүнд очно.'},
+ {q:'Файл хавсаргахдаа ямар дүрсийг дардаг вэ?',o:['📎 цаасны хавчаар','🗑️ хогийн сав','⭐ од','🔍 томруулдаг шил'],a:0,e:'📎 дүрсээр файл хавсаргана.'},
+ {q:'Gmail хаяг өөрөө нээх доод нас (Монгол Улс) хэд вэ?',o:['13','10','16','18'],a:0,e:'13 хүрээгүй бол эцэг эх нь Family Link-ээр нээж, удирдана.'}];
+const mStep=(n,t,h)=>`<div class="mstep"><span class="mnum">${n}</span><div><b>${t}</b><div>${h}</div></div></div>`;
+function mailTabHTML(){const u=user(),T=teacher(),t=MS.tab;
+ if(t==='open')return `<div class="mage">⚠️ <div><b>Насны шаардлага:</b> Монгол Улсад Gmail хаягийг <b>13 нас хүрсэн</b> хүн өөрөө нээж болно. 13 хүрээгүй бол <b>аав, ээжтэйгээ хамт</b> нээнэ: тэд Family Link-ээр хаягийг чинь нээж, удирдана. Сургууль тань сургуулийн хаяг өгдөг бол түүнийг ашиглана.</div></div>
+  <h3>📮 Хаягийн бүтэц</h3><div class="maddr"><span class="a1">bold.temuulen</span><span class="a2">@</span><span class="a3">gmail</span><span class="a4">.com</span></div><div class="mlegend"><span class="a1">Хэрэглэгчийн нэр</span><span class="a2">«эт» тэмдэг</span><span class="a3">Үйлчилгээ үзүүлэгч</span><span class="a4">Домэйн</span></div>
+  <h3>🪜 Gmail хаяг нээх алхмууд</h3>
+  ${mStep(1,'Gmail-ийн нүүр хуудсыг нээ','Хөтчийн хаягийн мөрөнд <code>gmail.com</code> гэж бичээд Enter дар. «<b>Бүртгэл үүсгэх</b>» (Create account) → «<b>Хувийн хэрэгцээнд</b>» (For my personal use)-г сонго.')}
+  ${mStep(2,'Овог, нэрээ бич','Жинхэнэ нэрээ латинаар эсвэл криллээр бич. Хоч, тоглоомын нэр бүү ашигла.')}
+  ${mStep(3,'Төрсөн огноо, хүйсээ оруул','Үнэн зөв оруул. Нас буруу оруулбал хаяг чинь хаагдаж болно.')}
+  ${mStep(4,'Хаягаа сонго','Энгийн, цэвэрхэн хаяг сонго.<div class="mgb"><span class="g">✅ bold.temuulen2013@gmail.com</span><span class="g">✅ nomin.bat.6a@gmail.com</span><span class="b">❌ supergamer_666@gmail.com</span><span class="b">❌ xxx.bolor.xxx@gmail.com</span></div>Хаягаа 10 жилийн дараа ч ичихгүй ашиглахаар сонго.')}
+  ${mStep(5,'Хүчтэй нууц үг үүсгэ','8-аас дээш тэмдэгттэй, <b>том, жижиг үсэг, тоо, тэмдэг</b> холилдсон байна. Жишээ: <code>Mazaalai!Govi2025</code>. Нууц үгээ найздаа бүү хэл, аав, ээждээ л хэл.')}
+  ${mStep(6,'Сэргээх утас, имэйл нэм','Нууц үгээ мартвал хаягаа буцааж авахын тулд <b>аав, ээжийн</b> утасны дугаар эсвэл имэйл хаягийг оруул.')}
+  ${mStep(7,'Нөхцөлтэй танилцаж зөвшөөр','Үйлчилгээний нөхцөлийг аав, ээжтэйгээ хамт уншаад «<b>Зөвшөөрөх</b>» (I agree) дар. Ингээд хаяг чинь бэлэн!')}
+  <div class="mtip"><b>🔐 Нээсний дараа:</b> нийтийн компьютерт нэвтэрсэн бол дуусахдаа заавал <b>«Гарах»</b> (Sign out) дар. «2 шаттай баталгаажуулалт»-ыг аав, ээжтэйгээ хамт асаавал хаяг чинь илүү аюулгүй болно.</div>`;
+ if(t==='write')return `<h3>✉️ Захидлын бүтэц</h3>
+  <div class="mmock"><div class="mrow"><b>Хэнд (To):</b> <span>${esc(mailTo())}</span><i>← хүлээн авагчийн хаяг</i></div><div class="mrow"><b>Хуулбар (CC):</b> <span class="mut">—</span><i>← мэдээлэл авах өөр хүн</i></div><div class="mrow"><b>Гарчиг:</b> <span>6А Болд Тэмүүлэн — 1.1.2 Ажлын хуудас</span><i>← товч, тодорхой</i></div>
+   <div class="mbody"><p class="hl1">Сайн байна уу, багшаа.<i>① Мэндчилгээ</i></p><p class="hl2">Би 6А ангийн Болд Тэмүүлэн байна. «Мэдээллийг дүрслэх хэлбэрүүд» хичээлийн ажлын хуудсаа хавсаргаж илгээж байна. Далбааны зургийг Paint программаар зурсан.<i>② Үндсэн хэсэг</i></p><p class="hl3">Цаг гарган үзсэнд баярлалаа.<i>③ Талархал</i></p><p class="hl4">Хүндэтгэсэн,<br>Болд Тэмүүлэн, 6А анги<i>④ Гарын үсэг</i></p></div><div class="mrow"><b>📎</b> <span class="matt">dalbaa_bold.png</span><i>← хавсралт</i></div></div>
+  <h3>📏 Цахим шуудангийн 10 дүрэм</h3><ol class="mrules"><li><b>Гарчиг</b>-аа заавал бич: хэн, юуны тухай.</li><li><b>Мэндчилгээ</b>-гээр эхэл: «Сайн байна уу, багшаа».</li><li>Өөрийгөө <b>танилцуул</b>: нэр, анги.</li><li><b>Товч, тодорхой</b> бич: 3–5 өгүүлбэр хангалттай.</li><li><b>ТОМ ҮСГЭЭР</b> бүү бич: хашгирч байгаа мэт харагдана.</li><li>Хүндэтгэлтэй, <b>эелдэг</b> үг хэллэг хэрэглэ.</li><li>Хавсралтаа <b>шалга</b>: «хавсаргалаа» гэчихээд мартаж болохгүй.</li><li><b>Талархал, гарын үсэг</b>-ээр төгсгө.</li><li>Илгээхээсээ өмнө <b>дахин уншиж</b>, алдаагаа зас.</li><li>Хэрэггүй бол <b>«Бүгдэд хариу»</b> (Reply all) бүү дар.</li></ol>
+  <h3>🔁 Хариу, дамжуулах</h3><table><tr><th>Товч</th><th>Хэнд очих вэ?</th></tr><tr><td>↩️ Reply (Хариу)</td><td>Зөвхөн илгээгчид</td></tr><tr><td>↩️↩️ Reply all (Бүгдэд хариу)</td><td>Илгээгч болон CC-д байсан бүх хүнд</td></tr><tr><td>➡️ Forward (Дамжуулах)</td><td>Таны сонгосон шинэ хүнд</td></tr></table>
+  <table><tr><th>Талбар</th><th>Утга</th></tr><tr><td>To (Хэнд)</td><td>Гол хүлээн авагч</td></tr><tr><td>CC (Хуулбар)</td><td>Мэдээлэл авах хүн. Бусад нь хаягийг нь харна.</td></tr><tr><td>BCC (Нууц хуулбар)</td><td>Бусад хүлээн авагч хаягийг нь харахгүй</td></tr></table>
+  <h3>🪜 Gmail-ээр илгээх алхмууд</h3>
+  ${mStep(1,'«✏️ Бичих» (Compose) товч дар','Зүүн дээд буланд байрлана.')}${mStep(2,'Хэнд талбарт хаяг бич','Хаягаа үсэг алдалгүй бич.')}${mStep(3,'Гарчиг бич','Жишээ: «6А Болд — Ажлын хуудас».')}${mStep(4,'Захидлаа бич','Мэндчилгээ → үндсэн хэсэг → талархал → гарын үсэг.')}${mStep(5,'📎 Файл хавсарга','Хавсаргах файлаа сонгоод хуулагдаж дуустал хүлээ.')}${mStep(6,'Дахин уншаад «Илгээх» (Send) дар','Илгээсэн захидлаа «Илгээсэн» (Sent) хавтсаас харна.')}
+  <div class="mtip"><b>✅ Илгээхийн өмнөх шалгалт:</b> хаяг зөв үү? · гарчиг бий юу? · мэндчилгээ, гарын үсэг бий юу? · хавсралт хавсарсан уу? · алдаагүй юу?</div>`;
+ if(t==='safe')return `<h3>🛡️ Аюулгүй ажиллах</h3><div class="mgrid"><div><b>🎣 Луйврын захидал</b><p>«Шагнал хожлоо», «Хаяг чинь хаагдана, нууц үгээ бич» гэсэн захидал луйвар байдаг. Холбоосыг нь бүү дар, хариу бүү бич.</p></div><div><b>📎 Танихгүй хавсралт</b><p>Танихгүй хүний илгээсэн файлыг бүү нээ. Вирустэй байж болно.</p></div><div><b>🔐 Нууц үг</b><p>Хэнд ч бүү хэл. Ямар ч байгууллага имэйлээр нууц үг асуудаггүй.</p></div><div><b>🚪 Гарах</b><p>Сургууль, нийтийн компьютерт ажилласны дараа заавал «Гарах» дар.</p></div><div><b>🙅 Хувийн мэдээлэл</b><p>Гэрийн хаяг, утас, зургаа танихгүй хүнд бүү илгээ.</p></div><div><b>🗣️ Томчуудад хэл</b><p>Айлгасан, эвгүй захидал ирвэл аав, ээж, багшдаа заавал хэл.</p></div></div>
+  <h3>🔍 Луйврын захидлыг хэрхэн таних вэ?</h3><div class="mmock bad"><div class="mrow"><b>Хэнээс:</b> <span>g00gle-support@mail-prize.xyz</span><i>← хаяг хачин</i></div><div class="mrow"><b>Гарчиг:</b> <span>ЯАРАЛТАЙ!!! ТА IPHONE ХОЖЛОО</span><i>← айлгах, яаруулах</i></div><div class="mbody"><p>Таны хаяг 24 цагийн дараа хаагдана. Шагналаа авахын тулд <u>энд дарж</u> нууц үгээ оруулна уу.<i>← нууц үг асууж байна</i></p></div></div>`;
+ if(t==='prac'){const D=MS.draft||(MS.draft={to:'',cc:'',sub:'',body:'',att:false});const nm=u?`${u.ovog} ${u.ner}`:'Таны нэр',cl=u?u.cls:'анги';
+  return `<div class="mtask"><b>🎯 Даалгавар:</b> Багшдаа <b>ажлын хуудсаа хавсаргаж</b> захидал илгээ. Багшийн хаяг: <code>${esc(mailTo())}</code><br><small>Энэ бол дадлагын шуудан. Жинхэнэ захидал илгээгдэхгүй.</small></div>
+  ${MS.sent?`<div class="msent">📤 <div><b>Захидал илгээгдлээ!</b><br>Бүх шалгуурыг хангасан. ${u?'Таны дадлага хадгалагдлаа.':''}</div></div><div class="row" style="justify-content:center"><button class="ghost" id="mnew">✏️ Шинэ захидал бичих</button></div>`:`
+  <div class="mcomp"><div class="mchead">Шинэ захидал</div>
+   <label class="mf"><span>Хэнд</span><input id="mto" value="${esc(D.to)}" placeholder="хаяг@жишээ.com" autocomplete="off"></label>
+   <label class="mf"><span>CC</span><input id="mcc" value="${esc(D.cc)}" placeholder="(заавал биш)" autocomplete="off"></label>
+   <label class="mf"><span>Гарчиг</span><input id="msub" value="${esc(D.sub)}" placeholder="Жишээ: ${esc(cl)} ${esc(u?.ner||'Нэр')} — Ажлын хуудас" autocomplete="off"></label>
+   <textarea id="mbody" placeholder="Сайн байна уу, багшаа.&#10;…&#10;Хүндэтгэсэн,&#10;${esc(nm)}, ${esc(cl)} анги">${esc(D.body)}</textarea>
+   <div class="mcfoot"><button type="button" class="ghost sm" id="matt">📎 ${D.att?'✓ ajlyn_huudas.png хавсарсан':'Файл хавсаргах'}</button><button id="msend">Илгээх ➤</button></div></div>
+  <ul class="mchk" id="mchk"></ul>`}`}
+ if(t==='quiz'){const Q=MS.quiz;if(!Q)return `<div class="kstart"><p>${MQ.length} асуулт. 80%-иас дээш авбал 📧 тэмдэг авна.</p>${u?.mail?.q!=null?`<p>Шилдэг оноо: <b>${u.mail.q}%</b></p>`:''}<button id="mqgo">📝 Сорил эхлүүлэх</button></div>`;
+  if(Q.i>=Q.items.length){const sc=Math.round(Q.ok/Q.items.length*100);return `<div class="kstart"><div class="kscore">${sc}%</div><p>${Q.ok}/${Q.items.length} зөв. ${sc>=80?'📧 Баяр хүргэе!':'Заавраа дахин уншаад оролдоорой.'}</p><button id="mqgo">↻ Дахин</button></div>`}
+  const it=Q.items[Q.i];return `<div class="kquiz"><div class="kqn">${Q.i+1} / ${Q.items.length} · ✓ ${Q.ok}</div><p class="kq">${esc(it.q)}</p><div class="kopts">${it.o.map((o,j)=>`<button class="kopt ${Q.ans!=null?(j===it.a?'ok':j===Q.ans?'no':''):''}" data-mo="${j}" ${Q.ans!=null?'disabled':''}>${esc(o)}</button>`).join('')}</div>${Q.ans!=null?`<p class="small">${esc(it.e)}</p><div class="row" style="justify-content:center"><button id="mqnext">Дараах →</button></div>`:''}</div>`}
+ return ''}
+function mailTeachHTML(){{const my=tKeys(teacher());if(!my.includes(tCls))tCls=my[0]}const studs=Object.values(users).filter(u=>!u.test&&inK(u,tCls)).sort((a,b)=>a.ovog.localeCompare(b.ovog));
+ return `<div class="card kteach"><div class="row" style="justify-content:space-between"><h3 style="margin:0">👩‍🏫 Ангийн ахиц</h3><select id="mcls" style="width:auto">${kClsOpts()}</select></div>${studs.length?`<div class="scroll"><table><thead><tr><th>№</th><th>Сурагч</th><th>Захидлын дадлага</th><th>Сорил</th></tr></thead><tbody>${studs.map((u,i)=>`<tr><td>${i+1}</td><td>${esc(u.ovog)} ${esc(u.ner)}</td><td>${u.mail?.sent?`✅ ${esc(u.mail.sent)}`:'<span class="mut">—</span>'}</td><td>${u.mail?.q==null?'<span class="mut">—</span>':u.mail.q>=80?`<b style="color:#2f9e62">📧 ${u.mail.q}%</b>`:u.mail.q+'%'}</td></tr>`).join('')}</tbody></table></div>`:'<p class="mut small">Энэ ангид сурагч алга.</p>'}</div>`}
+V.mail=()=>{const u=user(),T=teacher();const tabs=[['open','🆕 Хаяг нээх'],['write','✉️ Зөв илгээх'],['safe','🛡️ Аюулгүй'],['prac','✏️ Дадлага'],['quiz','📝 Сорил']];
+ return `<section class="band"><div class="wrap kwrap"><div class="khero mhero"><div><h2>📧 Цахим шуудан</h2><p>Хаяг нээх, багш, найз нартаа зөв, соёлтой захидал бичиж илгээх, аюулгүй ажиллахад суралцъя.</p></div><div class="kmed"><span class="${u?.mail?.sent?'on':''}" title="Дадлага">✉️</span><span class="${(u?.mail?.q||0)>=80?'on':''}" title="Сорил">📧</span></div></div>
+ ${T?mailTeachHTML():''}<div class="tabs ktabs">${tabs.map(([m,t])=>`<button class="${MS.tab===m?'on':''}" data-mt="${m}">${t}</button>`).join('')}</div><div class="kbody mailbody">${mailTabHTML()}</div></div></section>`};
+V.mail.bind=()=>{const go=()=>{const y=scrollY;render();scrollTo(0,y)},u=user();
+ document.querySelectorAll('[data-mt]').forEach(b=>b.onclick=()=>{MS.tab=b.dataset.mt;go()});
+ const mc=$('#mcls');if(mc)mc.onchange=()=>{tCls=mc.value;go()};
+ const qg=$('#mqgo');if(qg)qg.onclick=()=>{MS.quiz={items:kShuf(MQ).map(q=>{const o=kShuf(q.o.map((t,j)=>({t,r:j===q.a})));return {q:q.q,e:q.e,o:o.map(z=>z.t),a:o.findIndex(z=>z.r)}}),i:0,ok:0,ans:null};go()};
+ document.querySelectorAll('[data-mo]').forEach(b=>b.onclick=()=>{const Q=MS.quiz;Q.ans=+b.dataset.mo;if(Q.ans===Q.items[Q.i].a)Q.ok++;go()});
+ const qn=$('#mqnext');if(qn)qn.onclick=()=>{const Q=MS.quiz;Q.i++;Q.ans=null;if(Q.i>=Q.items.length&&u){const sc=Math.round(Q.ok/Q.items.length*100);u.mail??={};if((u.mail.q??-1)<sc)u.mail.q=sc;save();if(sc>=80&&typeof confetti==='function')setTimeout(()=>confetti(),200)}go()};
+ const nw=$('#mnew');if(nw)nw.onclick=()=>{MS.sent=false;MS.draft=null;go()};
+ if(!$('#mto'))return;const D=MS.draft;
+ const ok=e=>/^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$/.test(e.trim());
+ const run=()=>{D.to=$('#mto').value;D.cc=$('#mcc').value;D.sub=$('#msub').value;D.body=$('#mbody').value;const b=D.body.trim(),lines=b.split('\n').map(x=>x.trim()).filter(Boolean),nm=u?u.ner.toLowerCase():'';
+  const C=[[ok(D.to)&&D.to.trim().toLowerCase()===mailTo(),'«Хэнд» талбарт багшийн хаяг зөв бичигдсэн'],[!D.cc.trim()||D.cc.split(/[,;]/).every(ok),'CC хаяг зөв (эсвэл хоосон)'],[D.sub.trim().split(/\s+/).length>=3,'Гарчиг тодорхой (3-аас дээш үг)'],
+   [/^(сайн байна уу|сайн уу|эрхэм|хүндэт|өглөөний мэнд|оройн мэнд)/i.test(lines[0]||''),'Мэндчилгээгээр эхэлсэн'],[(b.match(/[.!?](\s|$)/g)||[]).length>=2,'Үндсэн хэсэг 2-оос дээш өгүүлбэртэй'],
+   [/(баярлалаа|талархлаа|хүндэтгэсэн)/i.test(b),'Талархал эсвэл «Хүндэтгэсэн»-ээр төгсгөсөн'],[u?(lines.slice(-2).join(' ').toLowerCase().includes(nm)):lines.length>=3,'Гарын үсэгт нэрээ бичсэн'],
+   [!/[A-ZА-ЯЁӨҮ]{6,}/.test(b+' '+D.sub),'ТОМ ҮСГЭЭР хашгираагүй'],[D.att,'Ажлын хуудсаа хавсаргасан']];
+  $('#mchk').innerHTML=C.map(([g,t])=>`<li class="${g?'y':'n'}">${g?'✓':'✗'} ${t}</li>`).join('');return C.every(z=>z[0])};
+ ['#mto','#mcc','#msub','#mbody'].forEach(s=>$(s).oninput=run);run();
+ $('#matt').onclick=()=>{run();D.att=!D.att;go()};
+ $('#msend').onclick=()=>{if(!run()){$('#mchk').classList.remove('shake');void $('#mchk').offsetWidth;$('#mchk').classList.add('shake');return}MS.sent=true;if(u){u.mail??={};u.mail.sent=today();save()}if(typeof confetti==='function')setTimeout(()=>confetti(),150);go()}};
+
+/* ===== 🎓 Батламжийн загвар, 📧 багшийн хаяг — багш засна ===== */
+const CERT_DEF={title:'БАТЛАМЖ',intro:'Энэхүү батламжийг',body:'{он} оны хичээлийн жилд Мэдээллийн технологийн хичээлийн бүх агуулгыг бүрэн судалж, дадлага ажил, нэгжийн шалгалтаа амжилттай өгсний төлөө олгов.',
+ praise:['Таны хичээнгүй хөдөлмөр, тасралтгүй эрэлхийлэл, шударга сэтгэл гайхалтай үр дүнд хүрлээ. Та цахим ертөнцийн жинхэнэ бүтээгч болжээ!','Та мэдлэг, чадвараа тууштай хөгжүүлж, хичээл бүрт идэвх санаачилгатай оролцлоо. Цаашид ч ийм л хүсэл тэмүүлэлтэй байгаарай!','Та хичээлийн жилийн турш тогтвортой суралцаж, олон шинэ чадвар эзэмшлээ. Таны ирээдүйн амжилтад итгэж байна!','Та хичээлийн жилийг амжилттай дуусгалаа. Алхам бүр чинь өсөлт — цаашид улам зоригтой суралцаарай!'],
+ sign:'Хичээл заасан багш',seal:'★',year:'',theme:'mn',scores:true};
+const CERT_THEMES=[['mn','🇲🇳 Монгол хээ'],['sky','💙 Цэнхэр'],['green','💚 Ногоон'],['purple','💜 Ягаан'],['gold','💛 Алтан']];
+const CT=()=>{const c=CFG().cert||{};const o={...CERT_DEF,...c};o.praise=CERT_DEF.praise.map((p,i)=>(c.praise&&c.praise[i])||p);o.year=c.year||SCHOOL_YEAR;return o};
+const certFill=(t,u,R,C)=>String(t||'').replace(/\{он\}/g,C.year).replace(/\{нэр\}/g,`${u.ovog} ${u.ner}`).replace(/\{анги\}/g,u.cls||'').replace(/\{дүн\}/g,R.total+'%');
+const MAIL_DEF='mt.bagsh@example.com';
+const mailOk=e=>/^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$/.test(String(e||'').trim());
+function mailTo(u){u=u||user();if(u&&typeof certTList==='function'){const t=certTList(u).find(t=>mailOk(t.email));if(t)return t.email.trim().toLowerCase()}const g=CFG().mailTo;return mailOk(g)?g.trim().toLowerCase():MAIL_DEF}
+let ctEdit=null;
+function certSetHTML(){const E=ctEdit??=JSON.parse(JSON.stringify(CT()));const T=teacher(),mg=CFG().mailTo||'';
+ const demo={ovog:'Жишээ',ner:'Сурагч',cls:(typeof CLASSES!=='undefined'?CLASSES[0]:'')},dR={view:96,pr:91,ex:88,total:91,letter:['A','Маш сайн']};
+ return `<div class="card setcard" style="max-width:none;text-align:left;margin-top:16px"><h3 style="margin-top:0">📧 Багшийн цахим шуудангийн хаяг</h3><p class="small mut" style="margin-top:0">Сурагчид «Цахим шуудан» хэсгийн дадлагад энэ хаяг руу захидал бичиж сурна. Багш бүр өөрийн хаягийг «👩‍🏫 Багш нар» табын «Нэр, имэйл засах» товчоор оруулбал сурагч өөрийн багшийн хаягийг харна.</p>
+  <div class="grid"><div><label for="smy">Миний хаяг (${esc(T?.name||'')})</label><input id="smy" value="${esc(T?.email||'')}" placeholder="ner@gmail.com" autocomplete="off"></div><div><label for="smail">Ерөнхий хаяг <span class="small mut">(багш нь хаяггүй ангид)</span></label><input id="smail" value="${esc(mg)}" placeholder="${MAIL_DEF}" autocomplete="off"></div></div>
+  <div class="row" style="margin-top:8px"><button class="leaf" id="smails">💾 Хаяг хадгалах</button><span class="small" id="smailm"></span></div></div>
+ <div class="card setcard" style="max-width:none;text-align:left;margin-top:16px"><h3 style="margin-top:0">🎓 Жилийн батламжийн загвар</h3><p class="small mut" style="margin-top:0">Бичвэрт <code>{нэр}</code>, <code>{анги}</code>, <code>{он}</code>, <code>{дүн}</code> гэж бичвэл сурагч бүрийн мэдээллээр автоматаар солигдоно. Доорх жишээ шууд өөрчлөгдөнө.</p>
+  <div class="ctgrid"><div>
+   <label>Өнгө, загвар</label><div class="row ctthemes">${CERT_THEMES.map(([k,n])=>`<button type="button" class="ctth th-${k} ${E.theme===k?'on':''}" data-ctt="${k}">${n}</button>`).join('')}</div>
+   <label for="ct_title">Гарчиг</label><input id="ct_title" data-ct="title" value="${esc(E.title)}" maxlength="30">
+   <label for="ct_year">Хичээлийн жил</label><input id="ct_year" data-ct="year" value="${esc(E.year)}" maxlength="20">
+   <label for="ct_intro">Нэрийн өмнөх мөр</label><input id="ct_intro" data-ct="intro" value="${esc(E.intro)}" maxlength="80">
+   <label for="ct_body">Үндсэн бичвэр</label><textarea id="ct_body" data-ct="body" rows="3" maxlength="400">${esc(E.body)}</textarea>
+   <label>Урам өгөх үг (дүнгээр)</label>${['90%+ (A)','80–89% (B)','70–79% (C)','70%-иас доош'].map((l,i)=>`<div class="ctpr"><small>${l}</small><textarea data-ctp="${i}" rows="2" maxlength="300">${esc(E.praise[i])}</textarea></div>`).join('')}
+   <div class="grid"><div><label for="ct_sign">Гарын үсгийн гарчиг</label><input id="ct_sign" data-ct="sign" value="${esc(E.sign)}" maxlength="40"></div><div><label for="ct_seal">Тамганы тэмдэг</label><input id="ct_seal" data-ct="seal" value="${esc(E.seal)}" maxlength="3"></div></div>
+   <label class="chk"><input type="checkbox" id="ct_scores" ${E.scores?'checked':''}> Дүнгийн хүснэгтийг харуулах</label>
+   <div class="row" style="margin-top:12px"><button class="leaf" id="ctsave">💾 Батламжийг хадгалах</button><button class="ghost" id="ctreset">↺ Анхны загвар</button><span class="small" id="ctmsg"></span></div>
+  </div><div><label>Урьдчилан харах</label><div class="ctprev" id="ctprev">${certHTML(demo,dR,E)}</div></div></div></div>`}
+function certSetBind(){const sm=$('#smails');if(sm)sm.onclick=()=>{const v=$('#smail').value.trim(),my=$('#smy').value.trim();if((v&&!mailOk(v))||(my&&!mailOk(my))){$('#smailm').textContent='❌ Хаяг буруу байна (жишээ: ner@gmail.com)';return}CFG().mailTo=v;const T=teacher();if(T){if(my)T.email=my;else delete T.email}save();$('#smailm').textContent='Хадгаллаа ✓'};
+ if(!$('#ctsave'))return;const E=ctEdit;const demo={ovog:'Жишээ',ner:'Сурагч',cls:(typeof CLASSES!=='undefined'?CLASSES[0]:'')},dR={view:96,pr:91,ex:88,total:91,letter:['A','Маш сайн']};
+ const prev=()=>{$('#ctprev').innerHTML=certHTML(demo,dR,E)};
+ document.querySelectorAll('[data-ct]').forEach(i=>i.oninput=()=>{E[i.dataset.ct]=i.value;prev()});
+ document.querySelectorAll('[data-ctp]').forEach(i=>i.oninput=()=>{E.praise[+i.dataset.ctp]=i.value;prev()});
+ $('#ct_scores').onchange=e=>{E.scores=e.target.checked;prev()};
+ document.querySelectorAll('[data-ctt]').forEach(b=>b.onclick=()=>{E.theme=b.dataset.ctt;document.querySelectorAll('[data-ctt]').forEach(x=>x.classList.toggle('on',x===b));prev()});
+ $('#ctsave').onclick=()=>{const c={};for(const k of ['title','intro','body','sign','seal','year','theme'])c[k]=String(E[k]||'').trim();c.scores=!!E.scores;c.praise=E.praise.map(p=>String(p||'').trim());if(!c.title)c.title=CERT_DEF.title;if(c.year===SCHOOL_YEAR)c.year='';CFG().cert=c;save();$('#ctmsg').textContent='Хадгаллаа ✓ Бүх сурагчийн батламж шинэчлэгдлээ.'};
+ $('#ctreset').onclick=()=>{if(!confirm('Батламжийг анхны загварт буцаах уу?'))return;delete CFG().cert;save();ctEdit=null;render()}}
+
 function render(){render0();__after()}
 function __after(){const d=document.getElementById('syncdot');if(d)d.dataset.st=SYNC.status;{const u=user(),w=document.querySelector('#app .wrap');if(u&&!teacher()&&!u.grp&&w&&!w.querySelector('.grpask'))w.insertAdjacentHTML('afterbegin',`<div class="syncbanner grpask" style="background:#e6f4f1;border-color:#2e8b57;color:#173b3f"><b>Мэдээлэл зүйн хичээлд аль бүлэгт ордог вэ?</b> <span class="row" style="display:inline-flex;gap:8px;margin-left:8px">${GRPS.map(g=>`<button class="sm" onclick="window._setGrp(${g})">${g}-р бүлэг</button>`).join('')}</span></div>`)}
  if(!SYNC.on&&teacher()&&(location.hash.slice(1)||'home')==='teacher'){const w=document.querySelector('#app .wrap');if(w&&!w.querySelector('.syncbanner'))w.insertAdjacentHTML('afterbegin','<div class="syncbanner"><b>Анхаар:</b> Firebase холбогдоогүй тул сурагчдын явц, таны нээсэн хичээл зөвхөн энэ компьютерт хадгалагдаж байна. <code>firebase-config.js</code> файлд тохиргоогоо хийснээр бүх компьютер нэг дор холбогдоно.</div>')}}
@@ -897,7 +1429,7 @@ function render0(){let v=(location.hash.slice(1)||'home');let f=V[v],nv=v;
  if(v.startsWith('th-')){const t=TH.find(x=>thId(x.id)===v);if(t){f=()=>theoryView(t.id);f.bind=()=>theoryBind(t.id);nv='theory'}}
  if(v.startsWith('w-')){const id=v.slice(2);f=()=>wsView(id);f.bind=()=>wsBind(id);nv='ws'}
  if(!f)f=V.home;cancelAnimationFrame(L.raf);clearInterval(window._qt);if(v!=='exam')clearInterval(window._et);
- $('#app').innerHTML=f();f.bind&&f.bind();
+ $('#app').innerHTML=f();f.bind&&f.bind();animIn();applyBrand();
  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===nv));
  const u=user();$('#who').textContent=teacher()?'Багшийн самбар':u?`${u.ner} · ${u.cls}`:'Нэвтрэх'}
 window.render=render;
