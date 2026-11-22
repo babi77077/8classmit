@@ -308,7 +308,7 @@ kbd{display:inline-block;min-width:26px;text-align:center;font:700 14px/1 "Nunit
 /* ===== Баяжуулсан онол ===== */
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}.flow span{background:linear-gradient(135deg,#e8f1ff,#fff);border:2px solid #9cc0f5;border-radius:14px;padding:8px 12px;font-weight:800;text-align:center;line-height:1.3}.flow span small{display:block;font-weight:600;color:#4a5275}.flow i{font-style:normal;font-weight:900;color:#2d78d2;font-size:20px}
 .mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px;margin:10px 0}.mini span{display:flex;flex-direction:column;gap:3px;background:#fff7ec;border:2px solid #ffd29a;border-radius:14px;padding:10px 12px}.mini small{color:#5b5470;font-weight:600}
-.bar{display:block;background:#e0457b;color:#fff;border-radius:8px;padding:2px 8px;margin:3px 0;font-weight:800;font-size:13px}.bar.b2{background:#2d78d2}
+span.bar{display:block;background:#e0457b;color:#fff;border-radius:8px;padding:2px 8px;margin:3px 0;font-weight:800;font-size:13px}span.bar.b2{background:#2d78d2}
 .pixgrid{display:grid;grid-template-columns:repeat(8,22px);gap:1px;margin:10px 0;background:#c9d3e6;width:max-content;border:1px solid #c9d3e6}.pixgrid i{display:block;width:22px;height:22px}
 .urlx{font:800 20px/1.6 "PT Mono",monospace;margin:8px 0}.urlx span{padding:2px 4px;border-radius:6px}.u1{background:#ffe3e3}.u2{background:#eee}.u3{background:#d3f9d8}.u4{background:#fff3bf}.u5{background:#d0ebff}
 .steps{margin:8px 0;padding-left:22px}.steps li{margin:5px 0}
@@ -349,6 +349,43 @@ kbd{display:inline-block;min-width:26px;text-align:center;font:700 14px/1 "Nunit
 .ctgrid>div:last-child{position:sticky;top:130px}.ctprev{border-radius:12px;overflow:hidden}.ctprev .cert{zoom:.58}
 .ctth{padding:6px 10px!important;min-height:0!important;font-size:13px;border:2px solid #dee2e6!important;background:#fff!important;color:#222!important}.ctth.on{border-color:#1971c2!important;box-shadow:0 0 0 3px #a5d8ff}
 .ctpr small{display:block;font-weight:800;color:#666;margin-top:6px}.ctpr textarea{width:100%}
+/* ===== Багшийн «Сурагчид» ===== */
+.rs{text-align:left}.rs .card{max-width:none;text-align:left}
+.rs-head{padding:14px 16px!important;display:flex;flex-direction:column;gap:10px}
+.rs-title{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}.rs-title h3{margin:2px 0 0}
+.rs-all summary{cursor:pointer;font-weight:700;font-size:14px;padding:6px 10px;border:1.5px solid var(--line,#ddd);border-radius:10px;background:var(--card,#fff);list-style:none}.rs-all[open] summary{margin-bottom:8px}
+.rs-mini{border-collapse:collapse;font-size:14px;min-width:280px}.rs-mini th,.rs-mini td{padding:5px 10px;border-bottom:1px solid var(--line,#e5e5e5);text-align:center}.rs-mini td:first-child,.rs-mini th:first-child{text-align:left}.rs-mini .rs-tot td{font-weight:800;border-top:2px solid var(--line,#ccc)}
+.rs-chips,.rs-notes{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.rs-chip{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:2px solid var(--line,#ddd);background:var(--card,#fff);font-weight:700;font-size:14.5px;color:inherit}
+.rs-chip b{font-size:19px;color:var(--red,#c0392b);min-width:18px;text-align:center}.rs-chip.on{border-color:var(--gold,#c9a54a);box-shadow:0 0 0 3px #c9a54a33;background:#fffaf0;color:#1d2433}.rs-chip.dis{opacity:.55;cursor:default}.rs-chip.warn{background:#fff4d6;border-color:#f0c36d;cursor:default;color:#5c4400}.rs-chip.sm{padding:5px 11px;font-size:13.5px}.rs-chip.sm b{font-size:16px}
+.rs-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}.rs-tools>input{flex:1 1 200px;max-width:320px;margin:0;min-height:40px}
+.rs-sort{display:flex!important;align-items:center;gap:6px;margin:0!important;font-weight:700;font-size:14px}.rs-sort select{width:auto;margin:0;min-height:40px}
+.rs-on{display:flex!important;align-items:center;gap:6px;margin:0!important;font-weight:700;font-size:14px;cursor:pointer;background:var(--card,#fff);border:1.5px solid var(--line,#ddd);border-radius:10px;padding:6px 10px}.rs-on input{width:20px;height:20px;min-height:0;margin:0}
+.rs-cols{position:relative}.rs-cols summary{cursor:pointer;font-weight:700;font-size:14px;padding:8px 12px;border:1.5px solid var(--line,#ddd);border-radius:10px;background:var(--card,#fff);list-style:none}
+.rs-cols>div{position:absolute;z-index:30;right:0;top:calc(100% + 6px);background:var(--card,#fff);color:inherit;border:1.5px solid var(--line,#ddd);border-radius:12px;padding:10px 12px;box-shadow:0 12px 30px #0003;display:flex;flex-direction:column;gap:6px;min-width:230px}
+.rs-cols label{display:flex!important;align-items:center;gap:8px;margin:0!important;font-weight:700;font-size:14px;cursor:pointer}.rs-cols input{width:20px;height:20px;min-height:0;margin:0}
+.rs-bulk{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 12px;margin:0 0 12px;border-radius:12px;background:#fff4d6;border:1.5px solid #f0c36d;color:#3d2e00}.rs-bulk span{font-weight:700;font-size:13.5px}.rs-bulk select{width:auto;margin:0;min-height:36px}.rs-bulk .red{color:#c0392b!important}
+.rs-tw{padding:0!important;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rs-t{width:100%;border-collapse:collapse;font-size:14.5px}.rs-t th{position:sticky;top:0;background:var(--soft,#f3efe6);text-align:left;font-size:13px;padding:10px 8px;white-space:nowrap;z-index:1}.rs-t td{padding:8px;border-bottom:1px solid var(--line,#eee);vertical-align:middle}
+.rs-t tr.sel td{background:#fff8e1}.rs-t tr:hover td{background:#00000006}.rs-t input[type=checkbox]{width:20px;height:20px;min-height:0;margin:0}
+.rs-nm{all:unset;cursor:pointer;font-weight:800;font-size:15.5px;color:inherit;border-bottom:1.5px dashed var(--gold,#c9a54a)}
+.rs-g{display:inline-block;white-space:nowrap;padding:3px 9px;border-radius:999px;font-size:12.5px;font-weight:700;background:#e8f0fc;color:#1f4e8c}.rs-g.g2{background:#e8f6ee;color:#1d5c4d}.rs-g.g0{background:#fff4d6;color:#7a5600}
+.rs-n{white-space:nowrap}.rs-n b{font-size:15px}.rs-n small{display:block;color:var(--mut,#777);font-size:12px}
+.rs-bar{display:block;width:90px;height:7px;border-radius:4px;background:var(--line,#e5e5e5);overflow:hidden;margin-bottom:3px}.rs-bar i{display:block;height:100%;background:linear-gradient(90deg,#2e8b57,#4fc48a);border-radius:4px}
+.rs-lt{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;color:#fff;font-weight:900;margin-right:6px;background:#888}.rs-lt.lA{background:#2b8a3e}.rs-lt.lB{background:#1f6feb}.rs-lt.lC{background:#e09a00}.rs-lt.lD{background:#d9480f}.rs-lt.lF{background:#c92a2a}
+#mbox:has(.rs-dt){max-width:min(920px,96vw)!important;width:96vw;text-align:left;max-height:92vh;overflow:auto}
+.rs-dh{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.rs-dh h3{margin:2px 0 6px;font-size:24px}
+.rs-form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 12px;background:var(--soft,#f6f2e8);border-radius:12px;padding:12px;margin:6px 0 12px}.rs-form label{display:flex;flex-direction:column;font-weight:700;font-size:13px;margin:0;gap:3px}.rs-form input,.rs-form select{margin:0;min-height:40px;width:100%}.rs-form .rs-wide{grid-column:1/-1;margin:0}.rs-form .row{gap:10px;align-items:center}
+@media(max-width:640px){.rs-form{grid-template-columns:1fr 1fr}}
+.rs-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}.rs-st{border:1.5px solid var(--line,#e5e5e5);border-radius:12px;padding:10px 12px;background:var(--card,#fff)}.rs-st b{display:block;font-size:22px;color:var(--red,#c0392b)}.rs-st span{display:block;font-weight:700;font-size:13px}.rs-st small{color:var(--mut,#777);font-size:12px}
+.rs-ut{width:100%;border-collapse:collapse;font-size:14px}.rs-ut th{text-align:left;background:var(--soft,#f3efe6);padding:8px;font-size:12.5px;white-space:nowrap}.rs-ut td{padding:7px 8px;border-bottom:1px solid var(--line,#eee)}.rs-ut .rs-chr td{background:#fffaf0;font-size:13.5px}.rs-ut .rs-bar{display:inline-block;width:70px;vertical-align:middle;margin:0 4px 0 0}.rs-ut small{color:var(--mut,#777)}
+.rs-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--line,#eee)}.rs-acts .red{color:#c0392b!important}
+.rs-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;background:#1b2a4a;color:#fff;padding:12px 18px;border-radius:12px;font-weight:700;z-index:200;transition:all .3s;max-width:92vw}.rs-toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:640px){.rs-cols{flex-basis:100%}.rs-cols>div{position:static;margin-top:6px;box-shadow:none}.rs-tools>input{max-width:none}.rs-title{flex-direction:column}.rs-chip{padding:7px 11px;font-size:13.5px}}
+.rs-form [hidden]{display:none!important}
+#app .rs .rs-nm{background:none!important;color:inherit!important;box-shadow:none!important;min-height:0!important;padding:0!important;border-radius:0!important;transform:none!important}
+#app .rs .rs-chip{background:var(--card,#fff)!important;color:inherit!important;box-shadow:none!important;min-height:0!important;padding:8px 14px!important;border-radius:999px!important;transform:none!important}#app .rs .rs-chip.sm{padding:5px 11px!important}
+#app .rs .rs-chip.on{background:#fffaf0!important;color:#1d2433!important;box-shadow:0 0 0 3px #c9a54a33!important}#app .rs .rs-chip.warn{background:#fff4d6!important;color:#5c4400!important}
 </style>
 </head>
 <body>
@@ -447,19 +484,10 @@ const unperm=(q,A)=>q.perm&&A!=null?q.perm[A]:A;
 
 /* ========== ХЭРЭГЛЭГЧ ========== */
 let users=store.get('users',null);
-if(!users){users={};let sd=11;const rnd=()=>{sd=(sd*16807)%2147483647;return sd/2147483647};
- const NM=[['Бат','Тэмүүлэн'],['Дорж','Номин'],['Ганбаатар','Анужин'],['Сүх','Билгүүн'],['Очир','Мишээл'],['Болд','Хулан'],['Энх','Төгөлдөр'],['Цэнд','Мөнхзул'],['Пүрэв','Ананд'],['Лхагва','Ариунаа']];
- NM.forEach(([o,n],i)=>{const c=i<6?'8А':'8Б',ab=.6+rnd()*.4,id='demo'+i;const ws={};
-  WS.forEach((w,j)=>{if(rnd()<.2&&j)return;const po=w.parts.map(()=>rnd()<ab),qo=w.quiz.map(()=>rnd()<ab+.05);const sc=po.filter(Boolean).length+qo.filter(Boolean).length;
-   ws[w.id]={date:'2026-11-1'+(5+j),chk:w.steps.map(()=>rnd()<.9),po,qo,qa:w.quiz.map((q,k)=>q.t==='choice'?(qo[k]?q.a:(q.a+1)%q.o.length):q.t==='tf'?(qo[k]?q.a:!q.a):q.t==='fill'?(qo[k]?q.a[0]:'—'):null),ans:{},score:sc,total:w.parts.length+w.quiz.length,reflect:w.reflect?'Би бэлэн загвар ашиглаж сурлаа. Багана тохируулах хэцүү байсан ч багшаас асууж ойлгосон.':''}});
-  const ex={};if(rnd()<.85){const res=BANK['1.3'].map((q,k)=>({i:k,ok:rnd()<ab,ans:null}));ex['1.3']=[{score:res.filter(r=>r.ok).length,total:res.length,date:'2026-11-14',res}]}
-  const t1=TH[0].test,lres=t1.map((q,k)=>({i:k,ok:rnd()<ab,ans:null}));const NOTE=['Муураар зураг зуруулах их сонирхолтой байлаа','Блок схем зурахыг дахин давтмаар байна','','Хичээл ойлгомжтой байсан','Даалгавар арай олон байсан',''];
-  users[id]={id,ovog:o,ner:n,cls:c,pw:hash('1234'),demo:1,theory:{'1.3.1':{score:5,total:6}},lab:{L1:1,L2:rnd()<.6?1:0,R1:rnd()<.5?1:0},ws,exams:ex,days:[],
-   ltest:rnd()<.85?{'1.3.1':{score:lres.filter(r=>r.ok).length,total:t1.length,date:'2026-11-13',res:lres}}:{},
-   ev:rnd()<.8?{'1.3.1':{self:TH[0].can.map(()=>Math.min(2,Math.floor(rnd()*3+ab-.4))),rate:Math.min(5,3+Math.floor(rnd()*3)),clear:Math.floor(rnd()*2.4),note:NOTE[i%6],date:'2026-11-13'}}:{}}});
- store.set('users',users)}
+if(!users){users={};store.set('users',users)}
+{let rm=0;for(const k of Object.keys(users)){const u=users[k];if(u&&(u.demo||/^demo\d+$/.test(k))){delete users[k];rm=1}}if(rm)store.set('users',users)}
 let exams=store.get('exams',{}),wsGrade=store.get('wsGrade',{});
-let opened=store.get('opened',null);if(!opened){opened={'8А':{'1.3.1':1,'1.3.2':1,'ws:Нугалмал танилцуулга бүтээцгээе':1},'8Б':{'1.3.1':1}};store.set('opened',opened)}
+let opened=store.get('opened',null);if(!opened){opened={};store.set('opened',opened)}
 let teachers=store.get('teachers',null);if(!teachers){teachers={bagsh:{name:'Б.Батцэцэг',pw:hash('1234'),admin:true,classes:CLASSES}};store.set('teachers',teachers)}
 let me=store.get('me',null),tlogin=store.get('tlogin',null);
 const save=()=>{store.set('users',users);store.set('exams',exams);store.set('teachers',teachers);store.set('wsGrade',wsGrade);store.set('opened',opened)};
@@ -1006,13 +1034,11 @@ function lrBind(){const lk=$('#lrk');if(!lk)return;lk.onchange=e=>{lrKey=e.targe
 V.teacher=()=>{const T=teacher();if(!T)return V.login();const my=tKeys(T);if(!my.includes(tCls))tCls=my[0];const list=Object.values(users).filter(u=>inK(u,tCls)).sort((a,b)=>a.ovog.localeCompare(b.ovog));
  return `<section class="band"><div class="wrap"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">Багшийн самбар</h2><p class="small mut" style="margin:4px 0 0">${esc(T.name)}${T.admin?' · Админ':''}</p></div><div class="row"><label for="tcls" style="margin:0">Анги</label><select id="tcls" style="width:auto">${my.map(c=>`<option value="${c}" ${c===tCls?'selected':''}>${gName(c)}</option>`).join('')}</select></div></div>
  <div class="tabs" style="margin:12px 0"><button data-tt="st" class="${tTab==='st'?'on':''}">Сурагчид</button><button data-tt="op" class="${tTab==='op'?'on':''}">🔓 Хичээл нээх</button><button data-tt="lr" class="${tTab==='lr'?'on':''}">Хичээлийн үр дүн, үнэлгээ</button><button data-tt="ws" class="${tTab==='ws'?'on':''}">Ажлын хуудас</button><button data-tt="an" class="${tTab==='an'?'on':''}">Шалгалтын анализ</button><button data-tt="ex" class="${tTab==='ex'?'on':''}">Шалгалт нээх, хаах</button><button data-tt="rk" class="${tTab==='rk'?'on':''}">🏅 Дүн, эрэмбэ</button><button data-tt="set" class="${tTab==='set'?'on':''}">⚙️ Тохиргоо</button>${T.admin?`<button data-tt="tc" class="${tTab==='tc'?'on':''}">👩‍🏫 Багш нар</button>`:''}</div>
- ${tTab==='set'?setHTML():tTab==='rk'?rkHTML():tTab==='tc'?(T.admin?tcHTML():''):tTab==='st'?`<div class="row" style="margin-bottom:10px"><button class="sm" id="sadd">+ Сурагч нэмэх</button><button class="red sm" id="sdel" ${sel.size?'':'disabled'}>Сонгосон ${sel.size} сурагчийг хасах</button><button class="ghost sm" id="sall">${list.length&&list.every(u=>sel.has(u.id))?'Сонголт цуцлах':'Бүгдийг сонгох'}</button></div>
-  <div class="card scroll"><table class="stack"><thead><tr><th></th><th>Овог нэр</th><th>Хичээлийн шалгалт</th><th>Лаборатори ★</th><th>Ажлын хуудас</th><th>Шалгалт</th><th>Өдөр</th><th></th></tr></thead><tbody>
-  ${list.map(u=>`<tr><td><input type="checkbox" data-sel="${u.id}" ${sel.has(u.id)?'checked':''} aria-label="${esc(u.ovog)} ${esc(u.ner)} сонгох" style="width:22px;min-height:22px"></td><td><b>${esc(u.ovog)} ${esc(u.ner)}</b>${u.clsNote?` <span class="pill">${esc(u.clsNote)}</span>`:''} <span class="pill" style="${u.grp?'':'background:#ffe9a8'}">${u.grp?u.grp+'-р бүлэг':'бүлэггүй'}</span>${u.demo?' <span class="demo">жишээ</span>':''}</td><td>${Object.values(u.ltest||{}).map(r=>r.score+'/'+r.total).join(' · ')||'—'}</td><td>${Object.values(u.lab||{}).filter(Boolean).length}</td><td>${Object.keys(u.ws||{}).length}/${WS.length}</td><td>${Object.entries(u.exams||{}).map(([n,a])=>`${n}: ${a.map(x=>x.score).join('·')}`).join('; ')||'—'}</td><td>${streak(u)}</td><td><button class="ghost sm" data-rp="${u.id}">Нууц үг</button><button class="ghost sm" data-mvg="${u.id}">Бүлэг солих</button><button class="ghost sm" data-sdx="${u.id}" style="color:#c0392b;margin-left:4px">Хасах</button></td></tr>`).join('')||`<tr><td colspan="8" class="mut">${gName(tCls)} ангид бүртгүүлсэн сурагч алга.</td></tr>`}</tbody></table></div>`:
+ ${tTab==='set'?setHTML():tTab==='rk'?rkHTML():tTab==='tc'?(T.admin?tcHTML():''):tTab==='st'?rosterHTML():
  tTab==='op'?opHTML():tTab==='lr'?lrHTML():tTab==='ws'?wsTeacherHTML():tTab==='an'?anHTML():
  `<div class="grid">${UNITS.filter(u=>BANK[u[0]]).map(([n,t])=>{const s=exams[cOf(tCls)]?.[n];return `<div class="card"><span class="pill">${gName(tCls)} · Нэгж ${n}</span><h3 style="margin-top:8px">${t}</h3>${s?.open?`<p class="small mut">Нээлттэй. Сурагчдад хэлэх код:</p><div class="code">${s.code}</div><button class="ghost" data-close="${n}" style="margin-top:8px">Хаах</button>`:`<p class="small mut">Хаалттай</p><button class="leaf" data-open="${n}">Нээх, код үүсгэх</button>`}</div>`}).join('')}</div>`}
  <div class="row" style="margin-top:16px"><button class="ghost" id="tpw">Нууц үгээ солих</button><button class="ghost" id="tout">Багшийн эрхээс гарах</button></div></div></section>`};
-V.teacher.bind=()=>{stBind();tcBind();rkBind();setBind();if(!teacher())return V.login.bind();$('#tcls').onchange=e=>{tCls=e.target.value;sel.clear();render()};document.querySelectorAll('[data-tt]').forEach(b=>b.onclick=()=>{tTab=b.dataset.tt;render()});
+V.teacher.bind=()=>{stBind();rosterBind();tcBind();rkBind();setBind();if(!teacher())return V.login.bind();$('#tcls').onchange=e=>{tCls=e.target.value;sel.clear();render()};document.querySelectorAll('[data-tt]').forEach(b=>b.onclick=()=>{tTab=b.dataset.tt;render()});
  document.querySelectorAll('[data-optg]').forEach(b=>b.onclick=()=>{const k=b.dataset.optg;opened[tCls]??={};if(opened[tCls][k])delete opened[tCls][k];else opened[tCls][k]=1;save();render()});
  document.querySelectorAll('[data-opall]').forEach(b=>b.onclick=()=>{const n=b.dataset.opall,v=b.dataset.v==='1';opened[tCls]??={};const ks=[...TH.filter(x=>x.u===n).map(x=>x.id),...WS.filter(w=>w.u===n).map(w=>'ws:'+w.les)];ks.forEach(k=>{if(v)opened[tCls][k]=1;else delete opened[tCls][k]});save();render()});
  lrBind();
@@ -1411,6 +1437,98 @@ function certSetBind(){const sm=$('#smails');if(sm)sm.onclick=()=>{const v=$('#s
  document.querySelectorAll('[data-ctt]').forEach(b=>b.onclick=()=>{E.theme=b.dataset.ctt;document.querySelectorAll('[data-ctt]').forEach(x=>x.classList.toggle('on',x===b));prev()});
  $('#ctsave').onclick=()=>{const c={};for(const k of ['title','intro','body','sign','seal','year','theme'])c[k]=String(E[k]||'').trim();c.scores=!!E.scores;c.praise=E.praise.map(p=>String(p||'').trim());if(!c.title)c.title=CERT_DEF.title;if(c.year===SCHOOL_YEAR)c.year='';CFG().cert=c;save();$('#ctmsg').textContent='Хадгаллаа ✓ Бүх сурагчийн батламж шинэчлэгдлээ.'};
  $('#ctreset').onclick=()=>{if(!confirm('Батламжийг анхны загварт буцаах уу?'))return;delete CFG().cert;save();ctEdit=null;render()}}
+
+/* ===== Багшийн «Сурагчид» хэсэг: бүлгийн тоо, өөр анги, нэр засах, бүлэг/анги солих, дэлгэрэнгүй үзүүлэлт ===== */
+const rsToast=m=>{if(typeof toast==='function')return toast(m);let e=document.querySelector('.rs-toast');if(!e){e=document.createElement('div');e.className='rs-toast';document.body.appendChild(e)}e.textContent=m;e.classList.add('on');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('on'),2600)};
+let rsQ='',rsSort='ner',rsNote='',rsSel=new Set(),rsAsk=null;
+const RS_COLS=[['view','📘 Хичээлийн үзэлт'],['chap','📚 Судалсан бүлэг'],['exam','📝 Шалгалт'],['grade','🎓 Дүн, үнэлгээ'],['rank','🏅 Эрэмбэ'],['metric','⭐ '+SITE_METRIC],['act','📅 Идэвх']];
+const rsCfg=()=>{let c={};try{c=JSON.parse(localStorage.getItem('rs_cfg_'+(window.SYNC_ROOT||''))||'{}')}catch(e){}return Object.assign({on:true,cols:Object.fromEntries(RS_COLS.map(x=>[x[0],true]))},c)};
+const rsSave=c=>{try{localStorage.setItem('rs_cfg_'+(window.SYNC_ROOT||''),JSON.stringify(c))}catch(e){}};
+const rsColl=(a,b)=>String(a||'').localeCompare(String(b||''),'mn',{sensitivity:'base'});
+const RS_CH=[...new Set(UNITS.map(x=>x[2]))];
+const rsUnitCh=n=>(UNITS.find(x=>x[0]===n)||[])[2];
+function rsInfo(u){const R=yearResult(u),D=u.done||{};
+ const chap=RS_CH.map(ch=>{const L=TH.filter(x=>rsUnitCh(x.u)===ch),d=L.filter(x=>D[x.id]).length;return {ch,d,t:L.length}});
+ const units=UNITS.map(([n,t,ch])=>{const L=TH.filter(x=>x.u===n),d=L.filter(x=>D[x.id]).length,a=u.exams?.[n]||[],F=BANK[n]?unitFinal(u,n):null;return {n,t,ch,d,tot:L.length,att:a.length,first:a[0]?pct(a[0].score,a[0].total):null,best:a.length?Math.max(...a.map(x=>pct(x.score,x.total))):null,F}});
+ const exU=units.filter(x=>BANK[x.n]);return {R,chap,units,chDone:chap.filter(c=>c.t&&c.d>=c.t).length,chStart:chap.filter(c=>c.d>0).length,unDone:units.filter(x=>x.tot&&x.d>=x.tot).length,exTaken:exU.filter(x=>x.att).length,exTot:exU.length,m:siteMetric(u),last:(u.days||[]).slice().sort().pop()||''}}
+function rsRank(pool,u){const L=pool.map(x=>({x,t:yearResult(x).total,m:siteMetric(x)})).sort((a,b)=>b.t-a.t||b.m-a.m);return {r:L.findIndex(z=>z.x.id===u.id)+1,n:L.length}}
+const rsBar=(p,c)=>`<span class="rs-bar"><i style="width:${Math.max(0,Math.min(100,p||0))}%;${c?'background:'+c:''}"></i></span>`;
+const rsGrp=u=>u.grp?u.grp+'-р бүлэг':'бүлэггүй';
+function rosterHTML(){const T=teacher(),my=tKeys(T),c=cOf(tCls),cfg=rsCfg();
+ const inCls=Object.values(users).filter(u=>!u.test&&u.cls===c);
+ let list=Object.values(users).filter(u=>!u.test&&inK(u,tCls));
+ if(c==='Өөр анги'&&rsNote)list=list.filter(u=>(u.clsNote||'(тэмдэглэлгүй)')===rsNote);
+ if(rsQ){const q=rsQ.toLowerCase();list=list.filter(u=>(u.ovog+' '+u.ner+' '+(u.clsNote||'')).toLowerCase().includes(q))}
+ const I=new Map(list.map(u=>[u.id,rsInfo(u)]));const rkPool=inCls;const RK=new Map(list.map(u=>[u.id,rsRank(rkPool,u)]));
+ const S={ner:(a,b)=>rsColl(a.ner,b.ner)||rsColl(a.ovog,b.ovog),ovog:(a,b)=>rsColl(a.ovog,b.ovog)||rsColl(a.ner,b.ner),grade:(a,b)=>I.get(b.id).R.total-I.get(a.id).R.total||rsColl(a.ner,b.ner),view:(a,b)=>I.get(b.id).R.view-I.get(a.id).R.view||rsColl(a.ner,b.ner),grp:(a,b)=>(a.grp||9)-(b.grp||9)||rsColl(a.ner,b.ner)};
+ list.sort(S[rsSort]||S.ner);for(const id of [...rsSel])if(!list.some(u=>u.id===id))rsSel.delete(id);
+ const gc=g=>inCls.filter(u=>(u.grp||0)===g).length,k0=inCls.filter(u=>!u.grp).length;
+ const chip=(key,lab,n,on)=>my.includes(key)?`<button class="rs-chip ${on?'on':''}" data-rsk="${key}"><b>${n}</b>${lab}</button>`:`<span class="rs-chip dis"><b>${n}</b>${lab}</span>`;
+ const notes=c==='Өөр анги'?Object.entries(inCls.reduce((m,u)=>{const k=u.clsNote||'(тэмдэглэлгүй)';m[k]=(m[k]||0)+1;return m},{})).sort((a,b)=>rsColl(a[0],b[0])):[];
+ const on=cfg.on,C=k=>on&&cfg.cols[k];const extra=(typeof ROSTER_X!=='undefined'?ROSTER_X:[]).filter(x=>C('x_'+x[0])!==false&&on);
+ const allSel=list.length&&list.every(u=>rsSel.has(u.id));
+ const classSum=my.filter(k=>!k.includes('/')).map(k=>{const us=Object.values(users).filter(u=>!u.test&&u.cls===k);return {k,n:us.length,g1:us.filter(u=>u.grp===1).length,g2:us.filter(u=>u.grp===2).length,g0:us.filter(u=>!u.grp).length}}).filter(x=>x.n||!x.k.startsWith('Өөр'));
+ return `<div class="rs">
+ <div class="card rs-head"><div class="rs-title"><div><span class="small mut">Сонгосон анги</span><h3>👥 ${esc(c)} анги · нийт ${inCls.length} сурагч</h3></div>
+  <details class="rs-all"><summary>📋 Бүх ангийн бүртгэл</summary><table class="rs-mini"><thead><tr><th>Анги</th><th>1-р бүлэг</th><th>2-р бүлэг</th>${classSum.some(x=>x.g0)?'<th>Бүлэггүй</th>':''}<th>Нийт</th></tr></thead><tbody>${classSum.map(x=>`<tr><td><b>${esc(x.k)}</b></td><td>${x.g1}</td><td>${x.g2}</td>${classSum.some(y=>y.g0)?`<td>${x.g0||''}</td>`:''}<td><b>${x.n}</b></td></tr>`).join('')}<tr class="rs-tot"><td>Бүгд</td><td>${classSum.reduce((a,x)=>a+x.g1,0)}</td><td>${classSum.reduce((a,x)=>a+x.g2,0)}</td>${classSum.some(x=>x.g0)?`<td>${classSum.reduce((a,x)=>a+x.g0,0)}</td>`:''}<td>${classSum.reduce((a,x)=>a+x.n,0)}</td></tr></tbody></table></details></div>
+  <div class="rs-chips">${chip(c,'Бүх бүлэг',inCls.length,!gOf(tCls))}${GRPS.map(g=>chip(c+'/'+g,g+'-р бүлэг',gc(g),gOf(tCls)===g)).join('')}${k0?`<span class="rs-chip warn"><b>${k0}</b>Бүлэг сонгоогүй</span>`:''}</div>
+  ${c==='Өөр анги'?`<div class="rs-notes"><span class="small mut">Аль ангиас бүртгүүлсэн бэ:</span>${notes.length?notes.map(([k,n])=>`<button class="rs-chip sm ${rsNote===k?'on':''}" data-rsn="${esc(k)}"><b>${n}</b>${esc(k)}</button>`).join(''):'<span class="small mut">Сурагч алга</span>'}${rsNote?'<button class="rs-chip sm" data-rsn="">✕ Бүгдийг харах</button>':''}</div>`:''}</div>
+ <div class="rs-tools"><button class="sm" id="sadd">＋ Сурагч нэмэх</button><input id="rsq" type="search" placeholder="🔍 Нэр, овгоор хайх" value="${esc(rsQ)}" autocomplete="off"><label class="rs-sort">Эрэмбэ<select id="rss">${[['ner','Нэрээр (А–Я)'],['ovog','Овгоор (А–Я)'],['grp','Бүлгээр'],['grade','Дүнгээр (их→бага)'],['view','Үзэлтээр']].map(([k,t])=>`<option value="${k}" ${rsSort===k?'selected':''}>${t}</option>`).join('')}</select></label>
+  <label class="rs-on"><input type="checkbox" id="rson" ${on?'checked':''}> 📊 Дэлгэрэнгүй мэдээлэл харуулах</label>
+  ${on?`<details class="rs-cols"><summary>⚙️ Баганууд</summary><div>${[...RS_COLS,...(typeof ROSTER_X!=='undefined'?ROSTER_X.map(x=>['x_'+x[0],x[1]]):[])].map(([k,t])=>`<label><input type="checkbox" data-rsc="${k}" ${cfg.cols[k]!==false?'checked':''}> ${t}</label>`).join('')}</div></details>`:''}</div>
+ ${rsSel.size?`<div class="rs-bulk"><b>✔ ${rsSel.size} сурагч сонгосон:</b><span>Бүлэг →</span>${GRPS.map(g=>`<button class="ghost sm" data-rsbg="${g}">${g}-р бүлэг</button>`).join('')}<span>Анги →</span><select id="rsbc"><option value="">— сонго —</option>${CLASSES.map(x=>`<option ${x===c?'disabled':''}>${x}</option>`).join('')}</select><button class="ghost sm red" id="rsbd">🗑 Хасах</button><button class="ghost sm" id="rsbx">Цуцлах</button></div>`:''}
+ <div class="card rs-tw"><table class="rs-t"><thead><tr><th><input type="checkbox" id="rsall" ${allSel?'checked':''} aria-label="Бүгдийг сонгох"></th><th>№</th><th>Нэр</th><th>Овог</th><th>Бүлэг</th>${c==='Өөр анги'?'<th>Аль анги</th>':''}
+  ${C('view')?'<th>Үзэлт</th>':''}${C('chap')?'<th>Судалсан бүлэг</th>':''}${C('exam')?'<th>Шалгалт</th>':''}${C('grade')?'<th>Дүн</th>':''}${C('rank')?'<th>Эрэмбэ</th>':''}${C('metric')?`<th>${esc(SITE_METRIC)}</th>`:''}${extra.map(x=>`<th>${x[1]}</th>`).join('')}${C('act')?'<th>Идэвх</th>':''}<th></th></tr></thead><tbody>
+  ${list.map((u,ix)=>{const X=I.get(u.id),R=X.R,K=RK.get(u.id);return `<tr class="${rsSel.has(u.id)?'sel':''}"><td><input type="checkbox" data-rss="${u.id}" ${rsSel.has(u.id)?'checked':''} aria-label="Сонгох"></td><td class="mut">${ix+1}</td>
+   <td><button class="rs-nm" data-rsd="${u.id}">${esc(u.ner)}</button>${u.demo?' <span class="demo">жишээ</span>':''}${u.free?' <span class="pill">түгжээгүй</span>':''}</td><td>${esc(u.ovog)}</td>
+   <td><span class="rs-g g${u.grp||0}">${rsGrp(u)}</span></td>${c==='Өөр анги'?`<td>${esc(u.clsNote||'—')}</td>`:''}
+   ${C('view')?`<td class="rs-n">${rsBar(R.view)}<b>${R.view}%</b><small>${R.L.done}/${R.L.total} хичээл</small></td>`:''}
+   ${C('chap')?`<td class="rs-n"><b>${X.chDone}/${RS_CH.length}</b> бүлэг<small>${X.unDone}/${UNITS.length} нэгж дууссан</small></td>`:''}
+   ${C('exam')?`<td class="rs-n"><b>${X.exTaken}/${X.exTot}</b> өгсөн<small>${X.units.filter(x=>x.att).map(x=>`${x.n}: ${x.first}%`).join(' · ')||'—'}</small></td>`:''}
+   ${C('grade')?`<td class="rs-n"><span class="rs-lt l${R.letter[0]}">${R.letter[0]}</span><b>${R.total}%</b><small>${R.letter[1]}</small></td>`:''}
+   ${C('rank')?`<td class="rs-n"><b>${K.r}</b>/${K.n}<small>ангидаа</small></td>`:''}
+   ${C('metric')?`<td><b>${X.m}</b></td>`:''}${extra.map(x=>`<td>${x[2](u)}</td>`).join('')}
+   ${C('act')?`<td class="rs-n"><b>${streak(u)}</b> өдөр<small>${X.last?'сүүлд '+X.last.slice(5):'—'}</small></td>`:''}
+   <td><button class="ghost sm" data-rsd="${u.id}" title="Засах, дэлгэрэнгүй">✏️ Засах</button></td></tr>`}).join('')||`<tr><td colspan="16" class="mut" style="padding:18px">${rsQ?'Хайлтад тохирох сурагч алга.':esc(gName(tCls))+' ангид бүртгүүлсэн сурагч алга.'}</td></tr>`}</tbody></table></div>
+ <p class="small mut">💡 Сурагчийн нэр эсвэл «✏️ Засах» дээр дарж нэр, овог, анги, бүлгийг засах, бүх үзүүлэлтийг дэлгэрэнгүй харна. Олон сурагчийг сонгоод бүлэг, анги нэг дор сольж болно.</p></div>`}
+function rsDetail(id){const u=users[id];if(!u)return;const X=rsInfo(u),R=X.R,cls=Object.values(users).filter(x=>!x.test&&x.cls===u.cls),grp=cls.filter(x=>x.grp===u.grp),KC=rsRank(cls,u),KG=u.grp?rsRank(grp,u):null;
+ const st=(v,l,s)=>`<div class="rs-st"><b>${v}</b><span>${l}</span>${s?`<small>${s}</small>`:''}</div>`;
+ modal(`<div class="rs-dt"><div class="rs-dh"><div><span class="small mut">${esc(u.cls)} · ${rsGrp(u)}${u.clsNote?' · '+esc(u.clsNote):''}</span><h3>${esc(u.ner)} <span class="mut">${esc(u.ovog)}</span></h3></div><button class="ghost sm" onclick="window.closeModal()">✕</button></div>
+ <form id="rsf" class="rs-form"><label>Нэр<input id="rsf_n" value="${esc(u.ner)}" required maxlength="30"></label><label>Овог<input id="rsf_o" value="${esc(u.ovog)}" required maxlength="30"></label>
+  <label>Анги<select id="rsf_c">${CLASSES.map(x=>`<option ${x===u.cls?'selected':''}>${x}</option>`).join('')}</select></label><label>Бүлэг<select id="rsf_g">${GRPS.map(g=>`<option value="${g}" ${u.grp===g?'selected':''}>${g}-р бүлэг</option>`).join('')}</select></label>
+  <label class="rs-wide" id="rsf_nw" ${u.cls==='Өөр анги'?'':'hidden'}>Аль анги, бүлэг вэ?<input id="rsf_x" value="${esc(u.clsNote||'')}" maxlength="40" placeholder="Жишээ: 7Б анги"></label>
+  <p class="fb no rs-wide" id="rsf_e"></p><div class="rs-wide row"><button>💾 Хадгалах</button><span class="small mut">Нэр, овог солигдвол сурагч шинэ нэрээрээ нэвтэрнэ.</span></div></form>
+ <div class="rs-stats">${st(R.view+'%','Хичээлийн үзэлт',R.L.done+'/'+R.L.total+' хичээл')}${st(X.chDone+'/'+RS_CH.length,'Дууссан бүлэг',X.unDone+'/'+UNITS.length+' нэгж')}${st(X.exTaken+'/'+X.exTot,'Шалгалт өгсөн',R.ex+'% дундаж')}${st(R.pr+'%','Дадлага')}${st(R.total+'% · '+R.letter[0],'Жилийн дүн',R.letter[1])}${st(KC.r+'/'+KC.n,'Ангидаа эрэмбэ',KG?KG.r+'/'+KG.n+' бүлэгтээ':'')}${st(X.m,SITE_METRIC)}${st(streak(u)+' өдөр','Дараалсан идэвх',X.last?'Сүүлд: '+X.last:'')}</div>
+ <h4 style="margin:14px 0 6px">📚 Бүлэг, нэгж тус бүрээр</h4><div class="scroll"><table class="rs-ut"><thead><tr><th>Нэгж</th><th>Хичээл үзсэн</th><th>Дадлага</th><th>Шалгалт</th><th>Нэгжийн дүн</th></tr></thead><tbody>
+ ${RS_CH.map(ch=>{const cc=X.chap.find(z=>z.ch===ch);return `<tr class="rs-chr"><td colspan="5"><b>${ch} бүлэг</b> — ${cc.d}/${cc.t} хичээл ${cc.t&&cc.d>=cc.t?'✅ дууссан':''}</td></tr>`+X.units.filter(x=>x.ch===ch).map(x=>`<tr><td><b>${x.n}</b> ${esc(x.t)}</td><td>${rsBar(pct(x.d,x.tot))} ${x.d}/${x.tot}</td><td>${x.F&&x.F.pr!=null?x.F.pr+'%':'—'}</td><td>${x.att?`${x.first}%<small> (${x.att} оролдлого${x.att>1?', шилдэг '+x.best+'%':''})</small>`:BANK[x.n]?'<span class="mut">өгөөгүй</span>':'—'}</td><td>${x.F&&x.F.fin!=null?`<b>${x.F.fin}%</b> ${LETTER(x.F.fin)[0]}`:'—'}</td></tr>`).join('')}).join('')}</tbody></table></div>
+ <div class="rs-acts"><button class="ghost sm" id="rs_pw">🔑 Шинэ нууц үг</button>${typeof ROSTER_FREE!=='undefined'&&ROSTER_FREE?`<button class="ghost sm" id="rs_fr">${u.free?'🔒 Түгжээ буцаах':'🔓 Бүх хичээлийг нээх'}</button>`:''}<button class="ghost sm red" id="rs_del">🗑 Сурагчийг хасах</button></div><div id="rs_msg"></div></div>`);
+ $('#rsf_c').onchange=e=>{$('#rsf_nw').hidden=e.target.value!=='Өөр анги'};
+ $('#rsf').onsubmit=e=>{e.preventDefault();const n=$('#rsf_n').value.trim().replace(/\s+/g,' '),o=$('#rsf_o').value.trim().replace(/\s+/g,' '),c=$('#rsf_c').value,g=+$('#rsf_g').value,x=$('#rsf_x').value.trim();
+  if(!n||!o)return $('#rsf_e').textContent='Нэр, овгоо бичнэ үү.';
+  if(Object.values(users).some(y=>y.id!==u.id&&y.cls===c&&y.ovog.toLowerCase()===o.toLowerCase()&&y.ner.toLowerCase()===n.toLowerCase()))return $('#rsf_e').textContent=`${c} ангид ${o} ${n} нэртэй сурагч аль хэдийн бүртгэлтэй байна.`;
+  const ch=[];if(u.ner!==n)ch.push(`нэр: ${u.ner} → ${n}`);if(u.ovog!==o)ch.push(`овог: ${u.ovog} → ${o}`);if(u.cls!==c)ch.push(`анги: ${u.cls} → ${c}`);if(u.grp!==g)ch.push(`бүлэг: ${u.grp||'—'} → ${g}`);
+  u.ner=n;u.ovog=o;u.cls=c;u.grp=g;u.clsNote=c==='Өөр анги'?(x||undefined):undefined;(u.hist??=[]).push({d:today(),by:tlogin,ch:ch.join('; ')});save();closeModal();render();
+  if(ch.length)rsToast('✅ '+ch.join(', '))};
+ $('#rs_pw').onclick=()=>{const p=String(Math.floor(1000+Math.random()*9000));u.pw=hash(p);save();$('#rs_msg').innerHTML=`<div class="def">Шинэ нууц үг: <b style="font-size:22px;letter-spacing:3px">${p}</b><br><span class="small">Нэвтрэх: овог <b>${esc(u.ovog)}</b>, нэр <b>${esc(u.ner)}</b>, анги <b>${esc(u.cls)}</b>. Сурагчид биечлэн хэлээрэй.</span></div>`};
+ const fr=$('#rs_fr');if(fr)fr.onclick=()=>{u.free=!u.free;save();closeModal();render()};
+ $('#rs_del').onclick=e=>{const b=e.currentTarget;if(!b.dataset.ok){b.dataset.ok=1;b.textContent='❗ Тийм, бүх дүнтэй нь устгах';$('#rs_msg').innerHTML='<p class="small" style="color:#c0392b">Энэ сурагчийн бүртгэл, дүн, үнэлгээ бүгд устана. Буцаах боломжгүй.</p>';return}
+  delete users[u.id];rsSel.delete(u.id);if(me===u.id){me=null;store.set('me',null)}save();closeModal();render()}}
+function rosterBind(){const q=s=>document.querySelectorAll(s);if(!document.querySelector('.rs'))return;const cfg=rsCfg();
+ q('[data-rsk]').forEach(b=>b.onclick=()=>{tCls=b.dataset.rsk;rsSel.clear();render()});
+ q('[data-rsn]').forEach(b=>b.onclick=()=>{rsNote=b.dataset.rsn;render()});
+ const qi=$('#rsq');if(qi){let t=0;qi.oninput=()=>{clearTimeout(t);t=setTimeout(()=>{rsQ=qi.value;const pos=qi.selectionStart;render();const n=$('#rsq');if(n){n.focus();try{n.setSelectionRange(pos,pos)}catch(e){}}},250)}}
+ const ss=$('#rss');if(ss)ss.onchange=()=>{rsSort=ss.value;render()};
+ const so=$('#rson');if(so)so.onchange=()=>{cfg.on=so.checked;rsSave(cfg);render()};
+ q('[data-rsc]').forEach(b=>b.onchange=()=>{cfg.cols[b.dataset.rsc]=b.checked;rsSave(cfg);render();const d=document.querySelector('.rs-cols');if(d)d.open=true});
+ q('[data-rss]').forEach(b=>b.onchange=()=>{b.checked?rsSel.add(b.dataset.rss):rsSel.delete(b.dataset.rss);render()});
+ const al=$('#rsall');if(al)al.onchange=()=>{const ids=[...document.querySelectorAll('[data-rss]')].map(x=>x.dataset.rss);if(al.checked)ids.forEach(i=>rsSel.add(i));else ids.forEach(i=>rsSel.delete(i));render()};
+ q('[data-rsd]').forEach(b=>b.onclick=()=>rsDetail(b.dataset.rsd));
+ q('[data-rsbg]').forEach(b=>b.onclick=()=>{const g=+b.dataset.rsbg;rsSel.forEach(id=>{if(users[id])users[id].grp=g});const n=rsSel.size;rsSel.clear();save();render();rsToast(`✅ ${n} сурагч ${g}-р бүлэгт шилжлээ`)});
+ const bc=$('#rsbc');if(bc)bc.onchange=()=>{const c=bc.value;if(!c)return;const n=rsSel.size;modal(`<h3>${n} сурагчийг ${esc(c)} анги руу шилжүүлэх үү?</h3><p class="small mut">Сурагчдын дүн, үнэлгээ хэвээр үлдэнэ. Тэд дараа нь <b>${esc(c)}</b> ангиа сонгож нэвтэрнэ.</p>${c==='Өөр анги'?'<label for="rsbn">Аль анги, бүлэг вэ?</label><input id="rsbn" placeholder="Жишээ: 7Б анги">':''}<div class="row" style="justify-content:center"><button class="ghost" onclick="window.closeModal()">Болих</button><button id="rsbok">Шилжүүлэх</button></div>`);
+  $('#rsbok').onclick=()=>{const note=($('#rsbn')?.value||'').trim();rsSel.forEach(id=>{const u=users[id];if(!u)return;u.cls=c;u.clsNote=c==='Өөр анги'?(note||u.clsNote):undefined});rsSel.clear();save();closeModal();render();rsToast(`✅ ${n} сурагч ${c} анги руу шилжлээ`)};bc.value=''};
+ const bd=$('#rsbd');if(bd)bd.onclick=()=>{const n=rsSel.size;modal(`<h3>${n} сурагчийг хасах уу?</h3><p class="small">Тэдний бүртгэл, дүн, үнэлгээ бүгд устана. Буцаах боломжгүй.</p><p class="small mut">${[...rsSel].map(id=>users[id]?esc(users[id].ner+' '+users[id].ovog):'').join(', ')}</p><div class="row" style="justify-content:center"><button class="ghost" onclick="window.closeModal()">Болих</button><button id="rsbdok" style="background:#c0392b">Хасах</button></div>`);
+  $('#rsbdok').onclick=()=>{rsSel.forEach(id=>{delete users[id];if(me===id){me=null;store.set('me',null)}});rsSel.clear();save();closeModal();render()}};
+ const bx=$('#rsbx');if(bx)bx.onclick=()=>{rsSel.clear();render()}}
 
 function render(){render0();__after()}
 function __after(){const d=document.getElementById('syncdot');if(d)d.dataset.st=SYNC.status;{const u=user(),w=document.querySelector('#app .wrap');if(u&&!teacher()&&!u.grp&&w&&!w.querySelector('.grpask'))w.insertAdjacentHTML('afterbegin',`<div class="syncbanner grpask" style="background:#e6f4f1;border-color:#2e8b57;color:#173b3f"><b>Мэдээлэл зүйн хичээлд аль бүлэгт ордог вэ?</b> <span class="row" style="display:inline-flex;gap:8px;margin-left:8px">${GRPS.map(g=>`<button class="sm" onclick="window._setGrp(${g})">${g}-р бүлэг</button>`).join('')}</span></div>`)}
